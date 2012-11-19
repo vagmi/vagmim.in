@@ -1,0 +1,11 @@
+---
+layout: post
+title: "Git Branch on the command prompt"
+date: 2009-04-29
+comments: false
+categories:
+ - git branch bash
+---
+
+<div class='post'>
+It is sometimes very useful to know the git branch you are working on right from the command prompt. You can do this by editing the ~/.bashrc file.<br /><br /><script src="http://gist.github.com/103674.js"></script><br /><br />This will show up a prompt which looks like this and fails gracefully when you are not on a git repo.<br /><br /><pre><code><br />vagmi@deepthought:~/work/testproj[master]$ git checkout new_feature<br />Switched to branch "new_feature"<br />vagmi@deepthought:~/work/testproj[new_feature]$ cd ..<br />vagmi@deepthought:~/work$<br /></code></pre><br /><br />This saves a lot of "git branch" when you are coding.</div>

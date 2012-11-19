@@ -1,0 +1,20 @@
+---
+layout: post
+title: "Configuration Data is such a Pain"
+date: 2004-12-29
+comments: false
+---
+
+<div class='post'>
+I have finally got my computer to my new house in <a href="http://hulk.bu.edu/misc/karnataka/cities/bangalore">Bangalore</a>. I dont have access to the internet, so I will essentially by offline. I am yet to install <a href="http://icsharpcode.com/OpenSource/SD">SharpDevelop</a> and <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=9B3A2CA6-3647-4070-9F41-A333C6B9181D&amp;displaylang=en">.NET Framework SDK v1.1</a>. Hopefully, I should be able to get it done today. I had some time today morning but I was too busy playing NFS Hot Pursuit 2 and Quake 3. (No real souls to frag. Only bots. )
+<br />
+<br />Currently one of our installation packages does something that it should not be doing. It is handling configuration data for several applications. Clearly this created several issues during upgrades. Now, for the next schedule major release, we (the packaging team) decided that we would let the applications handle the configuration information. This was duly presented as a proposal to other "application development" teams in a meeting. The people were a little hot under the collar during the meeting. Other development groups suspected that we were doing this to brush off our responsibility. I am sure that other setup developers would also have faced such similar predicament.
+<br />
+<br />I was recently browsing through the <a href="http://www.installshield.com/">InstallShield</a> <a href="http://community.installshield.com/">Community</a> forums and found that mosth setup developers were invariably including configuration data as a part of their installation. I even saw one post where a setup developer had used a VBScript custom action with the FileSystemObject and tried to replace certain place holder texts in the installed configuration file. I am sure that many of us, who have burnt their fingers with VBScript and FSO, would agree with me. Logically speaking, there is nothing wrong with this approach. But we have to realize that we are introducing a element that can go wrong. Having deferred VBScript custom actions with FSO is a lot of fun while debugging.
+<br />
+<br />My recommended approach would be to have a small configurator utility, which would accept command line parameters and perform the same tasks. This serves two purposes.
+<br />
+<br /><ol><li>The configuration data is effectively taken out of the MSI. You can avoid slicing and dicing the CustomActionData property to get the desired values. There is one element less in the project that can go wrong.
+<br /></li><li>The user need not run the installation, if he has specified incorrect configuration. He has the option of configuring the software after installing it. While installing on locked down environments, the setup author has to ensure that the permissions table is authored such that the current user has no problems writing on the the specified resources. This should'nt be a problem for registry keys or folders as their permission tokens can always be altered by the installer.
+<br /></li></ol>Finally, <a href="http://www.geekswithblogs.net/rikoe">Riko</a> is back. It seems that he is going to <a href="http://www.geekswithblogs.net/rikoe/archive/2004/12/28/18643.aspx">submit his tallow source</a> to the community. I can't wait to get my hands on it.
+<br /></div>

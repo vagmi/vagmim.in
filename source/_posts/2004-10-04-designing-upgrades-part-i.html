@@ -1,0 +1,37 @@
+---
+layout: post
+title: "Designing Upgrades - Part I"
+date: 2004-10-04
+comments: false
+---
+
+<div class='post'>
+The previous week had been really busy. With five new recruits on board, I was asked to give them a quick introduction to InstallShield X and Windows Installer. It was broken up into 5 sessions, 3 hours each. And of course, I had my routine to take care of. So, after all this hard work, I decided to pamper myself with a movie the weekend. Before that I have decided to write something about designing upgrades with Windows Installer and WIX. I have split this article into two for easy consumption.
+<br />
+<br />Designing upgrades are fairly basic and I have seen a lot of people in the forum having a little trouble getting started with the upgrades. But once they understand the concept of upgrades from the Windows Installer's perspective, it becomes a cakewalk. So, for starters, let me just talk about the different types of upgrades that you can perform with Windows Installer and implement the same using WIX. This article is designed only to be a quick start guide and is no means a complete guide for an upgrade. If you want to know more about upgrades, read the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/patching_and_upgrades.asp">Upgrades and Patching</a> section of the Windows Installer SDK documentation.
+<br />
+<br />Windows Installer keeps track of products and packages using GUIDs. There are three important GUIDs that you need to know to understand upgrades.
+<br /><ul>
+<br /><li><a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/productcode_property.asp">ProductCode</a> - This uniquely identifies a product. This value is written to the Property table under the name ProductCode.</li>
+<br /><li><a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/upgradecode_property.asp">UpgradeCode</a> - This GUID is used to logically bind related products. This value is written to the Property table under the name UpgradeCode.</li>
+<br /><li><a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/revision_number_summary_property.asp">Package Code</a> - This uniquely identifies a package. Almost any change in the MSI package, mandates a new Package GUID. This value is written to the summary information sream under the name of 'Revision Number'.</li>
+<br /></ul>
+<br />And then there is the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/productversion_property.asp">ProductVersion property</a>, which specifies the version of the product. Windows Installer recognizes three types of upgrades. In all these upgrades, the package code will always change.
+<br /><ul>
+<br /><li>When the upgrade just changes the application files but does not change the Product Code or the Product version, it is termed as a <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/small_updates.asp">small update</a>. </li>
+<br /><li>When the upgrade changes only the ProductVersion but does not change the ProductCode, it is termed as a <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/minor_upgrades.asp">minor upgrade</a>.</li>
+<br /><li>When both the ProductCode and ProductVersion changes, it is termed as a <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/major_upgrades.asp">Major Upgrade</a>.</li>
+<br /></ul>
+<br />The small update and the minor upgrade can be installed over the existing installation. Usually, they only make changes to the parts of applications that have been changed. There are usually no major design changes to the product tree, excepting a few additions and modifications.
+<br />
+<br />The major upgrade however, installs a completely new product and uninstalls the existing version of the product(s). Minor upgrade and small update can be targetted only at a particular product but Major upgrades can target more than one product. Major upgrade usually would have major changes made to the product tree. There might be situations that you might have to <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/changing_the_product_code.asp">change the product code</a>. In those cases, you would have no other choice but to perform a major upgrade.
+<br />
+<br />So, as long as you do not have to change the product code, you can perform a small update or a minor upgrade. Minor upgrade would allow you to track the upgrade applied by looking at the ProductVersion. You can apply a minor upgrade or small update using the following command line.
+<br />
+<br />msiexec.exe /i <Path_To_MSIFile.msi> REINSTALL=ALL REINSTALLMODE=vomus
+<br />
+<br />The value of the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/reinstall_property.asp">REINSTALL property</a> is a list of features delimited by commas that are to be reinstalled. The features listed must be present in the Feature column of the Feature table. The <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/reinstallmode_property.asp">REINSTALLMODE property</a> is a string containing letters specifying the type of reinstall to perform. Options are case-insensitive and order-independent. This property should normally always be used in conjunction with the REINSTALL property. However, this property can also be used during installation, not just reinstall. 
+<br />
+<br />To design a major upgrade, you would have to author the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/upgrade_table.asp">Upgrade table</a>. The upgrade table allows you to filter products and subsequently features based on the UpgradeCode, ProductVersion and Language. The Remove column of the upgrade table can be used to specify the list of features to be removed. Windows Installer will remove all the features, if the column is null. The ActionProperty column can be used to specify the name of a property. For the major upgrade to work, you need to have <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/findrelatedproducts_action.asp">FindRelatedProductsAction</a> and  <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/removeexistingproducts_action.asp">RemoveExistingProducts action</a> in the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/installexecutesequence_table.asp">InstallExecuteSequence table</a>.  The FindRelatedProducts action reads the settings in the upgrade table and stores the matching ProductCode(s) in the property specified by the ActionProperty column of the Upgrade Table. The RemoveExistingProducts action removes the product during installation. The most efficient placement for the RemoveExistingProducts action is after the InstallFinalize action. However, tools like InstallShield X, sequence this action in between InstallValidate and InstallInitialize actions.
+<br />
+<br />To be continued...</div>

@@ -1,0 +1,13 @@
+---
+layout: post
+title: "Modifying Radiant's Database Mailer"
+date: 2009-10-07
+comments: false
+categories:
+ - radiant
+ - quirks
+ - database_mailer
+---
+
+<div class='post'>
+Radiant's <a href="http://github.com/Aissac/radiant-database-mailer-extension/">Database Mailer</a> is an wonderful extension that can quickly set up mailer forms and add stuff to the database too. But they have tried to do some serious magic to ensure that arbitrary structures can be imported by defining them in the config/environment.rb. That is a bit too hacky for Rails to handle. <br /><br />If you decide to change the structure any time later, you cannot migrate those changes. That is quite a bummer. The crazy part is you cannot uninstall Database Mailer after that either. It keeps reporting an "undefined method set_schema_version" error. To uninstall it you have to manually nuke the form_datas (isn't data already plural?) table and related attachment tables. You also have to remove the migrations in the schema_migrations table manually. Can someone suggest a better alternative?</div>

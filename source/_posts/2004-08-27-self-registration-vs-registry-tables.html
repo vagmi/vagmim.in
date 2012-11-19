@@ -1,0 +1,34 @@
+---
+layout: post
+title: "Self-Registration vs. Registry tables group"
+date: 2004-08-27
+comments: false
+---
+
+<div class='post'>
+COM Servers are every Setup developer's nightmare. One of my friends, a release engineer, expressed her extreme frustration over the technique that they had used to register COM Servers. The setup developer had written 100s of lines of code to launch RegSvr32 using the '/s' switch to register these COM Servers. In theory, the process of registration of a COM Server is perfectly fine when done via the regsvr32 utility. But there are certain disadvantages while doing that from the MSI Engineer's perspective. Firstly, all the dependencies of the server need to be registered in a specific order. And secondly, the user performing the installation should have administrative rights. The latter aspect makes setup developers and administrators loathe the registration process. 
+<br />
+<br />Further, system administrators do not know the registry settings and COM interfaces that are exposed by the COM object. COM objects do not support reflection and hence are essentially black boxes. Windows Installer has a '<a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/selfreg_table.asp">SelfReg</a>' table which can be used to self-register COM servers. There are several disadvantages while using this table.
+<br />
+<br /><ul>
+<br /><li>Order of registration cannot be specified. Thus if the DLL has dependencies and the dependencies are not registered already, the self-registration would fail.</li>
+<br /><li>Rollback cannot be done reliably</li>
+<br /><li>Self-Registration requires administrative privileges</li>
+<br /><li>You cannot exploit the install-on-demand features of Windows Installer</li>
+<br /><li>You cannot register EXE (Out of process) servers.
+<br /></ul>
+<br />
+<br />Tools like <a href="http://www.installshield.com/products/x">InstallShield X</a> provide alternative methods to perform self-registration. This works around certain limitations like specifying the order of registration and registering EXE files. But largely there are limitations that are not in sync with Windows Installer's philosophy of a setup. Speaking of Setup Philosophy, RobMen's blog on his <a href="http://blogs.msdn.com/robmen/archive/2004/05/16/132928.aspx">philosophical musings</a> is really worth a read. I personally consider performing self-registration a fiendish act. Microsoft does not absolutely recommend it. Instead it recommends the use of <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/registry_tables_group.asp">Registry Table group</a>. These are a set of tables like Class, ProgId, Typelib, MIME, Extension and so forth that can be used to store COM information. Most of this information should be available in the generated IDL file for the COM component. If you have any trouble figuring it out, you can peep into the registry during the registration process using various registry-spying tools and extract the appropriate information. Thankfully, tools like <a href="http://www.installshield.com/products/x">InstallShield X</a> abstract this process. For example, using InstallShield X you can extract COM information from the key file of the component during the build time by setting the "COM Extract at Build" attribute of the component in the InstallShield X IDE. Although this makes life easy for a lot of setup developers, this technique has <a href="http://support.installshield.com/kb/view.asp?articleid=Q105681">its share of pains</a>. Although not perfect, this technique would solve most of the issues related with COM Registration.
+<br />
+<br />InstallShield also provides a simple utility call RegSpyUI.exe that helps users look at COM information for a specific DLL or exe. This tool is undocumented, unsupported and hence I do not know all the bad things that it might do. But it is a really cool utility, which helps us work around such nasty limitations. Search the InstallShield X or DevStudio installation directory for this tool. There are a few references to this tool in the <a href="http://community.installshield.com">InstallShield Communities</a>. So if something bad happens to your computer, don’t blame me. You have been warned. </wink>
+<br />
+<br />Some of the motivating factors for authoring these tables as opposed to self-registration are:
+<br />
+<br /><ol>
+<br /><li>You can forget about dependencies. Since all the information is already authored in the table, you do not need the COM servers registered in order.</li>
+<br /><li>You can register all kinds of COM Components (DLL, EXE, OCX and the like.)</li>
+<br /><li>You do not need administrative privileges. Since the registration is carried out by the standard actions, you can exploit MSI's support for <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/how_do_i_install_a_package_with_elevated_privileges_as_a_non_admin.asp">elevated privileges</a>. This is a boon for people handling locked down environments.</li>
+<br /><li>You can now support Installation-on-Demand for these COM Components. I would cover this in detail some other day.</li>
+<br /></ol>
+<br />
+<br />With all these facts by your side, I am now sure that you can convince any setup developer to use the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/registry_tables_group.asp">Registry Table Group</a> instead of performing self-registration.</div>

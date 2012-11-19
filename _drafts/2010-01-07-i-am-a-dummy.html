@@ -1,0 +1,9 @@
+---
+layout: post
+title: "I am a dummy"
+date: 2010-01-07
+comments: false
+---
+
+<div class='post'>
+Ever deleted or updated all the records in a table because you forgot the where clause? I have done this on my machine on a sqlite database. So, no harm done. But I do know of a friend whom I will not name (<cough> Vishal <cough>) who admitted to do that on a production database sitting on the server. Thanks to him it was a pretty large database and he started it in a transaction. The solution was simple. Pull the bloody plug. And it worked! None of the changes were committed. But he was working on Oracle with Toad on an underpowered machine. So if you are working on a reasonably fast machine with a smaller dataset, you might be in big trouble.<br /><br />Well fortunately for people like us, MySQL client can start with a </div>
