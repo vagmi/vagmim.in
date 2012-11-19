@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: scala | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/scala/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A Java that doesn't suck]]></title>
+    <link href="http://vagmim.in/blog/2007/11/27/java-that-doesnt-suck/"/>
+    <updated>2007-11-27T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2007/11/27/java-that-doesnt-suck</id>
+    <content type="html"><![CDATA[<div class='post'>
+I am a heavy C# and a Python user. I am looking at Java after a long time for some of my projects. I really miss the features in my favorite language. No delegates, no anonymous types, no type inference. In my quest to learn new languages, I started scouring the web. I then came across Scala. It is a better Java for the JVM. According to the <a href="http://shootout.alioth.debian.org/gp4sandbox/benchmark.php?test=all&lang=scala">Alioth performance shootout</a>, Scala's performance is comparable to Java6-server's performance. It supports type-inference, real iterators, list comprehension, the functional goodness and much more. I am impressed by the ease in which it can use Java's libraries. <br /><br />In short, it is a Java that doesn't suck.<br /><br />Here are some of the resources that would help you get started with Scala.<br /><br />Scala Home - <a href="http://www.scala-lang.org">http://www.scala-lang.org</a><br />Scala for Java Programmers - part 1 - <a href="http://blogs.sun.com/sundararajan/entry/scala_for_java_programmers">http://blogs.sun.com/sundararajan/entry/scala_for_java_programmers</a><br />Scala for Java Programmers - part 2 - <a href="http://blogs.sun.com/sundararajan/entry/scala_for_java_programmers">http://blogs.sun.com/sundararajan/entry/scala_for_java_programmers</a><br /><br />This is a nice video by the creator of Scala about building component systems and how scala is relevant in this context.<br /><br /><embed style="width:400px; height:326px;" id="VideoPlayback" type="application/x-shockwave-flash" src="http://video.google.com/googleplayer.swf?docId=553859542692229789&hl=en" flashvars=""> </embed></div>
+
+]]></content>
+  </entry>
+  
+</feed>

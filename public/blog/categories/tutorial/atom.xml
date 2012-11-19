@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: tutorial | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/tutorial/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Lisp Tutorial]]></title>
+    <link href="http://vagmim.in/blog/2007/09/23/lisp-tutorial/"/>
+    <updated>2007-09-23T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2007/09/23/lisp-tutorial</id>
+    <content type="html"><![CDATA[<div class='post'>
+Following <a href="http://www.gigamonkeys.com/blog/">Peter Seibel</a>'s <a href="http://www.gigamonkeys.com/blog/2007/09/19/bomb-me.html">request</a>, anybody looking for a Lisp Tutorial should read <a href="http://www.gigamonkeys.com/book">Practical Common Lisp</a>. It is the best <a href="http://en.wikipedia.org/wiki/Common_Lisp">Common Lisp</a> resource for beginners currently available online.<br /><br /><b>Update:</b> Made the post title a link and point it to the book.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

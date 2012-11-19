@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: xkb | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/xkb/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Moving back to blogger]]></title>
+    <link href="http://vagmim.in/blog/2007/01/08/moving-back-to-blogger/"/>
+    <updated>2007-01-08T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2007/01/08/moving-back-to-blogger</id>
+    <content type="html"><![CDATA[<div class='post'>
+I have moved back to blogger from my <a href="http://www.geekswithblogs.net/vagmi.mudumbai">previous blog</a> on geekswithblogs.net. I know that frequently changing the URL of a blog will hurt the traffic. But I have no other choice. Geeks with blogs admin application does not support unicode content and that really sucks. Apart from that fact, I have been working on phonetic layouts for both हिन्दी  and தமிழ் on <a href="http://www.ubuntu.com">Ubuntu</a>. I have just completed them . The first version can be downloaded <a href="http://hi-ta-phonetic.googlecode.com/svn/trunk/in-ph">here</a>.<br /><br />Most people like me are living the g-life. I use almost all the services that google exposes. Search, Calendar, Blogger, CodeHosting, Adsense, Docs and Spreadsheets, Picasa web, Youtube (although not technically a google service yet) and maps to name a few. Google has long since become the synonym for the word search. It is now pioneering in the applications space. <a href="http://www.google.com/a/">Google Apps for your domain</a> will give products like M$ Exchange and Lotus Domino a run for their money. It makes perfect business sense for SMEs to base their groupware on Google's infrastructure than maintain their own. This is of course given that you must have the kind of bandwidth and the infrastructure to remain connected and ensure that the business is not affected. But I do not see this as a huge problem. GMail exposes your inbox via POP3 and hence it is possible to have your mails both offline and online. Google Calendar can be used to sync up appointments. What is missing from Google right now is a Wiki. That would make it a complete groupware solution. Google would probably integrate its docs and spreadsheets application when they are mature with your domain. Google is taking web to the next level. And it is way more than Web 2.0. But let us refrain from naming it Web 3.0. Just imagine if we have enough bandwidth and google lets us host our databases on its infrastructure. I am sure google would like it. :-)<br /><br />We are now using the Web as its creator Tim Berners Lee envisioned it to be. A readable and a writable medium. Web is no more a place for companies to advertise their business. It is now a formidable platform on which they conduct business. <br /><br />Its midnight and I am very tired. Its about time I hit the sack. Good night world.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

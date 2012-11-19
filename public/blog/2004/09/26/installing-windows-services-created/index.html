@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Installing Windows Services (Created with .NET) with WIX - Vagmi's Blog</title>
+  <meta name="author" content="Vagmi Mudumbai">
+
+  
+  <meta name="description" content="This is a pretty obscure topic and there is not enough literature on this. Installing a .NET Service is a fairly simple task. The Visual Studio.NET &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://vagmim.in/blog/2004/09/26/installing-windows-services-created/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Vagmi's Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1364568-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Vagmi's Blog</a></h1>
+  
+    <h2>Rants and opinions about the world as I see it</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:vagmim.in" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Installing Windows Services (Created With .NET) With WIX</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-09-26T00:00:00+05:30" pubdate data-updated="true">Sep 26<span>th</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+This is a pretty obscure topic and there is not enough literature on this. Installing a .NET Service is a fairly simple task. The Visual Studio.NET interface allows you to add the System.Configuration.Installer class to your assembly that enables managed installations. Developers often test their services by using the installutil.exe command line tool. But this tool is not the most appropriate for packaging as it shows an ugly command window during installation, which no setup developer would desire. Microsoft, includes a DLL named installutillib.dll with a single MSI entry point function named ManagedInstall. This function can be called via a MSI custom action to handle the four overridable functions exposed by the Installer Class. I am an InstallShield X user and installing .NET service is as easy as setting a property for the component from the IDE. I was a little lost when I wanted to achieve the same with WIX. Although, I knew that I could create these custom actions myself, I was hunting for a way by which I could do it in an easier fashion with WIX. After hours of searching the WiX.chm file, I decided to get on with it myself. I still am not sure if its hidden somewhere in the Wix.chm file.
+<br />
+<br />I was a little skeptical about this and hence started of with an empty .NET enabled Windows Service that does nothing. I added the Installer class to the service and built it. I was too lazy to change the name. So my service was just called Service1 as christened by VS.NET 2003. Once we have our service executable ready, we have to create a little configuration file in XML that specifies the supported frameworks. I called it the IUConfig.XML For people wondering what IU stands for, it is short for InstallUtil &lt;smile/&gt;. The file is fairly simple and it goes something like this.
+<br />
+<br /><b>&lt;?xml version=&#8221;1.0&#8221;?&gt;
+<br />&lt;configuration&gt;
+<br />  &lt;startup&gt;
+<br />    &lt;supportedRuntime version=&#8221;v1.1.4322&#8221;/&gt;
+<br />  &lt;/startup&gt;
+<br />&lt;/configuration&gt;</b>
+<br />
+<br />I put my InstallUtilLib.dll, FirstWindowsService.exe (My Windows Service) and IUConfig.xml in a folder called src. You can find the InstallUtilLib.dll in your [WindowsFolder]\Microsoft.NET\Framework\v1.1.4322\ directory. Once you have these three files, its time to start coding the WXS file. Again, just for the sake of simplicity, I am going to install only this service and nothing else. So here is my WXS file. As you can see it is not much. It has only a feature with one component, containing the service executable and the iuconfig.xml file. I have added the InstallUtilLib.dll as a binary.
+<br />
+<br /><b>&lt;?xml version=&#8217;1.0&#8217;?&gt;
+<br />&lt;Wix xmlns=&#8217;http://schemas.microsoft.com/wix/2003/01/wi&#8217;&gt;
+<br />&lt;Product Id=&#8217;F47A6F48-86C1-47A8-B404-35656C908BEB&#8217; Name=&#8217;DotNetService&#8217; Language=&#8217;1033&#8217; Version=&#8217;1.0.0.0&#8217; Manufacturer=&#8217;Vagmi&#8217; UpgradeCode=&#8217;5BDA92CF-5D2B-4638-8550-4B8BE5BA8F24&#8217;&gt;
+<br />
+<br />&lt;Package Id=&#8217;????????-????-????-????-????????????&#8217; Description=&#8217;Dot Net Service&#8217; Comments=&#8217;Creating a .NET service&#8217; Manufacturer=&#8217;Vagmi&#8217; InstallerVersion=&#8217;200&#8217; Compressed=&#8217;yes&#8217;/&gt;
+<br />  &lt;Media Id=&#8217;1&#8217; Cabinet=&#8217;dotnet.cab&#8217; EmbedCab=&#8217;yes&#8217; /&gt;
+<br />
+<br />&lt;Directory Id=&#8217;TARGETDIR&#8217; Name=&#8217;SourceDir&#8217;&gt;
+<br />  &lt;Directory Id=&#8217;ProgramFilesFolder&#8217; Name=&#8217;PFiles&#8217;&gt;
+<br />    &lt;Directory Id=&#8217;DOTNETSERVICE&#8217; Name=&#8217;DotNet&#8217; LongName=&#8217;DotNetService&#8217;&gt;
+<br />      &lt;Component Id=&#8217;TheService&#8217; Guid=&#8217;FF15180D-B296-4F30-9385-0F15B8ACC1FF&#8217;&gt;
+<br />        &lt;File Id=&#8217;WindowsService&#8217; Name=&#8217;Firstw~1.exe&#8217; LongName=&#8217;FirstWindowsService.exe&#8217; KeyPath=&#8217;yes&#8217; DiskId=&#8217;1&#8217; src=&#8217;src\FirstWindowsService.exe&#8217; /&gt;
+<br />	&lt;File Id=&#8217;ConfigFile&#8217; Name=&#8217;IuConfig.xml&#8217; LongName=&#8217;IuConfig.xml&#8217; DiskId=&#8217;1&#8217; src=&#8217;src\IuConfig.xml&#8217; CompanionFile=&#8217;WindowsService&#8217;/&gt;
+<br />      &lt;/Component&gt;
+<br />    &lt;/Directory&gt;
+<br />  &lt;/Directory&gt;
+<br />&lt;/Directory&gt;
+<br />
+<br />&lt;Feature Id=&#8217;TheOnlyFeature&#8217; Description=&#8217;Feature contains the single component&#8217; Level=&#8217;1&#8217;&gt;
+<br />&lt;ComponentRef Id=&#8217;TheService&#8217;/&gt;
+<br />&lt;/Feature&gt;
+<br />
+<br />&lt;!&#8211; Including the InstallUtilLib.dll. This file does all the magic of installing the services. &#8211;&gt;
+<br />&lt;Binary Id=&#8217;InstallUtil&#8217; src=&#8217;src\InstallUtilLib.dll&#8217; /&gt;
+<br />&lt;/Product&gt;
+<br />&lt;/Wix&gt;</b>
+<br />
+<br />To perform a managed install of the service, we need four custom actions - two deferred custom actions for installing and uninstalling, one commit custom action and one rollback custom action. As these custom actions execute in the higher security context, we need to pass data to these custom actions using four separate &#8216;Set Property (Type 51)&#8217; custom actions. The ManagedInstall function expects the following parameters. The exact functionality of the parameters is still a mystery to me and I have to yet reasearch on it. But for now, we would take this for granted.
+<br />
+<br /><b>/installtype=notransaction /action=(install/uninstall/commit/rollback) /LogFile= &#8220;PathTo\Assembly&#8221; &#8220;PathTo\iuconfig.xml&#8221;</b>
+<br />
+<br />So the code for custom actions would look something like this.
+<br />
+<br /><b>&lt;CustomAction Id=&#8217;InstallServiceSetProp&#8217; Property=&#8217;InstallService&#8217; Value=&#8217;/installtype=notransaction /action=install /LogFile= &#8220;[#WindowsService]&#8221; &#8220;[DOTNETSERVICE]iuconfig.xml&#8221;&#8217;/&gt;
+<br />&lt;CustomAction Id=&#8217;InstallService&#8217; BinaryKey=&#8217;InstallUtil&#8217; DllEntry=&#8217;ManagedInstall&#8217; Execute=&#8217;deferred&#8217; /&gt;
+<br />&lt;CustomAction Id=&#8217;UnInstallServiceSetProp&#8217; Property=&#8217;UnInstallService&#8217; Value=&#8217;/installtype=notransaction /action=uninstall /LogFile= &#8220;[#WindowsService]&#8221; &#8220;[DOTNETSERVICE]iuconfig.xml&#8221;&#8217;/&gt;
+<br />&lt;CustomAction Id=&#8217;UnInstallService&#8217; BinaryKey=&#8217;InstallUtil&#8217; DllEntry=&#8217;ManagedInstall&#8217; Execute=&#8217;deferred&#8217; /&gt;
+<br />&lt;CustomAction Id=&#8217;CommitServiceSetProp&#8217; Property=&#8217;CommitService&#8217; Value=&#8217;/installtype=notransaction /action=commit /LogFile= &#8220;[#WindowsService]&#8221; &#8220;[DOTNETSERVICE]iuconfig.xml&#8221;&#8217;/&gt;
+<br />&lt;CustomAction Id=&#8217;CommitService&#8217; BinaryKey=&#8217;InstallUtil&#8217; DllEntry=&#8217;ManagedInstall&#8217; Execute=&#8217;commit&#8217; /&gt;
+<br />&lt;CustomAction Id=&#8217;RollbackServiceSetProp&#8217; Property=&#8217;RollbackService&#8217; Value=&#8217;/installtype=notransaction /action=rollback /LogFile= &#8220;[#WindowsService]&#8221; &#8220;[DOTNETSERVICE]iuconfig.xml&#8221;&#8217;/&gt;
+<br />&lt;CustomAction Id=&#8217;RollbackService&#8217; BinaryKey=&#8217;InstallUtil&#8217; DllEntry=&#8217;ManagedInstall&#8217; Execute=&#8217;rollback&#8217; /&gt;</b>
+<br />
+<br />You would not have to sequence these custom actions such that the uninstall custom actions run before the RemoveFiles action, and install, rollback & commit custom actions are scheduled after the InstallFiles action in the same order. So your &lt;InstallExecuteSequence&gt; would look something like this. 
+<br />
+<br /><b>&lt;InstallExecuteSequence&gt;
+<br />&lt;Custom Action=&#8217;UnInstallServiceSetProp&#8217; After=&#8217;MsiUnpublishAssemblies&#8217;&gt;$TheService=2&lt;/Custom&gt;
+<br />&lt;Custom Action=&#8217;UnInstallService&#8217; After=&#8217;UnInstallServiceSetProp&#8217;&gt;$TheService=2&lt;/Custom&gt;
+<br />&lt;Custom Action=&#8217;InstallServiceSetProp&#8217; After=&#8217;StartServices&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />&lt;Custom Action=&#8217;InstallService&#8217; After=&#8217;InstallServiceSetProp&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />&lt;Custom Action=&#8217;RollbackServiceSetProp&#8217; After=&#8217;InstallService&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />&lt;Custom Action=&#8217;RollbackService&#8217; After=&#8217;RollbackServiceSetProp&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />&lt;Custom Action=&#8217;CommitServiceSetProp&#8217; After=&#8217;RollbackService&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />&lt;Custom Action=&#8217;CommitService&#8217; After=&#8217;CommitServiceSetProp&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />&lt;/InstallExecuteSequence&gt;</b>
+<br />
+<br />Putting all this together, we would have a file like this.
+<br />
+<br /><b>&lt;?xml version=&#8217;1.0&#8217;?&gt;
+<br />&lt;Wix xmlns=&#8217;http://schemas.microsoft.com/wix/2003/01/wi&#8217;&gt;
+<br />&lt;Product Id=&#8217;F47A6F48-86C1-47A8-B404-35656C908BEB&#8217; Name=&#8217;DotNetService&#8217; Language=&#8217;1033&#8217; Version=&#8217;1.0.0.0&#8217; Manufacturer=&#8217;Vagmi&#8217; UpgradeCode=&#8217;5BDA92CF-5D2B-4638-8550-4B8BE5BA8F24&#8217;&gt;
+<br />
+<br />&lt;Package Id=&#8217;????????-????-????-????-????????????&#8217; Description=&#8217;Dot Net Service&#8217; Comments=&#8217;Creating a .NET service&#8217; Manufacturer=&#8217;Vagmi&#8217; InstallerVersion=&#8217;200&#8217; Compressed=&#8217;yes&#8217;/&gt;
+<br />  &lt;Media Id=&#8217;1&#8217; Cabinet=&#8217;dotnet.cab&#8217; EmbedCab=&#8217;yes&#8217; /&gt;
+<br />
+<br />&lt;Directory Id=&#8217;TARGETDIR&#8217; Name=&#8217;SourceDir&#8217;&gt;
+<br />  &lt;Directory Id=&#8217;ProgramFilesFolder&#8217; Name=&#8217;PFiles&#8217;&gt;
+<br />    &lt;Directory Id=&#8217;DOTNETSERVICE&#8217; Name=&#8217;DotNet&#8217; LongName=&#8217;DotNetService&#8217;&gt;
+<br />      &lt;Component Id=&#8217;TheService&#8217; Guid=&#8217;FF15180D-B296-4F30-9385-0F15B8ACC1FF&#8217;&gt;
+<br />        &lt;File Id=&#8217;WindowsService&#8217; Name=&#8217;Firstw~1.exe&#8217; LongName=&#8217;FirstWindowsService.exe&#8217; KeyPath=&#8217;yes&#8217; DiskId=&#8217;1&#8217; src=&#8217;src\FirstWindowsService.exe&#8217; /&gt;
+<br />	&lt;File Id=&#8217;ConfigFile&#8217; Name=&#8217;IuConfig.xml&#8217; LongName=&#8217;IuConfig.xml&#8217; DiskId=&#8217;1&#8217; src=&#8217;src\IuConfig.xml&#8217; CompanionFile=&#8217;WindowsService&#8217;/&gt;
+<br />      &lt;/Component&gt;
+<br />    &lt;/Directory&gt;
+<br />  &lt;/Directory&gt;
+<br />&lt;/Directory&gt;
+<br />
+<br />&lt;Feature Id=&#8217;TheOnlyFeature&#8217; Description=&#8217;Feature contains the single component&#8217; Level=&#8217;1&#8217;&gt;
+<br />&lt;ComponentRef Id=&#8217;TheService&#8217;/&gt;
+<br />&lt;/Feature&gt;
+<br />
+<br />&lt;!&#8211; Including the InstallUtilLib.dll. This file does all the magic of installing the services. &#8211;&gt;
+<br />&lt;Binary Id=&#8217;InstallUtil&#8217; src=&#8217;src\InstallUtilLib.dll&#8217; /&gt;
+<br />
+<br />&lt;!&#8211;Write custom actions to install, uninstall, commit and rollback the changes&#8211;&gt;
+<br />
+<br />&lt;CustomAction Id=&#8217;InstallServiceSetProp&#8217; Property=&#8217;InstallService&#8217; Value=&#8217;/installtype=notransaction /action=install /LogFile= &#8220;[#WindowsService]&#8221; &#8220;[DOTNETSERVICE]iuconfig.xml&#8221;&#8217;/&gt;
+<br />&lt;CustomAction Id=&#8217;InstallService&#8217; BinaryKey=&#8217;InstallUtil&#8217; DllEntry=&#8217;ManagedInstall&#8217; Execute=&#8217;deferred&#8217; /&gt;
+<br />
+<br />&lt;CustomAction Id=&#8217;UnInstallServiceSetProp&#8217; Property=&#8217;UnInstallService&#8217; Value=&#8217;/installtype=notransaction /action=uninstall /LogFile= &#8220;[#WindowsService]&#8221; &#8220;[DOTNETSERVICE]iuconfig.xml&#8221;&#8217;/&gt;
+<br />&lt;CustomAction Id=&#8217;UnInstallService&#8217; BinaryKey=&#8217;InstallUtil&#8217; DllEntry=&#8217;ManagedInstall&#8217; Execute=&#8217;deferred&#8217; /&gt;
+<br />
+<br />&lt;CustomAction Id=&#8217;CommitServiceSetProp&#8217; Property=&#8217;CommitService&#8217; Value=&#8217;/installtype=notransaction /action=commit /LogFile= &#8220;[#WindowsService]&#8221; &#8220;[DOTNETSERVICE]iuconfig.xml&#8221;&#8217;/&gt;
+<br />&lt;CustomAction Id=&#8217;CommitService&#8217; BinaryKey=&#8217;InstallUtil&#8217; DllEntry=&#8217;ManagedInstall&#8217; Execute=&#8217;commit&#8217; /&gt;
+<br />
+<br />&lt;CustomAction Id=&#8217;RollbackServiceSetProp&#8217; Property=&#8217;RollbackService&#8217; Value=&#8217;/installtype=notransaction /action=rollback /LogFile= &#8220;[#WindowsService]&#8221; &#8220;[DOTNETSERVICE]iuconfig.xml&#8221;&#8217;/&gt;
+<br />&lt;CustomAction Id=&#8217;RollbackService&#8217; BinaryKey=&#8217;InstallUtil&#8217; DllEntry=&#8217;ManagedInstall&#8217; Execute=&#8217;rollback&#8217; /&gt;
+<br />
+<br />&lt;!&#8211; Now to sequence these CAs in the execute sequence &#8211;&gt;
+<br />
+<br />&lt;InstallExecuteSequence&gt;
+<br />
+<br />&lt;Custom Action=&#8217;UnInstallServiceSetProp&#8217; After=&#8217;MsiUnpublishAssemblies&#8217;&gt;$TheService=2&lt;/Custom&gt;
+<br />&lt;Custom Action=&#8217;UnInstallService&#8217; After=&#8217;UnInstallServiceSetProp&#8217;&gt;$TheService=2&lt;/Custom&gt;
+<br />
+<br />&lt;Custom Action=&#8217;InstallServiceSetProp&#8217; After=&#8217;StartServices&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />&lt;Custom Action=&#8217;InstallService&#8217; After=&#8217;InstallServiceSetProp&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />
+<br />&lt;Custom Action=&#8217;RollbackServiceSetProp&#8217; After=&#8217;InstallService&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />&lt;Custom Action=&#8217;RollbackService&#8217; After=&#8217;RollbackServiceSetProp&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />
+<br />&lt;Custom Action=&#8217;CommitServiceSetProp&#8217; After=&#8217;RollbackService&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />&lt;Custom Action=&#8217;CommitService&#8217; After=&#8217;CommitServiceSetProp&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />
+<br />
+<br />&lt;/InstallExecuteSequence&gt;
+<br />
+<br />&lt;!&#8211;Now we&#8217;re done&#8211;&gt;
+<br />
+<br />&lt;/Product&gt;
+<br />&lt;/Wix&gt;</b>
+<br />
+<br />Despite all my skepticism, the above code ran perfectly fine. Now, I have to work on the real services. Hope you find this useful.</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Vagmi Mudumbai</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-09-26T00:00:00+05:30" pubdate data-updated="true">Sep 26<span>th</span>, 2004</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://vagmim.in/blog/2004/09/26/installing-windows-services-created/" data-via="vagmi" data-counturl="http://vagmim.in/blog/2004/09/26/installing-windows-services-created/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2004/09/25/to-nest-or-to-chain-or-to-merge/" title="Previous Post: To Nest or To Chain or To Merge">&laquo; To Nest or To Chain or To Merge</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2004/10/04/designing-upgrades-part-i/" title="Next Post: Designing Upgrades - Part I">Designing Upgrades - Part I &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2010/08/31/first-track-call-taxi-epic-fail/">First Track Call Taxi - Epic Fail</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/07/27/yes-men-fix-world/">Yes Men Fix the World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/05/25/my-hacking-playlist/">My hacking playlist</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/02/19/magic-of-y/">The magic of Y</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/02/12/statistics-is-important/">Statistics is important</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/vagmi">@vagmi</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'vagmi',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("vagmi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/vagmi" class="twitter-follow-button" data-show-count="false">Follow @vagmi</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Vagmi Mudumbai -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

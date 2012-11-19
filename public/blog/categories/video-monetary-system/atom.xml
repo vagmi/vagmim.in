@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: video monetary system | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/video-monetary-system/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A video on the monetary system]]></title>
+    <link href="http://vagmim.in/blog/2009/02/01/video-on-monetary-system/"/>
+    <updated>2009-02-01T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2009/02/01/video-on-monetary-system</id>
+    <content type="html"><![CDATA[<div class='post'>
+Apart from the conspiracy theory part in the end, this is by far the best explanation of the current monetary system.<br /><br /><embed id="VideoPlayback" src="http://video.google.com/googleplayer.swf?docid=-9050474362583451279&hl=en&fs=true" style="width:400px;height:326px" allowFullScreen="true" allowScriptAccess="always" type="application/x-shockwave-flash"> </embed></div>
+
+]]></content>
+  </entry>
+  
+</feed>

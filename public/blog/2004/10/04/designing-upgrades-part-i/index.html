@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Designing Upgrades - Part I - Vagmi's Blog</title>
+  <meta name="author" content="Vagmi Mudumbai">
+
+  
+  <meta name="description" content="The previous week had been really busy. With five new recruits on board, I was asked to give them a quick introduction to InstallShield X and &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://vagmim.in/blog/2004/10/04/designing-upgrades-part-i/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Vagmi's Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1364568-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Vagmi's Blog</a></h1>
+  
+    <h2>Rants and opinions about the world as I see it</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:vagmim.in" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Designing Upgrades - Part I</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-10-04T00:00:00+05:30" pubdate data-updated="true">Oct 4<span>th</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+The previous week had been really busy. With five new recruits on board, I was asked to give them a quick introduction to InstallShield X and Windows Installer. It was broken up into 5 sessions, 3 hours each. And of course, I had my routine to take care of. So, after all this hard work, I decided to pamper myself with a movie the weekend. Before that I have decided to write something about designing upgrades with Windows Installer and WIX. I have split this article into two for easy consumption.
+<br />
+<br />Designing upgrades are fairly basic and I have seen a lot of people in the forum having a little trouble getting started with the upgrades. But once they understand the concept of upgrades from the Windows Installer&#8217;s perspective, it becomes a cakewalk. So, for starters, let me just talk about the different types of upgrades that you can perform with Windows Installer and implement the same using WIX. This article is designed only to be a quick start guide and is no means a complete guide for an upgrade. If you want to know more about upgrades, read the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/patching_and_upgrades.asp">Upgrades and Patching</a> section of the Windows Installer SDK documentation.
+<br />
+<br />Windows Installer keeps track of products and packages using GUIDs. There are three important GUIDs that you need to know to understand upgrades.
+<br /><ul>
+<br /><li><a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/productcode_property.asp">ProductCode</a> - This uniquely identifies a product. This value is written to the Property table under the name ProductCode.</li>
+<br /><li><a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/upgradecode_property.asp">UpgradeCode</a> - This GUID is used to logically bind related products. This value is written to the Property table under the name UpgradeCode.</li>
+<br /><li><a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/revision_number_summary_property.asp">Package Code</a> - This uniquely identifies a package. Almost any change in the MSI package, mandates a new Package GUID. This value is written to the summary information sream under the name of &#8216;Revision Number&#8217;.</li>
+<br /></ul>
+<br />And then there is the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/productversion_property.asp">ProductVersion property</a>, which specifies the version of the product. Windows Installer recognizes three types of upgrades. In all these upgrades, the package code will always change.
+<br /><ul>
+<br /><li>When the upgrade just changes the application files but does not change the Product Code or the Product version, it is termed as a <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/small_updates.asp">small update</a>. </li>
+<br /><li>When the upgrade changes only the ProductVersion but does not change the ProductCode, it is termed as a <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/minor_upgrades.asp">minor upgrade</a>.</li>
+<br /><li>When both the ProductCode and ProductVersion changes, it is termed as a <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/major_upgrades.asp">Major Upgrade</a>.</li>
+<br /></ul>
+<br />The small update and the minor upgrade can be installed over the existing installation. Usually, they only make changes to the parts of applications that have been changed. There are usually no major design changes to the product tree, excepting a few additions and modifications.
+<br />
+<br />The major upgrade however, installs a completely new product and uninstalls the existing version of the product(s). Minor upgrade and small update can be targetted only at a particular product but Major upgrades can target more than one product. Major upgrade usually would have major changes made to the product tree. There might be situations that you might have to <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/changing_the_product_code.asp">change the product code</a>. In those cases, you would have no other choice but to perform a major upgrade.
+<br />
+<br />So, as long as you do not have to change the product code, you can perform a small update or a minor upgrade. Minor upgrade would allow you to track the upgrade applied by looking at the ProductVersion. You can apply a minor upgrade or small update using the following command line.
+<br />
+<br />msiexec.exe /i <Path_To_MSIFile.msi> REINSTALL=ALL REINSTALLMODE=vomus
+<br />
+<br />The value of the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/reinstall_property.asp">REINSTALL property</a> is a list of features delimited by commas that are to be reinstalled. The features listed must be present in the Feature column of the Feature table. The <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/reinstallmode_property.asp">REINSTALLMODE property</a> is a string containing letters specifying the type of reinstall to perform. Options are case-insensitive and order-independent. This property should normally always be used in conjunction with the REINSTALL property. However, this property can also be used during installation, not just reinstall. 
+<br />
+<br />To design a major upgrade, you would have to author the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/upgrade_table.asp">Upgrade table</a>. The upgrade table allows you to filter products and subsequently features based on the UpgradeCode, ProductVersion and Language. The Remove column of the upgrade table can be used to specify the list of features to be removed. Windows Installer will remove all the features, if the column is null. The ActionProperty column can be used to specify the name of a property. For the major upgrade to work, you need to have <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/findrelatedproducts_action.asp">FindRelatedProductsAction</a> and  <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/removeexistingproducts_action.asp">RemoveExistingProducts action</a> in the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/installexecutesequence_table.asp">InstallExecuteSequence table</a>.  The FindRelatedProducts action reads the settings in the upgrade table and stores the matching ProductCode(s) in the property specified by the ActionProperty column of the Upgrade Table. The RemoveExistingProducts action removes the product during installation. The most efficient placement for the RemoveExistingProducts action is after the InstallFinalize action. However, tools like InstallShield X, sequence this action in between InstallValidate and InstallInitialize actions.
+<br />
+<br />To be continued&#8230;</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Vagmi Mudumbai</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-10-04T00:00:00+05:30" pubdate data-updated="true">Oct 4<span>th</span>, 2004</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://vagmim.in/blog/2004/10/04/designing-upgrades-part-i/" data-via="vagmi" data-counturl="http://vagmim.in/blog/2004/10/04/designing-upgrades-part-i/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2004/09/26/installing-windows-services-created/" title="Previous Post: Installing Windows Services (Created with .NET) with WIX">&laquo; Installing Windows Services (Created with .NET) with WIX</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2004/10/07/handling-application-data/" title="Next Post: Handling Application Data">Handling Application Data &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2010/08/31/first-track-call-taxi-epic-fail/">First Track Call Taxi - Epic Fail</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/07/27/yes-men-fix-world/">Yes Men Fix the World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/05/25/my-hacking-playlist/">My hacking playlist</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/02/19/magic-of-y/">The magic of Y</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/02/12/statistics-is-important/">Statistics is important</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/vagmi">@vagmi</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'vagmi',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("vagmi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/vagmi" class="twitter-follow-button" data-show-count="false">Follow @vagmi</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Vagmi Mudumbai -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

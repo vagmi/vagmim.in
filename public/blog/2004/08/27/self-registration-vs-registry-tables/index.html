@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Self-Registration vs. Registry tables group - Vagmi's Blog</title>
+  <meta name="author" content="Vagmi Mudumbai">
+
+  
+  <meta name="description" content="COM Servers are every Setup developer&#8217;s nightmare. One of my friends, a release engineer, expressed her extreme frustration over the technique &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://vagmim.in/blog/2004/08/27/self-registration-vs-registry-tables/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Vagmi's Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1364568-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Vagmi's Blog</a></h1>
+  
+    <h2>Rants and opinions about the world as I see it</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:vagmim.in" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Self-Registration vs. Registry Tables Group</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-08-27T00:00:00+05:30" pubdate data-updated="true">Aug 27<span>th</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+COM Servers are every Setup developer&#8217;s nightmare. One of my friends, a release engineer, expressed her extreme frustration over the technique that they had used to register COM Servers. The setup developer had written 100s of lines of code to launch RegSvr32 using the &#8216;/s&#8217; switch to register these COM Servers. In theory, the process of registration of a COM Server is perfectly fine when done via the regsvr32 utility. But there are certain disadvantages while doing that from the MSI Engineer&#8217;s perspective. Firstly, all the dependencies of the server need to be registered in a specific order. And secondly, the user performing the installation should have administrative rights. The latter aspect makes setup developers and administrators loathe the registration process. 
+<br />
+<br />Further, system administrators do not know the registry settings and COM interfaces that are exposed by the COM object. COM objects do not support reflection and hence are essentially black boxes. Windows Installer has a &#8217;<a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/selfreg_table.asp">SelfReg</a>&#8217; table which can be used to self-register COM servers. There are several disadvantages while using this table.
+<br />
+<br /><ul>
+<br /><li>Order of registration cannot be specified. Thus if the DLL has dependencies and the dependencies are not registered already, the self-registration would fail.</li>
+<br /><li>Rollback cannot be done reliably</li>
+<br /><li>Self-Registration requires administrative privileges</li>
+<br /><li>You cannot exploit the install-on-demand features of Windows Installer</li>
+<br /><li>You cannot register EXE (Out of process) servers.
+<br /></ul>
+<br />
+<br />Tools like <a href="http://www.installshield.com/products/x">InstallShield X</a> provide alternative methods to perform self-registration. This works around certain limitations like specifying the order of registration and registering EXE files. But largely there are limitations that are not in sync with Windows Installer&#8217;s philosophy of a setup. Speaking of Setup Philosophy, RobMen&#8217;s blog on his <a href="http://blogs.msdn.com/robmen/archive/2004/05/16/132928.aspx">philosophical musings</a> is really worth a read. I personally consider performing self-registration a fiendish act. Microsoft does not absolutely recommend it. Instead it recommends the use of <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/registry_tables_group.asp">Registry Table group</a>. These are a set of tables like Class, ProgId, Typelib, MIME, Extension and so forth that can be used to store COM information. Most of this information should be available in the generated IDL file for the COM component. If you have any trouble figuring it out, you can peep into the registry during the registration process using various registry-spying tools and extract the appropriate information. Thankfully, tools like <a href="http://www.installshield.com/products/x">InstallShield X</a> abstract this process. For example, using InstallShield X you can extract COM information from the key file of the component during the build time by setting the &#8220;COM Extract at Build&#8221; attribute of the component in the InstallShield X IDE. Although this makes life easy for a lot of setup developers, this technique has <a href="http://support.installshield.com/kb/view.asp?articleid=Q105681">its share of pains</a>. Although not perfect, this technique would solve most of the issues related with COM Registration.
+<br />
+<br />InstallShield also provides a simple utility call RegSpyUI.exe that helps users look at COM information for a specific DLL or exe. This tool is undocumented, unsupported and hence I do not know all the bad things that it might do. But it is a really cool utility, which helps us work around such nasty limitations. Search the InstallShield X or DevStudio installation directory for this tool. There are a few references to this tool in the <a href="http://community.installshield.com">InstallShield Communities</a>. So if something bad happens to your computer, don’t blame me. You have been warned. </wink>
+<br />
+<br />Some of the motivating factors for authoring these tables as opposed to self-registration are:
+<br />
+<br /><ol>
+<br /><li>You can forget about dependencies. Since all the information is already authored in the table, you do not need the COM servers registered in order.</li>
+<br /><li>You can register all kinds of COM Components (DLL, EXE, OCX and the like.)</li>
+<br /><li>You do not need administrative privileges. Since the registration is carried out by the standard actions, you can exploit MSI&#8217;s support for <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/how_do_i_install_a_package_with_elevated_privileges_as_a_non_admin.asp">elevated privileges</a>. This is a boon for people handling locked down environments.</li>
+<br /><li>You can now support Installation-on-Demand for these COM Components. I would cover this in detail some other day.</li>
+<br /></ol>
+<br />
+<br />With all these facts by your side, I am now sure that you can convince any setup developer to use the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/registry_tables_group.asp">Registry Table Group</a> instead of performing self-registration.</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Vagmi Mudumbai</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-08-27T00:00:00+05:30" pubdate data-updated="true">Aug 27<span>th</span>, 2004</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://vagmim.in/blog/2004/08/27/self-registration-vs-registry-tables/" data-via="vagmi" data-counturl="http://vagmim.in/blog/2004/08/27/self-registration-vs-registry-tables/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2004/08/21/reading-windows-installer-logs/" title="Previous Post: Reading Windows Installer Logs">&laquo; Reading Windows Installer Logs</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2004/09/25/all-about-wix/" title="Next Post: All About WIX">All About WIX &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2010/08/31/first-track-call-taxi-epic-fail/">First Track Call Taxi - Epic Fail</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/07/27/yes-men-fix-world/">Yes Men Fix the World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/05/25/my-hacking-playlist/">My hacking playlist</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/02/19/magic-of-y/">The magic of Y</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/02/12/statistics-is-important/">Statistics is important</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/vagmi">@vagmi</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'vagmi',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("vagmi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/vagmi" class="twitter-follow-button" data-show-count="false">Follow @vagmi</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Vagmi Mudumbai -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

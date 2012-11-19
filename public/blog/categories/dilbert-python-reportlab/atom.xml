@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: dilbert python reportlab | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/dilbert-python-reportlab/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Meetings and Boredom continue]]></title>
+    <link href="http://vagmim.in/blog/2008/11/18/meetings-and-boredom-continues/"/>
+    <updated>2008-11-18T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2008/11/18/meetings-and-boredom-continues</id>
+    <content type="html"><![CDATA[<div class='post'>
+I am sitting on yet another <a href="http://blog.vagmim.com/2008/11/meetings-and-boredom.html">boring meeting</a> and have written a script to write it to a PDF. Its not a pretty one but I got it done in 30 mins. That has to count for something. You would need <a href="http://www.reportlab.org/">ReportLab</a> and <a href="http://www.pythonware.com/products/pil/">PIL</a> for this.<br /><br /><script src="http://gist.github.com/26096.js"></script><br /><br />Beautiful Soup and ReportLab rock.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

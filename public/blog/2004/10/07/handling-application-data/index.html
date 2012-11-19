@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Handling Application Data - Vagmi's Blog</title>
+  <meta name="author" content="Vagmi Mudumbai">
+
+  
+  <meta name="description" content="Recently, I had initiated a thread in the WIX users list regarding the inclusion of application data in the MSI package. My thanks to Riko, who &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://vagmim.in/blog/2004/10/07/handling-application-data/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Vagmi's Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1364568-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Vagmi's Blog</a></h1>
+  
+    <h2>Rants and opinions about the world as I see it</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:vagmim.in" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Handling Application Data</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-10-07T00:00:00+05:30" pubdate data-updated="true">Oct 7<span>th</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+Recently, I had initiated a thread in the WIX users list regarding the inclusion of application data in the MSI package. My thanks to Riko, who shared his views on that. It has always been tricky and will continue to be a tricky situation to deal with application data. Most applications include their application runtime and configuration data as registry entries, INI or XML files. An unassuming developer might package these registry entries with the Main application&#8217;s component, as they are dependent on the main application. This would work fine during the first install, but would cause significant issues during an upgrade. <a href="http://www.pduck.com/aboutme.htm">Geoff</a> has blogged one <a href="http://www.pduck.com/2004/08/stop-overwriting-my-registry-entries.html">such scenario</a>. This blog tries to capture some of my thoughts regarding such Application Data. 
+<br />
+<br />For starters, lets look at what happens when you include the application data in the MSI package. The user, to configure the software the way they want, usually modifies these entries. Many times, it is the application itself that changes or writes data to the registry, INI or XML files to persist the configuration state of the application. Assuming we have included such files and registry entries grouped in the same component as the main executable. We can argue that it would be a good design as these entries are logically bound to the application and have no sense existing as a standalone unit. The application would roll out pretty smooth and will have no problems until you hit a point when you have to upgrade. Let us consider a minor upgrade, no major changes, a few DLLs modified and couple of executables added. Let main executable file have its version bumped. As the executable is the key file of the component, it qualifies for an upgrade. Let us also consider changes made to the XML files and a few Registry entries to accommodate the change. During an upgrade, all hell would break loose. The registry would be overwritten and the registry might be left with conflicting entries and some XML files would updated, the others may be left untouched as it would have a greater modified date. If you are really unlucky, the testing team might not quite get the tests done right. The Result: <b>Total Chaos</b>. 
+<br />
+<br />So how should these things be handled? The answer to this question is not straightforward and seems to be pretty tricky. The most ideal scenario would be to let the application handle its own configuration. The application should be able to create these registry entries and XML files during the first run. The setup developer then has to merely author the RemoveFile and RemoveReigstry tables to get the files out during uninstallation. As far as XML handling is concerned, it is best left to the application to handle it. MSI does not support XML handling and we need robust custom actions to do it for us. Handling XML data/SQL Data during upgrades can only be done using custom code. It would be desirable if this code is present on the application&#8217;s end and not on the installer&#8217;s end. If you do have to include the application data in the MSI package, the following guidelines may be useful.
+<br />
+<br /><b>1) Identify and Isolate the Application Data:</b>
+<br />Clearly identify the resources like registry entries, INI Files and other configuration files that are to be used by the application. Use the INIFile table to author INI Files. Avoid including the INI file itself in the File table. Once identified, include the application data in a separate component. Use multiple components, if necessary.
+<br />
+<br /><b>2) Minor Upgrade and Uninstall Scenario:</b>
+<br />If the application creates extra files or registry entries, ensure that the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/removefile_table.asp">RemoveFile</a> and the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/removeregistry_table.asp">RemoveRegistry</a> tables are populated. The problem is that these tables are referred to even during installation of the component. So you would have to set the <b>Never Overwrite bit</b> of the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/component_table.asp">component</a> to make sure that this component is never marked for an upgrade. Code the upgrade logic for the application data in to the application itself. In the unlikely event of it not being feasible, write custom actions to achieve the same. Avoid writing custom actions for tasks that can be handled by the application. 
+<br />
+<br /><b>3) Major Upgrade Scenario:</b>
+<br />Certain applications like InstallShield X, schedule the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/removeexistingproducts_action.asp">RemoveExistingProducts action</a> right before the InstallInitialize action. This is not the most efficient placement for this action. The most efficient placement for this action would be after the InstallFinalize action. I will talk about this in detail another time, if you haven&#8217;t figured it out as yet. If the authoring tool places the RemoveExistingProducts action before InstallInitialize, manually schedule it after InstallFinalize. There are certain custom actions in InstallShield X (I guess Component Services) that are not very happy with this placement, although I am not very sure about this. In these cases, you would have to use related locator (AppSearch, RegLocator, IniLocator, etc.,) and signature tables to get save the information into properties and reuse them in the install. This is a very elaborate and time-consuming exercise. The shorter and a devilish way to get around this is to write custom actions to read the values in the registry and store them in a text file, back up your application data files and restore them back with another set of custom actions. As unscientific as it might sound, a lot of people have used it to get out of this mess. 
+<br />
+<br /><a href="http://blogs.msdn.com/robmen">Rob</a> is currently working on a similar blog entry. I can&#8217;t wait to read on what he has to say about this.</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Vagmi Mudumbai</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-10-07T00:00:00+05:30" pubdate data-updated="true">Oct 7<span>th</span>, 2004</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://vagmim.in/blog/2004/10/07/handling-application-data/" data-via="vagmi" data-counturl="http://vagmim.in/blog/2004/10/07/handling-application-data/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2004/10/04/designing-upgrades-part-i/" title="Previous Post: Designing Upgrades - Part I">&laquo; Designing Upgrades - Part I</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2004/10/08/rikos-blog-entry-on-resources-and-data/" title="Next Post: Riko's Blog Entry on Resources and Data">Riko's Blog Entry on Resources and Data &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2010/08/31/first-track-call-taxi-epic-fail/">First Track Call Taxi - Epic Fail</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/07/27/yes-men-fix-world/">Yes Men Fix the World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/05/25/my-hacking-playlist/">My hacking playlist</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/02/19/magic-of-y/">The magic of Y</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/02/12/statistics-is-important/">Statistics is important</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/vagmi">@vagmi</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'vagmi',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("vagmi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/vagmi" class="twitter-follow-button" data-show-count="false">Follow @vagmi</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Vagmi Mudumbai -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

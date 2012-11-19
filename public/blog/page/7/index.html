@@ -1,0 +1,606 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Vagmi's Blog</title>
+  <meta name="author" content="Vagmi Mudumbai">
+
+  
+  <meta name="description" content="I have been an avid fan of programming languages like C#, Python and Java as they take away most of the clunkiness of C/C++ code. Java, .NET/Mono, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://vagmim.in/blog/page/7/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Vagmi's Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1364568-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Vagmi's Blog</a></h1>
+  
+    <h2>Rants and opinions about the world as I see it</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:vagmim.in" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/11/15/when-cross-platform-is-not-good-enough/">When Cross Platform Is Not Good Enough&#8230;</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-15T00:00:00+05:30" pubdate data-updated="true">Nov 15<span>th</span>, 2006</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I have been an avid fan of programming languages like C#, Python and Java as they take away most of the clunkiness of C/C++ code. <a href="http://java.sun.com/" title="Java">Java</a>, .NET/<a href="http://www.mono-project.com/Main_Page" title="Mono">Mono</a>, <a href="http://www.python.org/" title="Python">Python</a>, <a href="http://www.ruby-lang.org/" title="Ruby">Ruby</a> and all other similar languages make claims that they are cross platform compliant. But the truth is, the library developer is bound to a specific technology.<br /><br />For instance, the <a href="http://bazaar-vcs.org/" title="bzr">bzr</a> version control system is written entirely in python. It has quite some promising features but it can never measure up to <a href="http://subversion.tigris.org/" title="Subversion">Subversion</a>. Just imagine integrating bzr with <a href="http://www.eclipse.org/" title="Eclipse">Eclipse</a> or using it with Visual Studio 2005. I am sure that I am not the first person to raise this as a concern. It is a part of the <a href="http://bazaar-vcs.org/FAQ" title="FAQ">FAQ</a> <a href="http://bazaar-vcs.org/FAQ#head-d7f8073f904f1e4b96e52d4c77f79e38cf0099f0" title="here">here</a>. But my concern is not about the performance but the portability. It might, at the outset, seem as a funny argument as Python is supposed to be an extremely portable language so why should anyone have such a concern? The problem is not with the platform portability but with the technology portability. You would have to jump through several hoops before you can get bzr working with Java or .NET/Mono. Another argument might be that people could simply port bzr to <a href="http://www.jython.org/" title="Jython">Jython</a> or <a href="http://www.codeplex.com/Wiki/View.aspx?ProjectName=IronPython" title="IronPython">IronPython</a>. This might be possible with open source software but might not be the case with the closed source counterparts. There are a lot of good number of libraries written in Java, which unfortunately have to be rewritten in .NET. A testimony to this is the J* open source projects being ported to .NET and called as N*, like xUnit, xAnt, xVelocity, etc.<br /><br />I understand that Java, C#, Python or Ruby make developers insanely productive. But library developers have to resist the urge to develop libraries in these languages and try to write their libraries in C/C++. By libraries, I also mean the tools and toolkits that are associated with them. Cross platform portability is definitely a concern. But it can be addressed but portable libraries like <a href="http://www.boost.org/" title="Boost">Boost</a> or <a href="http://apr.apache.org/" title="APR">APR</a>. You can later provide bindings to higher languages in the .NET stack, Java, Python or Ruby using interface generators like <a href="http://www.swig.org/" title="SWIG">SWIG</a>. There are numerous projects that have followed this approach and are hugely succesful. For instance, <a href="http://subversion.tigris.org/" title="Subversion">Subversion</a>, <a href="http://www.wxwidgets.org/" title="wxWidgets">wxWidgets</a>, <a href="http://www.gtk.org/" title="GTK">GTK</a> , <a href="http://www.sqlite.org/" title="SQLite">SQLite</a>, <a href="http://www.mysql.com/" title="MySQL">MySQL</a> are all glorious examples of toolkits and libraries that have core C/C++ components and have language bindings to higher level languages.<br /><br />I am not saying that programming in Python or Ruby is bad. I absolutely love the way they make you productive. But high level languages are not the panacea for all programming problems. There are certain categories of software that ought to be written in C/C++ and not with higher languages. You can then write wrapper/helper libraries to make the access even simpler. But if the library developer ensures compliance across technologies, higher the chances of the library being usable and consequently popular.<br /><br />Just my 2 cents on library development.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/12/29/configuration-data-is-such-pain/">Configuration Data Is Such a Pain</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-12-29T00:00:00+05:30" pubdate data-updated="true">Dec 29<span>th</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+I have finally got my computer to my new house in <a href="http://hulk.bu.edu/misc/karnataka/cities/bangalore">Bangalore</a>. I dont have access to the internet, so I will essentially by offline. I am yet to install <a href="http://icsharpcode.com/OpenSource/SD">SharpDevelop</a> and <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=9B3A2CA6-3647-4070-9F41-A333C6B9181D&amp;displaylang=en">.NET Framework SDK v1.1</a>. Hopefully, I should be able to get it done today. I had some time today morning but I was too busy playing NFS Hot Pursuit 2 and Quake 3. (No real souls to frag. Only bots. )
+<br />
+<br />Currently one of our installation packages does something that it should not be doing. It is handling configuration data for several applications. Clearly this created several issues during upgrades. Now, for the next schedule major release, we (the packaging team) decided that we would let the applications handle the configuration information. This was duly presented as a proposal to other &#8220;application development&#8221; teams in a meeting. The people were a little hot under the collar during the meeting. Other development groups suspected that we were doing this to brush off our responsibility. I am sure that other setup developers would also have faced such similar predicament.
+<br />
+<br />I was recently browsing through the <a href="http://www.installshield.com/">InstallShield</a> <a href="http://community.installshield.com/">Community</a> forums and found that mosth setup developers were invariably including configuration data as a part of their installation. I even saw one post where a setup developer had used a VBScript custom action with the FileSystemObject and tried to replace certain place holder texts in the installed configuration file. I am sure that many of us, who have burnt their fingers with VBScript and FSO, would agree with me. Logically speaking, there is nothing wrong with this approach. But we have to realize that we are introducing a element that can go wrong. Having deferred VBScript custom actions with FSO is a lot of fun while debugging.
+<br />
+<br />My recommended approach would be to have a small configurator utility, which would accept command line parameters and perform the same tasks. This serves two purposes.
+<br />
+<br /><ol><li>The configuration data is effectively taken out of the MSI. You can avoid slicing and dicing the CustomActionData property to get the desired values. There is one element less in the project that can go wrong.
+<br /></li><li>The user need not run the installation, if he has specified incorrect configuration. He has the option of configuring the software after installing it. While installing on locked down environments, the setup author has to ensure that the permissions table is authored such that the current user has no problems writing on the the specified resources. This should&#8217;nt be a problem for registry keys or folders as their permission tokens can always be altered by the installer.
+<br /></li></ol>Finally, <a href="http://www.geekswithblogs.net/rikoe">Riko</a> is back. It seems that he is going to <a href="http://www.geekswithblogs.net/rikoe/archive/2004/12/28/18643.aspx">submit his tallow source</a> to the community. I can&#8217;t wait to get my hands on it.
+<br /></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/12/23/my-2-cents/">My 2 Cents</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-12-23T00:00:00+05:30" pubdate data-updated="true">Dec 23<span>rd</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<P>If people were following the the WIX-Users Mailing list, they would find that it has been a little hot recently. The first instance (as far as my knowledge goes) was with <A href="http://msmvps.com/michael/">Michael</A> creating a validation tool for the WIX Toolset called &#8217;<A href="http://www.deploynow.com/Articles/Details.aspx?ID=2">smoke</A>&#8217;. I personally found it very useful as it could easily be included as a part of the build process. The output is in a structured XML format that makes it easier for us to crunch and build reports. But, some of the members in the group did not share the same level of enthusiasm. <A href="http://msmvps.com/michael/">Michael</A> seemed to be put off by that and included a <A href="http://msmvps.com/michael/archive/2004/12/13/23808.aspx">disturbing update</A> to his blog entry. <A href="http://blogs.msdn.com/robmen">Rob</A> immediately acknowledged it and posted a blog entry&nbsp;about being <A href="http://blogs.msdn.com/robmen/archive/2004/12/16/318015.aspx">thick skinned</A>.</P><br /><P>Recently, history repeated with Marc Bogers starting to ask about the ICE 33 warnings as Tallow populates the Registry table instead of the <A href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/registry_tables_group.asp">Registry Tables group</A>. Firstly, Tallow is only a helper utility and is anything but perfect. It is useful but does not exactly produce usable WIX code. Heck, it doesn&#8217;t even write to a file. <A href="http://blogs.msdn.com/robmen">Rob</A> had said that ICE33 warnings can be ignored as it created some &#8220;strange behavior&#8221;. More precisely, the resiliency associated with advertisement would prompt the end user for the media when Windows Installer detects some inconsistencies with the CLSID registration. Michael dismissed the argument that it arose from sloppy authoring and had nothing to do with MSI itself. Follow Michael&#8217;s <A href="http://msmvps.com/michael/archive/2004/12/22/26726.aspx">blog entry on COM registration </A>for more information. </P><br /><P>As we all know, Rob does not agree on a lot of things like inserting GUIDs while generating output with Tallow, using the <A href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/registry_tables_group.asp">Registry Tables Group </A>and so on. I am sure that he has good reasons behind them. I am also sure that many people (including me), have modified Tallow to suit their requirements. Some people are using <A href="http://geekswithblogs.net/rikoe">Riko</A>&#8217;s Tallow that does write to the Regsitry table&#8217;s group using the Class and TypeLib elements. (On a totally different note, Riko, when are you going to release that code of yours?) I have a version of Tallow that creates components with GUIDs and names them appropriately. I am pretty sure that I am aware of the consequences and I have written code to persist the component information for future reference. </P><br /><P>This freedom is the inherent beauty of open-source software. People can use their own ingenious imagination to tailor the tool to best suit their requirements. Of course, some of our opinions differ and we need a healthy debate to analyze these opinions and make the best of it. We should refrain from flaming and should try to embrace new ideas. Rob may be the BDFL for the <A href="http://wix.sourceforge.net/">WIX Toolset</A> but I am sure that he would like the WIX Toolset to be successful and that helps developers create better installers without breaking much sweat. I tried hard not to write about this topic but after reading Michael&#8217;s blog and comments with certain <A href="http://msmvps.com/michael/archive/2004/12/22/26809.aspx">conspiracy theories</A>, I wanted to voice my opinion too. I am sorry if I have hurt anybody&#8217;s feelings.</P></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/12/13/using-installscript-application-as/">Using an InstallScript Application as the Setup Launcher</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-12-13T00:00:00+05:30" pubdate data-updated="true">Dec 13<span>th</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<P>This, I guess, is my first <A href="http://www.installshield.com/">InstallShield</A> specific post. MSI is good in a lot of things but not when dealing with more than one package in a single transaction. MSI engine is designed to be run as a single instance and cannot be used effectively to install more than one package. Nested installations are possible but often lead to undesired consequences. Having a setup chainer is good but it involves writing code and handling reboots. So, for all who are using <A href="http://www.installshield.com/products/installshield/default.asp">InstallShield DevStudio</A> and up can benefit by using the <A href="http://helpnet.installshield.com/Robo/BIN/Robo.dll?tpc=/robo/projects/InstallShieldXHelpLib/ProjectType_InstallScript.htm">InstallScript project</A> as their setup launcher and monitor. We can effectively &#8220;script&#8221; a launcher application and have complete control over the installation process using the available libraries.</P><br /><P>Why InstallScript&#8230;.? I would not usually recommend InstallScript for any of the custom actions in the project, as the MSI-Scripting bridge is a little weak and has certain limitations. However, InstallScript libraries would cut down most of the code that you would have to write with a brand new C++ application. Also the scripting engine supports the silent mode. So you do not have to code separately for that either. But on the flip side, you would have an overhead of 1 Meg for the InstallScript engine. But this is okay considering the fresh set of bugs that you would introduce with the first version of the launcher application. For those not concerned about silent mode, you can check out the free open source setup launcher (<A href="http://www.devage.com/dotNetInstaller/dotNetInstaller.html">dotNetInstaller</A>).</P><br /><P>The trick here is to use the InstallScript&#8217;s program&#8230;.endprogram syntax instead of the event based model. This makes sure that you do not register the application and does not call unknown events in between. Good old block scripting. &lt;smile/&gt; This also means that you need to take care of exceptions. If you are a setup developer from the good old InstallShield Professional 5.x days, you would immediately be at home with this kind of approach. So a simple script to just display a message box would be as below.</P><br /><P>#include &#8220;ifx.h&#8221; //The standard header<BR>//Our program block starts here<BR>program<BR>&nbsp;MessageBox(&#8220;Hello World!&#8221;,INFORMATION);<BR>endprogram</P><br /><P>InstallScript engine just executes the statments present between the program and endprogram statements. As you can see, this approach gives you the flexibility of a complete scripting language with libraries custom made for creating installations. InstallScript projects are known for their flexibility but miss on the other aspects of MSI such as Elevated Privileges, Install on Demand, Source Resiliency and Self-healing. </P></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/12/01/spying-on-registry-entries/">Spying on Registry Entries</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-12-01T00:00:00+05:30" pubdate data-updated="true">Dec 1<span>st</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<P>I am probably letting out the best kept secret of installation industry. I always used to wonder and have now discovered how most of the installation tools spy on registry entries that are created during COM registration or similar processes without actually affecting the build system. The spying program creates temporary registry keys for each of the registry hives HKCR, HKLM, HKCU, HKU and it maps the registry hives to these temporary registry keys. It then triggers the registration function which creates registry entries withing the registry keys specified instead of including it in the hives. I came across this revelation while I was wading through the source code for Tallow in the WIX toolset.</P><br /><P>The core of this spying exercise relies on functions exposed by the advapi32.dll. The actual hive to key mapping is performed by the <A href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/sysinfo/base/regoverridepredefkey.asp">RegOverridePredefKey()</A> function. The handle to the registry key is passed by using the <A href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/sysinfo/base/regcreatekeyex.asp">RegCreateKeyEx()</A> or the <A href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/sysinfo/base/regopenkeyex.asp">RegOpenKeyEx()</A> function. After the mapping is done, you can invoke the DllRegisterServer() function after loading the library using the <A href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dllproc/base/loadlibrary.asp">LoadLibrary()</A> function. This mapping would be active for all the registry entries created by that particular process. So out of process registration for exe files may not directly work with this method. For the sake of simplicity, I am going to extract COM Interop settings from a given assembly. So let us write a simple console app in C# to do this. This app would perform the mapping and write the registry entries to a REG file and wipe out the key after the file is written.</P><br /><P>Extracting registration information from a DLL file is similar but involve the importing other functions from Kernel32.dll. So I am giving that a raincheck now. You can download the Wix toolset&#8217;s source package if you are interested. To start off with, let us write a class with static members to import the functions from advapi32.dll and create wrappers for them. Ensure that you have <A href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpref/html/frlrfsystemruntimeinteropservices.asp">System.Runtime.InteropServices</A> namespace included.</P><br /><DIV class=cf><br /><P class=cl>&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>class</FONT></SPAN> OverRideRegistry<BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb2><FONT color=#008000>//We first declare some stuff required. The are defined in winreg.h and windows.h<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>public</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>static</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>readonly</FONT></SPAN> UIntPtr HkeyClassesRoot = (UIntPtr)0x80000000;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>public</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>static</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>readonly</FONT></SPAN> UIntPtr HkeyCurrentUser = (UIntPtr)0x80000001;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>public</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>static</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>readonly</FONT></SPAN> UIntPtr HkeyLocalMachine = (UIntPtr)0x80000002;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>public</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>static</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>readonly</FONT></SPAN> UIntPtr HkeyUsers = (UIntPtr)0x80000003;<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>public</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>const</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>uint</FONT></SPAN> Delete = 0x00010000;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>public</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>const</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>uint</FONT></SPAN> ReadOnly = 0x00020000;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>public</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>const</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>uint</FONT></SPAN> WriteDac = 0x00040000;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>public</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>const</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>uint</FONT></SPAN> WriteOwner = 0x00080000;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>public</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>const</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>uint</FONT></SPAN> Synchronize = 0x00100000;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>public</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>const</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>uint</FONT></SPAN> StandardRightsRequired = 0x000F0000;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>public</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>const</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>uint</FONT></SPAN> StandardRightsAll = 0x001F0000;<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>public</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>const</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>uint</FONT></SPAN> GenericRead = 0x80000000;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>public</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>const</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>uint</FONT></SPAN> GenericWrite = 0x40000000;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>public</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>const</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>uint</FONT></SPAN> GenericExecute = 0x20000000;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>public</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>const</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>uint</FONT></SPAN> GenericAll = 0x10000000;<BR><SPAN class=cb1><FONT color=#0000ff><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #region</FONT></SPAN> The Interop Import Stuff<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb2><FONT color=#008000>//we now import the functions exposed by advapi32.dll<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb2><FONT color=#008000>//Use RegCreateKeyEx to get handle to the openedKey<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [DllImport(&#8220;advapi32.dll&#8221;, EntryPoint=&#8221;RegCreateKeyExW&#8221;, CharSet=CharSet.Unicode, ExactSpelling=<SPAN class=cb1><FONT color=#0000ff>true</FONT></SPAN>, SetLastError=<SPAN class=cb1><FONT color=#0000ff>true</FONT></SPAN>)]<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>internal</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>static</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>extern</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>int</FONT></SPAN> RegCreateKey(UIntPtr key, <SPAN class=cb1><FONT color=#0000ff>string</FONT></SPAN> subkey, <SPAN class=cb1><FONT color=#0000ff>uint</FONT></SPAN> reserved, <SPAN class=cb1><FONT color=#0000ff>string</FONT></SPAN> className, <SPAN class=cb1><FONT color=#0000ff>uint</FONT></SPAN> options, <SPAN class=cb1><FONT color=#0000ff>uint</FONT></SPAN> desiredSam, <SPAN class=cb1><FONT color=#0000ff>uint</FONT></SPAN> securityAttributes, <SPAN class=cb1><FONT color=#0000ff>out</FONT></SPAN> IntPtr openedKey, <SPAN class=cb1><FONT color=#0000ff>out</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>uint</FONT></SPAN> disposition);<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb2><FONT color=#008000>//This does the actual hive to key mapping<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [DllImport(&#8220;advapi32.dll&#8221;, EntryPoint=&#8221;RegOverridePredefKey&#8221;, CharSet=CharSet.Unicode, ExactSpelling=<SPAN class=cb1><FONT color=#0000ff>true</FONT></SPAN>, SetLastError=<SPAN class=cb1><FONT color=#0000ff>true</FONT></SPAN>)]<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>internal</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>static</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>extern</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>int</FONT></SPAN> RegOverridePredefKey(UIntPtr key, IntPtr newKey);<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb2><FONT color=#008000>//Like good programmers, we release our handles.<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [DllImport(&#8220;advapi32.dll&#8221;, EntryPoint=&#8221;RegCloseKey&#8221;, CharSet=CharSet.Unicode, ExactSpelling=<SPAN class=cb1><FONT color=#0000ff>true</FONT></SPAN>, SetLastError=<SPAN class=cb1><FONT color=#0000ff>true</FONT></SPAN>)]<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>internal</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>static</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>extern</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>int</FONT></SPAN> RegCloseKey(IntPtr key);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb2><FONT color=#008000>//Our interops are done :-)<BR></FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #endregion<BR></FONT></SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb2><FONT color=#008000>//Now we actually write wrapper functions to use the imported functions<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb2><FONT color=#008000>//Wrapper for creating Registry Keys<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>internal</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>static</FONT></SPAN> IntPtr OpenRegistryKey(UIntPtr key, <SPAN class=cb1><FONT color=#0000ff>string</FONT></SPAN> path)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IntPtr newKey = IntPtr.Zero;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>uint</FONT></SPAN> disposition = 0;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>uint</FONT></SPAN> security = StandardRightsAll | GenericRead | GenericWrite | GenericExecute | GenericAll;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>int</FONT></SPAN> error = RegCreateKey(key, path, 0, <SPAN class=cb1><FONT color=#0000ff>null</FONT></SPAN>, 0, security, 0, <SPAN class=cb1><FONT color=#0000ff>out</FONT></SPAN> newKey, <SPAN class=cb1><FONT color=#0000ff>out</FONT></SPAN> disposition);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>return</FONT></SPAN> newKey;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb2><FONT color=#008000>//Wrapper for the mapping<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>internal</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>static</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>void</FONT></SPAN> OverrideRegistryKey(UIntPtr key, IntPtr newKey)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>int</FONT></SPAN> error = RegOverridePredefKey(key, newKey);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb2><FONT color=#008000>//Wrapper for freeing the handle<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>internal</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>static</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>void</FONT></SPAN> CloseRegistryKey(IntPtr key)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>int</FONT></SPAN> error = RegCloseKey(key);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; }</P><br /><P class=cl>Now that we have the helper class with the static methods, we can define our main Console App class, which would use the functions in the helper class to register the assembly and steal the registry entries. Let us define the functions that Map and Map the registry hives. I had initialized the RegLocation to a string &#8220;Software&#92;Vagmi&#92;RegInterop&#92;&#8221;. So the extracted registry entries would be put in the HKLM hive within the specified path. Also not that I have mapped HKLM as the final mapping. Else all keys that are subsequently created would be created within our registry key.</P><br /><DIV class=cf><br /><P class=cl>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>void</FONT></SPAN> MapRegHives()<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MapRegHive(OverRideRegistry.HkeyClassesRoot,<SPAN class=cb1><FONT color=#0000ff>this</FONT></SPAN>.RegLocation+&#8221;HKCR&#8221;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MapRegHive(OverRideRegistry.HkeyCurrentUser,<SPAN class=cb1><FONT color=#0000ff>this</FONT></SPAN>.RegLocation+&#8221;HKCU&#8221;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MapRegHive(OverRideRegistry.HkeyUsers,<SPAN class=cb1><FONT color=#0000ff>this</FONT></SPAN>.RegLocation+&#8221;HKU&#8221;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MapRegHive(OverRideRegistry.HkeyLocalMachine,<SPAN class=cb1><FONT color=#0000ff>this</FONT></SPAN>.RegLocation+&#8221;HKLM&#8221;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>void</FONT></SPAN> MapRegHive(UIntPtr key, <SPAN class=cb1><FONT color=#0000ff>string</FONT></SPAN> location)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine(&#8220;Mapping &#8221; + key + &#8220;&nbsp; to &#8221; + location);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IntPtr createdKey=IntPtr.Zero;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>try<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; createdKey=OverRideRegistry.OpenRegistryKey(OverRideRegistry.HkeyLocalMachine,location);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OverRideRegistry.OverrideRegistryKey(key,createdKey);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>catch</FONT></SPAN>(Exception e)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine(&#8220;Caught exception: &#8221; + e.Message);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>finally<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb2><FONT color=#008000>//close key like responsible programmers<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OverRideRegistry.CloseRegistryKey(createdKey);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb2><FONT color=#008000>//Functions to unmap registry hives.<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>void</FONT></SPAN> UnMapRegHives()<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OverRideRegistry.OverrideRegistryKey(OverRideRegistry.HkeyClassesRoot,IntPtr.Zero);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OverRideRegistry.OverrideRegistryKey(OverRideRegistry.HkeyCurrentUser,IntPtr.Zero);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OverRideRegistry.OverrideRegistryKey(OverRideRegistry.HkeyLocalMachine,IntPtr.Zero);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OverRideRegistry.OverrideRegistryKey(OverRideRegistry.HkeyUsers,IntPtr.Zero);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</P><br /><P class=cl>I then parse two command line arguments one for the DLL and another for the REG file to export. I then pass these as constructors to my class, which calls these functions. </P><br /><DIV class=cf><br /><P class=cl>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>public</FONT></SPAN> RegSpyCOMInterop(<SPAN class=cb1><FONT color=#0000ff>string</FONT></SPAN> AssemblyPath, <SPAN class=cb1><FONT color=#0000ff>string</FONT></SPAN> RegFile)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>try<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Assembly a=Assembly.LoadFrom(AssemblyPath);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RegistrationServices regServices=<SPAN class=cb1><FONT color=#0000ff>new</FONT></SPAN> RegistrationServices();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb2><FONT color=#008000>//map hives to registry keys<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MapRegHives();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb2><FONT color=#008000>//Register assembly for COM interop<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; regServices.RegisterAssembly(a,AssemblyRegistrationFlags.SetCodeBase);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb2><FONT color=#008000>//Unmap hives<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UnMapRegHives();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WriteToRegFile(RegFile);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>catch</FONT></SPAN>(Exception e)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine(&#8220;Caught Exception : &#8221; + e.Message);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</P><br /><P class=cl>The WriteToRegFile() function launches regedit and exports the hive that contains our keys. It then uses simple text replacement to change the values of the exported file to make the REG file functional.</P><br /><DIV class=cf><br /><P class=cl>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>public</FONT></SPAN> <SPAN class=cb1><FONT color=#0000ff>void</FONT></SPAN> WriteToRegFile(<SPAN class=cb1><FONT color=#0000ff>string</FONT></SPAN> regfile)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RegistryKey r=Registry.LocalMachine.OpenSubKey(RegLocation,<SPAN class=cb1><FONT color=#0000ff>false</FONT></SPAN>);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PathToDelete=r.Name + &#8220;&#92;&#8221;;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Process pr=<SPAN class=cb1><FONT color=#0000ff>new</FONT></SPAN> Process();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pr.StartInfo.FileName=&#8221;regedit&#8221;;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pr.StartInfo.Arguments=&#8221; /e &#8221; + regfile + &#8221; &#8221; + r.Name;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pr.Start();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pr.WaitForExit();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>string</FONT></SPAN> line;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StreamReader reader=<SPAN class=cb1><FONT color=#0000ff>new</FONT></SPAN> StreamReader(regfile);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StreamWriter writer=<SPAN class=cb1><FONT color=#0000ff>new</FONT></SPAN> StreamWriter(&#8220;TempFile.txt&#8221;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>while</FONT></SPAN>((line=reader.ReadLine())!=<SPAN class=cb1><FONT color=#0000ff>null</FONT></SPAN>)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; writer.WriteLine(processRegistryName(line));<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; reader.Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; writer.Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; File.Copy(&#8220;TempFile.txt&#8221;,regfile,<SPAN class=cb1><FONT color=#0000ff>true</FONT></SPAN>);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; File.Delete(&#8220;TempFile.txt&#8221;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r.Flush();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r.Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</P><br /><P class=cl>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>public</FONT></SPAN> String processRegistryName(<SPAN class=cb1><FONT color=#0000ff>string</FONT></SPAN> regname)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>string</FONT></SPAN> newRegName=&#8221;&#8220;;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; newRegName=regname.Replace(PathToDelete,&#8221;&#8220;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; newRegName=newRegName.Replace(&#8220;[&#8221; + PathToDelete.Substring(0,PathToDelete.Length-1) + &#8220;]&#8221;,&#8221;&#8220;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; newRegName=newRegName.Replace(&#8220;HKCR&#8221;,&#8221;HKEY_CLASS_ROOT&#8221;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; newRegName=newRegName.Replace(&#8220;HKCU&#8221;,&#8221;HKEY_CURRENT_USER&#8221;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; newRegName=newRegName.Replace(&#8220;HKLM&#8221;,&#8221;HKEY_LOCAL_MACHINE&#8221;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; newRegName=newRegName.Replace(&#8220;HKU&#8221;,&#8221;HKEY_USERS&#8221;);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>return</FONT></SPAN> newRegName;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</P><br /><P class=cl>There you have it. A command line utility to extract COM Interop Registry entries. Hope this answered some of your queries regarding registration without affecting the target system. You can find the entire source code at <A href="http://www.geekswithblogs.net/vagmi.mudumbai/articles/16581.aspx">http://www.geekswithblogs.net/vagmi.mudumbai/articles/16581.aspx</A>.</P></DIV></DIV></DIV></DIV></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/11/23/using-wix-toolset-for-distributed/">Using WIX Toolset for Distributed Development</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-11-23T00:00:00+05:30" pubdate data-updated="true">Nov 23<span>rd</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<P>When I talk to my fellow developers and other installation developers about the WIX Toolset, they do not fully understand the implications of the WIX Toolset in its own right but map its features to their favorite installation development tools. The WIX Toolset mostly ensures that you follow the best practices while authoring packages. The biggest advantage of the WIX Toolset over other applications is the support for distributed development. I have raved and ranted about this in my previous blog entries but I would substantiate it with actual WXS code this time. For starters, WXS file is an XML file that has to follow the schema as specified in the wix.xsd file in the &#8216;doc&#8217; folder of your distribution. <A href="http://blogs.msdn.com/robmen">Rob</A> has an excellent <A href="http://blogs.msdn.com/robmen/archive/2004/09/23/233684.aspx">demo</A> on distributed development with the WIX toolset. But the quality of video is&nbsp;very poor and the sample files are not yet available for us to tweak around with. So&nbsp;I have come up with my own example.</P><P>Let us assume the following scenario. There are&nbsp;group of installation and application&nbsp;developers in the organization working on a setup project. Let us allocate roles (purely hypothetical. I am not a manager &lt;grin/&gt;) for our convenience. Let us assume that the application developers take care of maintaining a catalog of&nbsp;components and resources that go into the product. The second developer takes care of assigning the appropriate components into the respective merge modules or features in a product. Let another developer be responsible for creating UIs. Additionally, each application developer creates his own fragments of files by hand or by using a simple tool. Let us assume that we have to package three files.</P><OL>
+<br /><LI>Notepad.exe</LI>
+<br /><LI>ReadMe.txt</LI>
+<br /><LI>Calc.exe</LI></OL><P>Notepad.exe and Readme.txt are a logical unit and hence we would put them in a single component called Notepad.exe and set Notepad.exe as the key file of the component. We would also have Readme.txt as a companion file for Notepad.exe such that the versioning logic of Readme.txt is controlled by the versioning logic of Notepad.exe. Calc.exe is a standalone application that does not have anyother files. So here we go. The application developer codes his file named Dev1.wxs. Pretty simple isn&#8217;t it? </P><P>&lt;!&#8211;Dev1.wxs&#8211;&gt;<BR><SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Wix</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>xmlns</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;http://schemas.microsoft.com/wix/2003/01/wi&#8221;&gt;<BR></FONT></SPAN>&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Fragment</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>DirectoryRef</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Id</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;INSTALLDIR&#8221;&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Component</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Id</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;Notepad.exe&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Guid</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;12CC008F-89A6-422d-868B-B066606FFD99&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>DiskId</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;1&#8221;&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>File</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Id</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;Notepad.exe&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Name</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;Notepad.exe&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>LongName</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;Notepad.exe&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>KeyPath</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;yes&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>src</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;$(env.BUILDPATH)\Notepad.exe&#8221;&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Shortcut</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Id</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;LaunchNotepad&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Advertise</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;no&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Description</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;Launches Notepad&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Directory</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;DesktopFolder&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Name</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;Notepad&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>LongName</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;Launch Notepad&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>WorkingDirectory</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;INSTALLDIR&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Icon</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;Notepad.ico&#8221;/&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;/</FONT></SPAN><SPAN class=cb2><FONT color=#800000>File</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>File</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Id</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;Readme.txt&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Name</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;Readme.txt&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>LongName</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;Readme.txt&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>CompanionFile</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;Notepad.exe&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>src</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;$(env.BUILDPATH)\Readme.txt&#8221;/&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;/</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Component</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;/</FONT></SPAN><SPAN class=cb2><FONT color=#800000>DirectoryRef</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;<BR>&nbsp;&nbsp;&nbsp; <FONT color=#0000ff size=2>&lt;</FONT><FONT color=#800000 size=2>Icon</FONT><FONT color=#ff00ff size=2> </FONT><FONT color=#ff0000 size=2>Id</FONT><FONT color=#0000ff size=2>=&#8221;Notepad.ico&#8221;</FONT><FONT color=#ff00ff size=2> </FONT><FONT color=#ff0000 size=2>src</FONT><FONT color=#0000ff size=2>=&#8221;$(env.BUILDPATH)\Notepad.ico&#8221;/&gt;<BR>&nbsp; </FONT></FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&lt;/</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Fragment</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;<BR></FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&lt;/</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Wix</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;</FONT></SPAN></P><P>Now the second application developer creates his file dev2.wxs.</P><P>&nbsp;</P><P><SPAN class=cb1><FONT color=#0000ff>&lt;!&#8211;Dev2.wxs&#8211;&gt;<BR>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Wix</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>xmlns</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;http://schemas.microsoft.com/wix/2003/01/wi&#8221;&gt;<BR></FONT></SPAN>&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Fragment</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>DirectoryRef</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Id</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;INSTALLDIR&#8221;&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Component</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Id</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;Calc.exe&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Guid</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;2C5ECB67-E585-4301-BAF4-5380FE6C26AB&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>DiskId</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;1&#8221;&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>File</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Id</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;Calc.exe&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Name</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;Calc.exe&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>LongName</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;Calc.exe&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>KeyPath</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;yes&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>src</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;$(env.BUILDPATH)\Calc.exe&#8221;/&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;/</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Component</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;/</FONT></SPAN><SPAN class=cb2><FONT color=#800000>DirectoryRef</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;<BR></FONT></SPAN>&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;/</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Fragment</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;<BR></FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&lt;/</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Wix</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;</FONT></SPAN></P><P><SPAN class=cb1>By now, the UI guy would have created a new WXS file for UI or stole the UI from a premade package. I normally steal UI from premade(I just coined this word)&nbsp;packages like Orca or some UI generated by freeware installers. Writing UI code for MSI using the WIX toolset is not exactly a pleasurable experience. &lt;sigh/&gt; So here goes the UI file. I am not going to include the WXS file here but if you need it, you can send me an email at <A href="mailto:vagmi.mudumbai@gmail.com">vagmi.mudumbai@gmail.com</A>. Now we have a file called dialogs.wxs which just has a bunch of dialogs, binaries, error texts, UITexts and properties defined for the UI.</SPAN></P><P><SPAN class=cb1>Now we have to piece together each of these files and link them to our product. This is the MyProduct.wxs file which contains the feature-component mapping and the rest of the installation logic.</SPAN></P><SPAN class=cb1><DIV class=cf><P class=cl><SPAN class=cb1><FONT color=#0000ff>&lt;!&#8211;MyProduct.wxs&#8211;&gt;<BR>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Wix</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>xmlns</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;http://schemas.microsoft.com/wix/2003/01/wi&#8221;&gt;<BR></FONT></SPAN>&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Product</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Id</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;148E08FF-D7C4-46ed-8D4D-601C67FE0AFD&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Language</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;1033&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Name</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;MyProduct&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Version</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;1.0.0&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>UpgradeCode</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;B7FE793A-800D-4c14-8CB4-B00AA84FF685&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Manufacturer</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;Vagmi&#8221;&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Package</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Id</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;D1192FCD-BA01-4d8f-BA7B-663CE9934BDE&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Compressed</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;yes&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Description</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;My WIX Installation&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>InstallerVersion</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;200&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Languages</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;1033&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Manufacturer</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;Vagmi&#8221;/&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Media</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Cabinet</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;Data.cab&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>EmbedCab</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;yes&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Id</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;1&#8221;/&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Directory</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Id</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;TARGETDIR&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Name</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;SourceDir&#8221;&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Directory</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Id</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;ProgramFilesFolder&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Name</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;PFiles&#8221;&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Directory</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Id</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;INSTALLDIR&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Name</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;Vagmi&#8221;/&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;/</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Directory</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Directory</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Id</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;DesktopFolder&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Name</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;DTFOLDER&#8221;/&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;/</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Directory</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>UI</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>InstallUISequence</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Show</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Dialog</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;SetupCompleteError&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>OnExit</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;error&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>/&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Show</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Dialog</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;SetupInterrupted&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>OnExit</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;cancel&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>/&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Show</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Dialog</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;SetupCompleteSuccess&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>OnExit</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;success&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>/&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Show</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Dialog</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;SetupInitialization&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>After</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;LaunchConditions&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>/&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>ResolveSource</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Before</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;CostFinalize&#8221;&gt;&lt;![</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff>CDATA[Not Installed And Not PATCH]]</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;&lt;/</FONT></SPAN><SPAN class=cb2><FONT color=#800000>ResolveSource</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Show</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Dialog</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;InstallWelcome&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>After</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;MigrateFeatureStates&#8221;&gt;&lt;![</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff>CDATA[Not Installed And </FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>(</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff>Not PATCH Or IS_MAJOR_UPGRADE</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>)]]&gt;&lt;/</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Show</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Show</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Dialog</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;SetupResume&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>After</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;InstallWelcome&#8221;&gt;&lt;![</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff>CDATA[Installed And </FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>(</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff>RESUME Or Preselected</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>)</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> And Not PATCH]]</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;&lt;/</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Show</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Show</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Dialog</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;MaintenanceWelcome&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>After</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;SetupResume&#8221;&gt;&lt;![</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff>CDATA[Installed And Not RESUME And Not Preselected And Not PATCH]]</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;&lt;/</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Show</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Show</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Dialog</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;SetupProgress&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>After</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;MaintenanceWelcome&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>/&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;/</FONT></SPAN><SPAN class=cb2><FONT color=#800000>InstallUISequence</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;/</FONT></SPAN><SPAN class=cb2><FONT color=#800000>UI</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Feature</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Id</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;TheOnlyFeature&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>ConfigurableDirectory</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;INSTALLDIR&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Level</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;1&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Title</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;TheOnlyFeature&#8221;</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Description</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;TheOnlyFeature&#8221;&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>ComponentRef</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Id</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;Notepad.exe&#8221;/&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;</FONT></SPAN><SPAN class=cb2><FONT color=#800000>ComponentRef</FONT></SPAN><SPAN class=cb3><FONT color=#ff00ff> </FONT></SPAN><SPAN class=cb4><FONT color=#ff0000>Id</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>=&#8221;Calc.exe&#8221;/&gt;<BR></FONT></SPAN>&nbsp;&nbsp;&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;/</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Feature</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;<BR></FONT></SPAN>&nbsp; <SPAN class=cb1><FONT color=#0000ff>&lt;/</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Product</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;<BR></FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&lt;/</FONT></SPAN><SPAN class=cb2><FONT color=#800000>Wix</FONT></SPAN><SPAN class=cb1><FONT color=#0000ff>&gt;</FONT></SPAN></P></DIV><!--EndFragment--></SPAN><P><SPAN class=cb1>As you can clearly see, the complex job of creating an installer package is split among the developers. This is a great feature as it does away with Merge Modules and all the associated hassles with modularization. Further changes or corrections can be made independently without affecting other parts of the installation. The only part that needs automation is the generation of WXS fragments for the developers. Although it is a simple piece of code to write, we cannot expect all developers to be conversant with XML and learn the WIX toolset. All we&nbsp;need is for them to specify the files and the destinations in a tool and a tool that should generate minimal WXS code for these fragments. I do not think that should be a problem considering the level of automation installation and build teams adopt for other tasks.</SPAN></P><P><SPAN class=cb1>Building these is a straight forward task. </SPAN></P><UL>
+<br /><LI><SPAN class=cb1>Compile the files using the following command.<BR>candle dev1.wxs dev2.wxs dialogs.wxs myproduct.wxs<BR><BR>This would produce dev1.wixobj, dev2.wixobj, dialogs.wixobj and myproduct.wixobj</SPAN></LI>
+<br /><LI><SPAN class=cb1>You can then link the generated object files using light.<BR>light -out build/product.msi dev1.wixobj dev2.wixobj dialogs.wixobj myproduct.wixobj</SPAN></LI></UL><P><SPAN class=cb1>The myproduct.msi file would be generated in a folder named &#8216;build&#8217; under the current directory. </P></SPAN></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/11/23/microsofts-whitepaper-on-patch/">Microsoft&#8217;s Whitepaper on Patch Sequencing</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-11-23T00:00:00+05:30" pubdate data-updated="true">Nov 23<span>rd</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<P>While browsing, I came across this excellent whitepaper on MSI 3.0 Patch Sequencing. </P><br /><P><A href="http://www.microsoft.com/downloads/details.aspx?FamilyId=AD7AC91E-2493-4549-AE6F-BF5E007C12A3&displaylang=en">http://www.microsoft.com/downloads/details.aspx?FamilyId=AD7AC91E-2493-4549-AE6F-BF5E007C12A3&amp;displaylang=en</A></P></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/11/22/wix-tool/">WIX Tool</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-11-22T00:00:00+05:30" pubdate data-updated="true">Nov 22<span>nd</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<P>I have become quite lazy off late. I caught up with the WIX chat only after <A href="http://blogs.msdn.com/robmen">Rob</A> posted the <A href="http://blogs.msdn.com/robmen/archive/2004/11/20/267320.aspx">link</A> on his blog. I was glad to find out that WIX was going to get integrated into Visual Studio.NET and there would be a MSBUILD task for WIX in Visual Studio .NET 2005. Very interesting indeed. Read the Windows Installer <A href="http://msdn.microsoft.com/chats/transcripts/windows/windows_110904a.aspx">chat transcript</A>&nbsp;for more information.</P><br /><P>There has been a lot of commotion in the wix-users list about a good tool that generates WIX code for us. It was really encouraging to find out that there are a lot of developers just like me who feel that it is important to have a WIX code gen tool at least for the painful UI parts. Also it would help us get the overall view of the Setup project. I would visualize the tool to be some sort of a modeler than a full blown tool like InstallShield. I would still like to edit the XML code by hand and use the tool only as a layer to automate the redundant tasks. This would of course save a lot of time for more interesting things for more important stuff. (Yes. Gaming does count as one of the important stuff.) &lt;smile/&gt;</P><br /><P>I am no C# guru and I really have started learning C# and .NET only for the past 6 months. Yeah! I have been a little slack in joining the .NET bandwagon. I have started coding in C# for fun and I have started to play around with the WIX code right about now. I have been trying to serialize and de-serialize WIX objects into XML contents using the Serialize namespace. But reality is just dawning on me. XML Serialization support in the System.XML namespace is not up to the mark. At least not up to my expectation. I spend most of my code type checking stuff and writing my own wrapper classes to expose the public members as properties. As I said, I am no tools guru but I was hoping to get each of the WIX object into the property grid. This would ease out most of the work and present a decent WXS reader if not a tool to write WXS file. Gabor has started working on a C# based WIX Dialog editor. I cant wait to get its sources.&nbsp;I am now looking for a&nbsp;good free refactoring plug in for Visual Studio .NET 2003 to convert public variables into public properties. I thought of writing the addin myself but I really don&#8217;t want to re-invent the wheel. But if I end up writing it, I promise to expose the code to the community. &lt;smile/&gt;</P></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/11/03/designing-good-setups/">Designing Good Setups</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-11-03T00:00:00+05:30" pubdate data-updated="true">Nov 3<span>rd</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<P>I have been mulling over the essentials of designing good setups and I found that most of it boils down to the component rules and the way you identify the data that goes to the setup. Microsoft enforces a set of rules that you should follow while authoring components. So, if the components are well managed, your product is well managed to a certain extent. Once you have identified the &#8220;Resources&#8221; in the setup, you would have to segregate them into components. Resources are bits installed by the setup, which do not change during the lifetime of the application, unless changed by a better version of the product by means of an MSI operation (small update/ minor upgrade/ major upgrade). <A href="http://blogs.msdn.com/robmen/">Rob</A> has blogged about what <A href="http://blogs.msdn.com/robmen/archive/2003/09/29/56470.aspx">setup is</A> and explains Resources, Application Data and User Data in good detail. I have my own opinions on <A href="http://installneo.blogspot.com/2004/10/handling-application-data.html">handling application data</A>. User Data is never installed, managed or removed and hence does not bother us.</P><br /><P><A href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/organizing_applications_into_components.asp">Components</A> are logical group of resources like Files, Registry entries, COM information, ODBC Data, Shortcuts and so on. Component is considered the atomic unit of installation. This statement is quite misleading and I have queued up a blog for Windows Installer&#8217;s wierd behaviors to deal with that &lt;grin/&gt;. </P><br /><UL><br /><LI>As a rule of the thumb, you should place PE files (EXE, DLL, OCX and so on) individually in a component. Ensure that the key file that you select for a component is versioned. If the developer has not versioned the file, let him know that versioning a PE is very important to have a <A href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/default_file_versioning.asp">reliable upgrade</A>. There are certain situations in which the setup developer has to assert his/her position to ensure the quality of the software shipped. After all if the installation fails, the customers would have no chance to further evaluate or use the product. If you have non-versioned resources that need to be upgraded, ensure that they are made companions to the key file of the component. This would ensure that the versioning logic for the component is consistent.</LI><br /><LI>Never remove a resource or add a resouce to the component. If you have a file in the component, the only thing you can do is to bump up the file version or change the contents of the file itself. You can never add a file or remove a file from a component. This would result in incorrect reference counting and might prematurely remove resouces from the system or leave resource behind during uninstallation.</LI><br /><LI>You cannot include resources going to multiple locations in the same component. Also you cannot change the destination of the component once declared. You would have to ensure that once the component design has been finialized, its destination&#8217;s position in the directory product tree structure does not change. </LI><br /><LI>If you have same file, especially a key file included in two different components that go to the same destination directory (e.g., 32 bit and 64 bit files or different language versions) ensure that these components are mutually exclusive by setting appropriate conditions on the components.</LI><br /><LI>Component code and name of the component must be the same.</LI><br /><LI>Make sure that there is only one COM server per component. Also ensure that the component is not linked to multiple features and is linked only to a single feature.</LI><br /><LI>Ensure that shortcuts are included in the same component that&nbsp;has the file. Thus, the shortcuts are installed only when the file is installed. This might seem&nbsp;very elementary but people from other installation worlds like InstallScript, find this particularly hard to digest.&nbsp;</LI></UL><br /><P>Microsoft has also included a nice little article on things that could happen <A href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/what_happens_if_the_component_rules_are_broken.asp">when component rules are broken</A> in the Platform SDK.</P></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/10/29/wix-features/">WIX Features</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-10-29T00:00:00+05:30" pubdate data-updated="true">Oct 29<span>th</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+After my recent cribbing about my wish-list for WIX, it is only fair that I talk about the advantages of <a href="http:\\wix.sourceforge.net">WIX</a> over other tools like InstallShield. I am primarily comparing it with InstallShield, as it is the only tool that I am aware of to an extent and is also the current market leader (in my opinion) in the installation tools market place.
+<br />
+<br /><b>1) XML Format:</b> <a href="http:\\wix.sourceforge.net">WIX</a> source files are in a programmer friendly format. You are allowed to comment the code at any place, that makes the installation project source files as readable as the application&#8217;s source files. Tools like <a href="http://www.installshield.com/products/x">InstallShield X</a> allow you to save your file in the XML format but editing the XML and adding comments to it is not really easy. Furthermore, the changes in the source code across versions can be easily tracked by diffing from the source control, which would be very inconvenient with binary files.
+<br />
+<br /><b>2) Distributed Development: </b>Each setup developer or even the application developer can edit a small fragment of the project to produce multiple WXS files which can be compiled independently and linked in the final process to produce MSI/MSM files. To my knowledge, this feature is currently available only with WIX. Of course, you could use other tools to create Merge Modules, but they would only add to the confusion with the modularization of the columns than to aid the process of distributed development. You can use <a href="http:\\wix.sourceforge.net">WIX</a> to maintain the readability of code. You could include comments within the code to actually point to the WXS file from which the element is referenced.
+<br />
+<br /><b>3) Clean Installation:</b> You do not have to go through a whole big deal of the installation process just to get the package authoring system available on the build and the design environments. The <a href="http:\\wix.sourceforge.net">WIX</a> package decompressed is only 3.56 MB including the documentation and comes completely with custom actions to work with IIS, SQL Server, hypercharged LockPermissions functionality and much more. There are no DLLs to be registered, no registry entries to be created. Just unzip it into a machine with .NET Framework 1.1 installed and <a href="http:\\wix.sourceforge.net">WIX</a> would run without any problems. You would need Platform SDK on the machine to work with merge modules. Or at least the mergemod.dll registered on the build machine.
+<br />
+<br /><b>4) Custom Action Library:</b> <a href="http:\\wix.sourceforge.net">WIX</a> comes with a custom action library to install/configure IIS websites and virtual directories. It is also present in InstallShield. <a href="http:\\wix.sourceforge.net">WIX</a> has support for SQL Server 2000 which is also present in <a href="http://www.installshield.com">InstallShield</a> X. So I guess that levels the playing field. What <a href="http:\\wix.sourceforge.net">WIX</a> currently does not have is the support for installing COM+ Applications. But people following the Wix-Users list would know that these are already been worked upon and there have been a couple of users who have implemented the code and are currently contributing it back to the community.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/8/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/6/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2010/08/31/first-track-call-taxi-epic-fail/">First Track Call Taxi - Epic Fail</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/07/27/yes-men-fix-world/">Yes Men Fix the World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/05/25/my-hacking-playlist/">My hacking playlist</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/02/19/magic-of-y/">The magic of Y</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/02/12/statistics-is-important/">Statistics is important</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/vagmi">@vagmi</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'vagmi',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("vagmi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/vagmi" class="twitter-follow-button" data-show-count="false">Follow @vagmi</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Vagmi Mudumbai -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

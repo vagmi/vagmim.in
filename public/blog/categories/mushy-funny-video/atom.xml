@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: mushy funny video | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/mushy-funny-video/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hug a developer]]></title>
+    <link href="http://vagmim.in/blog/2008/08/28/hug-developer/"/>
+    <updated>2008-08-28T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2008/08/28/hug-developer</id>
+    <content type="html"><![CDATA[<div class='post'>
+<embed src="http://blip.tv/play/gYwjwZJqjdEh" type="application/x-shockwave-flash" width="640" height="390" allowscriptaccess="always" allowfullscreen="true"></embed> <br /><br />Recognize how hard we work. Hug a developer today. :-)</div>
+
+]]></content>
+  </entry>
+  
+</feed>

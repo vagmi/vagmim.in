@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: vim | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/vim/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Getting to tolerate Radiant]]></title>
+    <link href="http://vagmim.in/blog/2009/09/26/getting-to-tolerate-radiant/"/>
+    <updated>2009-09-26T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2009/09/26/getting-to-tolerate-radiant</id>
+    <content type="html"><![CDATA[<div class='post'>
+I have been working with <a href="http://radiantcms.org">Radiant</a> for the past couple of days. It is definitely impressive. But I simply hated the fact that you need to work within the confines of the browser's textarea to fill in content. This is just plain lame. I am so used to <a href="http://www.vim.org/">Vim</a> that typing within that small window is just plain irritating. You can of course copy paste stuff from and to vim but that is equally lame. Luckily there are a couple of ways you can work around this. <br /><br />The first being the "<a href="https://addons.mozilla.org/en-US/firefox/addon/4125">Its all Text</a>" extension. Its all text enables me to type anything that I type in a text area in vim. It is actually pretty cool.<br /><br />The second being <a href="http://github.com/nelstrom/radiant-file-system-extension">radiant-file-system-extension</a>. It allows me to use the file system and version content with git. Happy hacking with radiant.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

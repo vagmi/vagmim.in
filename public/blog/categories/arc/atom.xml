@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: arc | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/arc/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hello Arc]]></title>
+    <link href="http://vagmim.in/blog/2008/01/31/hello-arc/"/>
+    <updated>2008-01-31T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2008/01/31/hello-arc</id>
+    <content type="html"><![CDATA[<div class='post'>
+There has been quite some ruckus on the blogosphere about <a href="http://arclanguage.com">Arc</a>. I have just downloaded it and finished reading through the <a href="http://ycombinator.com/arc/tut.txt">tutorial</a>. I like it. I am sure that features like Unicode will get added. However, I would like to see the standard library. How can I do FFI? Database interfaces? May be they are already there but I still don't see them yet. In the meanwhile, here is an interesting snipped of Arc for everybody who is pondering about Life, Universe and Everything.<br /><br />arc> (reduce + (cons 6 (map [* 4 _] (keep odd '(1 2 3 4 5)))))<br />42<br /><br />Keep coding.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: programeter opinions | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/programeter-opinions/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Open letter to Programeter]]></title>
+    <link href="http://vagmim.in/blog/2008/07/03/open-letter-to-programeter/"/>
+    <updated>2008-07-03T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2008/07/03/open-letter-to-programeter</id>
+    <content type="html"><![CDATA[<div class='post'>
+Mark from Programeter had left the following comment on my <a href="http://blog.vagmim.com/2008/07/dumbest-idea-ever.html">earlier post</a> on <a href="http://www.programeter.com/">Programeter</a>. I started typing out my response as a comment but it was turning out to be too long. So I decided to make it another post in itself.<br /><br /><blockquote>I am from Programeter - hope I will survive the criticts after mentioning that ;).<br /><br />There are so many questions in the post and comments, so I can't aswer all of those in just one reply. So if I missed yours, go <a href="http://getsatisfaction.com/programeter">here</a> and post them.<br /><br />But some comments are here:<br />* I am not sure I understand why all programmers so afraid of being measured. Would you imagine all salesmen quiting the company because of introduction of CRM? Good programmers should not be afraid of any indicator.<br />* Yes, I agree "stupid" managers can get it wrong. But stupid managers will get it wrong with or without Programeter.<br />* Lots of comments, about cheating the system. Go and try to cheat it ;) if you cheat at least 3 of our indicators during one reporting period - Programeter will quit measuring your company as a bonus ;)<br /><br />if you have more questions, let me know!<br /></blockquote><br /><br />Hi Mark,<br /><br />First off, thanks for <a href="http://getsatisfaction.com/programeter">opening up</a> this discussion. This has done a lot to increase my trust in you. What would really salvage the reputation of Programeter from this situation, is to point Programeter on an Open Source codebase (e.g., subversion) and provide the reports online for the world to see. If they do make sense, we would be more than happy to embrace it and even suggest changes to it. <br /><br />We (Programmers) are not afraid of being measured. We are insulted by the notion that the decisions on those measures could potentially be taken by some management folks who have absolutely no idea of what programming is about. This tool is dangerous in the hands of bad management.<br /><br />Bad management already refers to programmers as resources as if they are interchangeable cogs in a system. The marketing material on your site does nothing to change this. We have had several epic fails in our industry because of clueless management. The last thing we need is another earnest effort by smart developers to fuel this trend.<br /><br />Also, there are other ways in which individuals who code add value to an organization. Interacting with people, making teams gel, sharing knowledge on corporate wikis/discussion boards, having passionate coffee corner chats to keep the spirit of the team and so on. None of these are on source control. People's contribution cannot be measured but it is essential for an organization to judge the value added by an individual to an organization. Not all of these judgments can be based on objectivity and measurable facts. Programeter can only suggest facts about one of the facets of an individual's contribution. Suggesting an interpretation of it should be best left to the manager and not by the tool. There has been a lot of discussion about kLOCs. Is more better or is less better. There are other softer issues like security, performance or just an annoying API bug that had to be worked around. You can only present the facts. You cannot draw conclusions without knowing the whole. And those facts are not on source control. I am not dissing the tool. As a nerd I love statistics. I love generating insight on raw data. I would however take caution in interpreting the reports and weigh other facts before making a decision. <br /><br />The bottom line is. <br />Code Checked into Source Control != Value Generated<br /><br />The marketing material on your site is completely laughable. If anything, it only damages the credibility of your product. It would be bought by wrong companies and will be used to make wrong decisions. I am sure that this would not help the sales of your software in the long run. Reconsider your selling approach and come up with proof that your tool works. If you can do both, I wish you all the success for this tool.<br /><br />Regards,<br />Vagmi<br />(An individual contributor to a big Software company)<br /><br />Disclaimer: All of these opinions are mine and do not represent the views of my employer.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

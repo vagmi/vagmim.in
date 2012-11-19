@@ -1,0 +1,902 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Vagmi's Blog</title>
+  <meta name="author" content="Vagmi Mudumbai">
+
+  
+  <meta name="description" content="After a long time, I have got some time to get to my blog. After a long day of presentations, I guess it is only fair enough that I relax by &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://vagmim.in/blog/page/8/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Vagmi's Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1364568-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Vagmi's Blog</a></h1>
+  
+    <h2>Rants and opinions about the world as I see it</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:vagmim.in" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/10/28/what-does-wix-need/">What Does WIX Need?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-10-28T00:00:00+05:30" pubdate data-updated="true">Oct 28<span>th</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+After a long time, I have got some time to get to my blog. After a long day of presentations, I guess it is only fair enough that I relax by concentrating sometime on my long forgotten blog. We in our organization primarily use InstallShield for most of our setup development needs. I and one of my colleagues were discussing the topic of distributed development. InstallShield is good in a lot of things but distributed development is not one of them.
+<br />
+<br />As a common sense approach, distributed development is done using merge modules. Although these may be discrete chunk of non reusable installation units, merge modules are the only way to enable Distributed development with InstallShield. I then truly realized the power of <a href="http://wix.sourceforge.net">WIX</a> which inherently supports distributed development. I then mentally started preparing a list of features that <a href="http://wix.sourceforge.net">WIX</a> ought to have to replace tools like InstallShield.
+<br />
+<br />1) <b>GUI</b> - I guess WIXStudio need to be pushed a little harder. I personally do not believe that a development tool such as <a href="http://wix.sourceforge.net">WIX</a> really needs a GUI. But if the world were to run only on my beliefs, it would be a far better place than it is right now <grin/>.  <a href="http://wix.sourceforge.net">WIX</a> language is pretty straight forward and the tool nudges the developers on to the right track. Where the tool fails to point to the right direction, <a href="http://sourceforge.net/mail/?group_id=105970">wix-users list</a> does the job.
+<br />
+<br />2) <b>Bells and Whistles</b> - Tallow is a cool tool but is unfortunately very buggy. As Rob suggested it is a fertile field for development and is constantly improving. I have seen some pretty encouraging messages in the Users list. I still have not become a part of the dev-list as yet, as I really cannot contribute at this point in time. I would however like to do so as soon as I have access to my computer at home. 
+<br />
+<br />3) <b>Dialogs</b> - It would be great to have a dialog editor. If not a full blown IDE for WIX, the least setup developers expect would be to have a dialog editor. <a href="http://blogs.msdn.com/robmen">Rob</a> would argue that setup need not have a user interface, but in reality, dialogs are required for a enterprise setup of a decent quality. I have posted a message on WIX-Users-list for a list of free/open source MSI editors with visual Dialog editors. We could then dark the setup and create a WXS fragment.
+<br />
+<br />4) <b>Documentation</b> – Last but not the least, <a href="http://wix.sourceforge.net">WIX</a> really needs a lot more documentation. I have been really busy off-late and have not been able to contribute as much to <a href="http://wix.sourceforge.net">WIX</a> as before. I hope the <a href="http://wix.sourceforge.net/wiki">WIX Wiki</a> would grow to fill this need.
+<br />
+<br />IMHO, WIX is still the best tool to create installations for large projects.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/10/15/good-bye/">Good Bye!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-10-15T00:00:00+05:30" pubdate data-updated="true">Oct 15<span>th</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Imagine a blog entry where I talk about my last day in my organization. Incidentally <a href="http://blogs.msdn.com/robmen">Rob</a> <a href="http://blogs.msdn.com/robmen/archive/2004/10/15/242655.aspx">is moving</a> to the Longhorn Windows Setup team. </div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/10/08/rikos-blog-entry-on-resources-and-data/">Riko&#8217;s Blog Entry on Resources and Data</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-10-08T00:00:00+05:30" pubdate data-updated="true">Oct 8<span>th</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Imagine a blog entry where Riko speaks on the Resources, User Data and Application Data. As noted in his blog, he is yet to make his point. <smile/> It is an excellent blog entry. Also read Rob&#8217;s entry on what <a href="http://blogs.msdn.com/robmen/archive/2003/09/29/56470.aspx">setup is</a>. There are a couple of links to the same entry in Riko&#8217;s article too.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/10/07/handling-application-data/">Handling Application Data</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-10-07T00:00:00+05:30" pubdate data-updated="true">Oct 7<span>th</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Recently, I had initiated a thread in the WIX users list regarding the inclusion of application data in the MSI package. My thanks to Riko, who shared his views on that. It has always been tricky and will continue to be a tricky situation to deal with application data. Most applications include their application runtime and configuration data as registry entries, INI or XML files. An unassuming developer might package these registry entries with the Main application&#8217;s component, as they are dependent on the main application. This would work fine during the first install, but would cause significant issues during an upgrade. <a href="http://www.pduck.com/aboutme.htm">Geoff</a> has blogged one <a href="http://www.pduck.com/2004/08/stop-overwriting-my-registry-entries.html">such scenario</a>. This blog tries to capture some of my thoughts regarding such Application Data. 
+<br />
+<br />For starters, lets look at what happens when you include the application data in the MSI package. The user, to configure the software the way they want, usually modifies these entries. Many times, it is the application itself that changes or writes data to the registry, INI or XML files to persist the configuration state of the application. Assuming we have included such files and registry entries grouped in the same component as the main executable. We can argue that it would be a good design as these entries are logically bound to the application and have no sense existing as a standalone unit. The application would roll out pretty smooth and will have no problems until you hit a point when you have to upgrade. Let us consider a minor upgrade, no major changes, a few DLLs modified and couple of executables added. Let main executable file have its version bumped. As the executable is the key file of the component, it qualifies for an upgrade. Let us also consider changes made to the XML files and a few Registry entries to accommodate the change. During an upgrade, all hell would break loose. The registry would be overwritten and the registry might be left with conflicting entries and some XML files would updated, the others may be left untouched as it would have a greater modified date. If you are really unlucky, the testing team might not quite get the tests done right. The Result: <b>Total Chaos</b>. 
+<br />
+<br />So how should these things be handled? The answer to this question is not straightforward and seems to be pretty tricky. The most ideal scenario would be to let the application handle its own configuration. The application should be able to create these registry entries and XML files during the first run. The setup developer then has to merely author the RemoveFile and RemoveReigstry tables to get the files out during uninstallation. As far as XML handling is concerned, it is best left to the application to handle it. MSI does not support XML handling and we need robust custom actions to do it for us. Handling XML data/SQL Data during upgrades can only be done using custom code. It would be desirable if this code is present on the application&#8217;s end and not on the installer&#8217;s end. If you do have to include the application data in the MSI package, the following guidelines may be useful.
+<br />
+<br /><b>1) Identify and Isolate the Application Data:</b>
+<br />Clearly identify the resources like registry entries, INI Files and other configuration files that are to be used by the application. Use the INIFile table to author INI Files. Avoid including the INI file itself in the File table. Once identified, include the application data in a separate component. Use multiple components, if necessary.
+<br />
+<br /><b>2) Minor Upgrade and Uninstall Scenario:</b>
+<br />If the application creates extra files or registry entries, ensure that the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/removefile_table.asp">RemoveFile</a> and the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/removeregistry_table.asp">RemoveRegistry</a> tables are populated. The problem is that these tables are referred to even during installation of the component. So you would have to set the <b>Never Overwrite bit</b> of the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/component_table.asp">component</a> to make sure that this component is never marked for an upgrade. Code the upgrade logic for the application data in to the application itself. In the unlikely event of it not being feasible, write custom actions to achieve the same. Avoid writing custom actions for tasks that can be handled by the application. 
+<br />
+<br /><b>3) Major Upgrade Scenario:</b>
+<br />Certain applications like InstallShield X, schedule the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/removeexistingproducts_action.asp">RemoveExistingProducts action</a> right before the InstallInitialize action. This is not the most efficient placement for this action. The most efficient placement for this action would be after the InstallFinalize action. I will talk about this in detail another time, if you haven&#8217;t figured it out as yet. If the authoring tool places the RemoveExistingProducts action before InstallInitialize, manually schedule it after InstallFinalize. There are certain custom actions in InstallShield X (I guess Component Services) that are not very happy with this placement, although I am not very sure about this. In these cases, you would have to use related locator (AppSearch, RegLocator, IniLocator, etc.,) and signature tables to get save the information into properties and reuse them in the install. This is a very elaborate and time-consuming exercise. The shorter and a devilish way to get around this is to write custom actions to read the values in the registry and store them in a text file, back up your application data files and restore them back with another set of custom actions. As unscientific as it might sound, a lot of people have used it to get out of this mess. 
+<br />
+<br /><a href="http://blogs.msdn.com/robmen">Rob</a> is currently working on a similar blog entry. I can&#8217;t wait to read on what he has to say about this.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/10/04/designing-upgrades-part-i/">Designing Upgrades - Part I</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-10-04T00:00:00+05:30" pubdate data-updated="true">Oct 4<span>th</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+The previous week had been really busy. With five new recruits on board, I was asked to give them a quick introduction to InstallShield X and Windows Installer. It was broken up into 5 sessions, 3 hours each. And of course, I had my routine to take care of. So, after all this hard work, I decided to pamper myself with a movie the weekend. Before that I have decided to write something about designing upgrades with Windows Installer and WIX. I have split this article into two for easy consumption.
+<br />
+<br />Designing upgrades are fairly basic and I have seen a lot of people in the forum having a little trouble getting started with the upgrades. But once they understand the concept of upgrades from the Windows Installer&#8217;s perspective, it becomes a cakewalk. So, for starters, let me just talk about the different types of upgrades that you can perform with Windows Installer and implement the same using WIX. This article is designed only to be a quick start guide and is no means a complete guide for an upgrade. If you want to know more about upgrades, read the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/patching_and_upgrades.asp">Upgrades and Patching</a> section of the Windows Installer SDK documentation.
+<br />
+<br />Windows Installer keeps track of products and packages using GUIDs. There are three important GUIDs that you need to know to understand upgrades.
+<br /><ul>
+<br /><li><a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/productcode_property.asp">ProductCode</a> - This uniquely identifies a product. This value is written to the Property table under the name ProductCode.</li>
+<br /><li><a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/upgradecode_property.asp">UpgradeCode</a> - This GUID is used to logically bind related products. This value is written to the Property table under the name UpgradeCode.</li>
+<br /><li><a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/revision_number_summary_property.asp">Package Code</a> - This uniquely identifies a package. Almost any change in the MSI package, mandates a new Package GUID. This value is written to the summary information sream under the name of &#8216;Revision Number&#8217;.</li>
+<br /></ul>
+<br />And then there is the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/productversion_property.asp">ProductVersion property</a>, which specifies the version of the product. Windows Installer recognizes three types of upgrades. In all these upgrades, the package code will always change.
+<br /><ul>
+<br /><li>When the upgrade just changes the application files but does not change the Product Code or the Product version, it is termed as a <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/small_updates.asp">small update</a>. </li>
+<br /><li>When the upgrade changes only the ProductVersion but does not change the ProductCode, it is termed as a <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/minor_upgrades.asp">minor upgrade</a>.</li>
+<br /><li>When both the ProductCode and ProductVersion changes, it is termed as a <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/major_upgrades.asp">Major Upgrade</a>.</li>
+<br /></ul>
+<br />The small update and the minor upgrade can be installed over the existing installation. Usually, they only make changes to the parts of applications that have been changed. There are usually no major design changes to the product tree, excepting a few additions and modifications.
+<br />
+<br />The major upgrade however, installs a completely new product and uninstalls the existing version of the product(s). Minor upgrade and small update can be targetted only at a particular product but Major upgrades can target more than one product. Major upgrade usually would have major changes made to the product tree. There might be situations that you might have to <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/changing_the_product_code.asp">change the product code</a>. In those cases, you would have no other choice but to perform a major upgrade.
+<br />
+<br />So, as long as you do not have to change the product code, you can perform a small update or a minor upgrade. Minor upgrade would allow you to track the upgrade applied by looking at the ProductVersion. You can apply a minor upgrade or small update using the following command line.
+<br />
+<br />msiexec.exe /i <Path_To_MSIFile.msi> REINSTALL=ALL REINSTALLMODE=vomus
+<br />
+<br />The value of the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/reinstall_property.asp">REINSTALL property</a> is a list of features delimited by commas that are to be reinstalled. The features listed must be present in the Feature column of the Feature table. The <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/reinstallmode_property.asp">REINSTALLMODE property</a> is a string containing letters specifying the type of reinstall to perform. Options are case-insensitive and order-independent. This property should normally always be used in conjunction with the REINSTALL property. However, this property can also be used during installation, not just reinstall. 
+<br />
+<br />To design a major upgrade, you would have to author the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/upgrade_table.asp">Upgrade table</a>. The upgrade table allows you to filter products and subsequently features based on the UpgradeCode, ProductVersion and Language. The Remove column of the upgrade table can be used to specify the list of features to be removed. Windows Installer will remove all the features, if the column is null. The ActionProperty column can be used to specify the name of a property. For the major upgrade to work, you need to have <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/findrelatedproducts_action.asp">FindRelatedProductsAction</a> and  <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/removeexistingproducts_action.asp">RemoveExistingProducts action</a> in the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/installexecutesequence_table.asp">InstallExecuteSequence table</a>.  The FindRelatedProducts action reads the settings in the upgrade table and stores the matching ProductCode(s) in the property specified by the ActionProperty column of the Upgrade Table. The RemoveExistingProducts action removes the product during installation. The most efficient placement for the RemoveExistingProducts action is after the InstallFinalize action. However, tools like InstallShield X, sequence this action in between InstallValidate and InstallInitialize actions.
+<br />
+<br />To be continued&#8230;</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/09/26/installing-windows-services-created/">Installing Windows Services (Created With .NET) With WIX</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-09-26T00:00:00+05:30" pubdate data-updated="true">Sep 26<span>th</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+This is a pretty obscure topic and there is not enough literature on this. Installing a .NET Service is a fairly simple task. The Visual Studio.NET interface allows you to add the System.Configuration.Installer class to your assembly that enables managed installations. Developers often test their services by using the installutil.exe command line tool. But this tool is not the most appropriate for packaging as it shows an ugly command window during installation, which no setup developer would desire. Microsoft, includes a DLL named installutillib.dll with a single MSI entry point function named ManagedInstall. This function can be called via a MSI custom action to handle the four overridable functions exposed by the Installer Class. I am an InstallShield X user and installing .NET service is as easy as setting a property for the component from the IDE. I was a little lost when I wanted to achieve the same with WIX. Although, I knew that I could create these custom actions myself, I was hunting for a way by which I could do it in an easier fashion with WIX. After hours of searching the WiX.chm file, I decided to get on with it myself. I still am not sure if its hidden somewhere in the Wix.chm file.
+<br />
+<br />I was a little skeptical about this and hence started of with an empty .NET enabled Windows Service that does nothing. I added the Installer class to the service and built it. I was too lazy to change the name. So my service was just called Service1 as christened by VS.NET 2003. Once we have our service executable ready, we have to create a little configuration file in XML that specifies the supported frameworks. I called it the IUConfig.XML For people wondering what IU stands for, it is short for InstallUtil &lt;smile/&gt;. The file is fairly simple and it goes something like this.
+<br />
+<br /><b>&lt;?xml version=&#8221;1.0&#8221;?&gt;
+<br />&lt;configuration&gt;
+<br />  &lt;startup&gt;
+<br />    &lt;supportedRuntime version=&#8221;v1.1.4322&#8221;/&gt;
+<br />  &lt;/startup&gt;
+<br />&lt;/configuration&gt;</b>
+<br />
+<br />I put my InstallUtilLib.dll, FirstWindowsService.exe (My Windows Service) and IUConfig.xml in a folder called src. You can find the InstallUtilLib.dll in your [WindowsFolder]\Microsoft.NET\Framework\v1.1.4322\ directory. Once you have these three files, its time to start coding the WXS file. Again, just for the sake of simplicity, I am going to install only this service and nothing else. So here is my WXS file. As you can see it is not much. It has only a feature with one component, containing the service executable and the iuconfig.xml file. I have added the InstallUtilLib.dll as a binary.
+<br />
+<br /><b>&lt;?xml version=&#8217;1.0&#8217;?&gt;
+<br />&lt;Wix xmlns=&#8217;http://schemas.microsoft.com/wix/2003/01/wi&#8217;&gt;
+<br />&lt;Product Id=&#8217;F47A6F48-86C1-47A8-B404-35656C908BEB&#8217; Name=&#8217;DotNetService&#8217; Language=&#8217;1033&#8217; Version=&#8217;1.0.0.0&#8217; Manufacturer=&#8217;Vagmi&#8217; UpgradeCode=&#8217;5BDA92CF-5D2B-4638-8550-4B8BE5BA8F24&#8217;&gt;
+<br />
+<br />&lt;Package Id=&#8217;????????-????-????-????-????????????&#8217; Description=&#8217;Dot Net Service&#8217; Comments=&#8217;Creating a .NET service&#8217; Manufacturer=&#8217;Vagmi&#8217; InstallerVersion=&#8217;200&#8217; Compressed=&#8217;yes&#8217;/&gt;
+<br />  &lt;Media Id=&#8217;1&#8217; Cabinet=&#8217;dotnet.cab&#8217; EmbedCab=&#8217;yes&#8217; /&gt;
+<br />
+<br />&lt;Directory Id=&#8217;TARGETDIR&#8217; Name=&#8217;SourceDir&#8217;&gt;
+<br />  &lt;Directory Id=&#8217;ProgramFilesFolder&#8217; Name=&#8217;PFiles&#8217;&gt;
+<br />    &lt;Directory Id=&#8217;DOTNETSERVICE&#8217; Name=&#8217;DotNet&#8217; LongName=&#8217;DotNetService&#8217;&gt;
+<br />      &lt;Component Id=&#8217;TheService&#8217; Guid=&#8217;FF15180D-B296-4F30-9385-0F15B8ACC1FF&#8217;&gt;
+<br />        &lt;File Id=&#8217;WindowsService&#8217; Name=&#8217;Firstw~1.exe&#8217; LongName=&#8217;FirstWindowsService.exe&#8217; KeyPath=&#8217;yes&#8217; DiskId=&#8217;1&#8217; src=&#8217;src\FirstWindowsService.exe&#8217; /&gt;
+<br />	&lt;File Id=&#8217;ConfigFile&#8217; Name=&#8217;IuConfig.xml&#8217; LongName=&#8217;IuConfig.xml&#8217; DiskId=&#8217;1&#8217; src=&#8217;src\IuConfig.xml&#8217; CompanionFile=&#8217;WindowsService&#8217;/&gt;
+<br />      &lt;/Component&gt;
+<br />    &lt;/Directory&gt;
+<br />  &lt;/Directory&gt;
+<br />&lt;/Directory&gt;
+<br />
+<br />&lt;Feature Id=&#8217;TheOnlyFeature&#8217; Description=&#8217;Feature contains the single component&#8217; Level=&#8217;1&#8217;&gt;
+<br />&lt;ComponentRef Id=&#8217;TheService&#8217;/&gt;
+<br />&lt;/Feature&gt;
+<br />
+<br />&lt;!&#8211; Including the InstallUtilLib.dll. This file does all the magic of installing the services. &#8211;&gt;
+<br />&lt;Binary Id=&#8217;InstallUtil&#8217; src=&#8217;src\InstallUtilLib.dll&#8217; /&gt;
+<br />&lt;/Product&gt;
+<br />&lt;/Wix&gt;</b>
+<br />
+<br />To perform a managed install of the service, we need four custom actions - two deferred custom actions for installing and uninstalling, one commit custom action and one rollback custom action. As these custom actions execute in the higher security context, we need to pass data to these custom actions using four separate &#8216;Set Property (Type 51)&#8217; custom actions. The ManagedInstall function expects the following parameters. The exact functionality of the parameters is still a mystery to me and I have to yet reasearch on it. But for now, we would take this for granted.
+<br />
+<br /><b>/installtype=notransaction /action=(install/uninstall/commit/rollback) /LogFile= &#8220;PathTo\Assembly&#8221; &#8220;PathTo\iuconfig.xml&#8221;</b>
+<br />
+<br />So the code for custom actions would look something like this.
+<br />
+<br /><b>&lt;CustomAction Id=&#8217;InstallServiceSetProp&#8217; Property=&#8217;InstallService&#8217; Value=&#8217;/installtype=notransaction /action=install /LogFile= &#8220;[#WindowsService]&#8221; &#8220;[DOTNETSERVICE]iuconfig.xml&#8221;&#8217;/&gt;
+<br />&lt;CustomAction Id=&#8217;InstallService&#8217; BinaryKey=&#8217;InstallUtil&#8217; DllEntry=&#8217;ManagedInstall&#8217; Execute=&#8217;deferred&#8217; /&gt;
+<br />&lt;CustomAction Id=&#8217;UnInstallServiceSetProp&#8217; Property=&#8217;UnInstallService&#8217; Value=&#8217;/installtype=notransaction /action=uninstall /LogFile= &#8220;[#WindowsService]&#8221; &#8220;[DOTNETSERVICE]iuconfig.xml&#8221;&#8217;/&gt;
+<br />&lt;CustomAction Id=&#8217;UnInstallService&#8217; BinaryKey=&#8217;InstallUtil&#8217; DllEntry=&#8217;ManagedInstall&#8217; Execute=&#8217;deferred&#8217; /&gt;
+<br />&lt;CustomAction Id=&#8217;CommitServiceSetProp&#8217; Property=&#8217;CommitService&#8217; Value=&#8217;/installtype=notransaction /action=commit /LogFile= &#8220;[#WindowsService]&#8221; &#8220;[DOTNETSERVICE]iuconfig.xml&#8221;&#8217;/&gt;
+<br />&lt;CustomAction Id=&#8217;CommitService&#8217; BinaryKey=&#8217;InstallUtil&#8217; DllEntry=&#8217;ManagedInstall&#8217; Execute=&#8217;commit&#8217; /&gt;
+<br />&lt;CustomAction Id=&#8217;RollbackServiceSetProp&#8217; Property=&#8217;RollbackService&#8217; Value=&#8217;/installtype=notransaction /action=rollback /LogFile= &#8220;[#WindowsService]&#8221; &#8220;[DOTNETSERVICE]iuconfig.xml&#8221;&#8217;/&gt;
+<br />&lt;CustomAction Id=&#8217;RollbackService&#8217; BinaryKey=&#8217;InstallUtil&#8217; DllEntry=&#8217;ManagedInstall&#8217; Execute=&#8217;rollback&#8217; /&gt;</b>
+<br />
+<br />You would not have to sequence these custom actions such that the uninstall custom actions run before the RemoveFiles action, and install, rollback & commit custom actions are scheduled after the InstallFiles action in the same order. So your &lt;InstallExecuteSequence&gt; would look something like this. 
+<br />
+<br /><b>&lt;InstallExecuteSequence&gt;
+<br />&lt;Custom Action=&#8217;UnInstallServiceSetProp&#8217; After=&#8217;MsiUnpublishAssemblies&#8217;&gt;$TheService=2&lt;/Custom&gt;
+<br />&lt;Custom Action=&#8217;UnInstallService&#8217; After=&#8217;UnInstallServiceSetProp&#8217;&gt;$TheService=2&lt;/Custom&gt;
+<br />&lt;Custom Action=&#8217;InstallServiceSetProp&#8217; After=&#8217;StartServices&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />&lt;Custom Action=&#8217;InstallService&#8217; After=&#8217;InstallServiceSetProp&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />&lt;Custom Action=&#8217;RollbackServiceSetProp&#8217; After=&#8217;InstallService&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />&lt;Custom Action=&#8217;RollbackService&#8217; After=&#8217;RollbackServiceSetProp&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />&lt;Custom Action=&#8217;CommitServiceSetProp&#8217; After=&#8217;RollbackService&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />&lt;Custom Action=&#8217;CommitService&#8217; After=&#8217;CommitServiceSetProp&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />&lt;/InstallExecuteSequence&gt;</b>
+<br />
+<br />Putting all this together, we would have a file like this.
+<br />
+<br /><b>&lt;?xml version=&#8217;1.0&#8217;?&gt;
+<br />&lt;Wix xmlns=&#8217;http://schemas.microsoft.com/wix/2003/01/wi&#8217;&gt;
+<br />&lt;Product Id=&#8217;F47A6F48-86C1-47A8-B404-35656C908BEB&#8217; Name=&#8217;DotNetService&#8217; Language=&#8217;1033&#8217; Version=&#8217;1.0.0.0&#8217; Manufacturer=&#8217;Vagmi&#8217; UpgradeCode=&#8217;5BDA92CF-5D2B-4638-8550-4B8BE5BA8F24&#8217;&gt;
+<br />
+<br />&lt;Package Id=&#8217;????????-????-????-????-????????????&#8217; Description=&#8217;Dot Net Service&#8217; Comments=&#8217;Creating a .NET service&#8217; Manufacturer=&#8217;Vagmi&#8217; InstallerVersion=&#8217;200&#8217; Compressed=&#8217;yes&#8217;/&gt;
+<br />  &lt;Media Id=&#8217;1&#8217; Cabinet=&#8217;dotnet.cab&#8217; EmbedCab=&#8217;yes&#8217; /&gt;
+<br />
+<br />&lt;Directory Id=&#8217;TARGETDIR&#8217; Name=&#8217;SourceDir&#8217;&gt;
+<br />  &lt;Directory Id=&#8217;ProgramFilesFolder&#8217; Name=&#8217;PFiles&#8217;&gt;
+<br />    &lt;Directory Id=&#8217;DOTNETSERVICE&#8217; Name=&#8217;DotNet&#8217; LongName=&#8217;DotNetService&#8217;&gt;
+<br />      &lt;Component Id=&#8217;TheService&#8217; Guid=&#8217;FF15180D-B296-4F30-9385-0F15B8ACC1FF&#8217;&gt;
+<br />        &lt;File Id=&#8217;WindowsService&#8217; Name=&#8217;Firstw~1.exe&#8217; LongName=&#8217;FirstWindowsService.exe&#8217; KeyPath=&#8217;yes&#8217; DiskId=&#8217;1&#8217; src=&#8217;src\FirstWindowsService.exe&#8217; /&gt;
+<br />	&lt;File Id=&#8217;ConfigFile&#8217; Name=&#8217;IuConfig.xml&#8217; LongName=&#8217;IuConfig.xml&#8217; DiskId=&#8217;1&#8217; src=&#8217;src\IuConfig.xml&#8217; CompanionFile=&#8217;WindowsService&#8217;/&gt;
+<br />      &lt;/Component&gt;
+<br />    &lt;/Directory&gt;
+<br />  &lt;/Directory&gt;
+<br />&lt;/Directory&gt;
+<br />
+<br />&lt;Feature Id=&#8217;TheOnlyFeature&#8217; Description=&#8217;Feature contains the single component&#8217; Level=&#8217;1&#8217;&gt;
+<br />&lt;ComponentRef Id=&#8217;TheService&#8217;/&gt;
+<br />&lt;/Feature&gt;
+<br />
+<br />&lt;!&#8211; Including the InstallUtilLib.dll. This file does all the magic of installing the services. &#8211;&gt;
+<br />&lt;Binary Id=&#8217;InstallUtil&#8217; src=&#8217;src\InstallUtilLib.dll&#8217; /&gt;
+<br />
+<br />&lt;!&#8211;Write custom actions to install, uninstall, commit and rollback the changes&#8211;&gt;
+<br />
+<br />&lt;CustomAction Id=&#8217;InstallServiceSetProp&#8217; Property=&#8217;InstallService&#8217; Value=&#8217;/installtype=notransaction /action=install /LogFile= &#8220;[#WindowsService]&#8221; &#8220;[DOTNETSERVICE]iuconfig.xml&#8221;&#8217;/&gt;
+<br />&lt;CustomAction Id=&#8217;InstallService&#8217; BinaryKey=&#8217;InstallUtil&#8217; DllEntry=&#8217;ManagedInstall&#8217; Execute=&#8217;deferred&#8217; /&gt;
+<br />
+<br />&lt;CustomAction Id=&#8217;UnInstallServiceSetProp&#8217; Property=&#8217;UnInstallService&#8217; Value=&#8217;/installtype=notransaction /action=uninstall /LogFile= &#8220;[#WindowsService]&#8221; &#8220;[DOTNETSERVICE]iuconfig.xml&#8221;&#8217;/&gt;
+<br />&lt;CustomAction Id=&#8217;UnInstallService&#8217; BinaryKey=&#8217;InstallUtil&#8217; DllEntry=&#8217;ManagedInstall&#8217; Execute=&#8217;deferred&#8217; /&gt;
+<br />
+<br />&lt;CustomAction Id=&#8217;CommitServiceSetProp&#8217; Property=&#8217;CommitService&#8217; Value=&#8217;/installtype=notransaction /action=commit /LogFile= &#8220;[#WindowsService]&#8221; &#8220;[DOTNETSERVICE]iuconfig.xml&#8221;&#8217;/&gt;
+<br />&lt;CustomAction Id=&#8217;CommitService&#8217; BinaryKey=&#8217;InstallUtil&#8217; DllEntry=&#8217;ManagedInstall&#8217; Execute=&#8217;commit&#8217; /&gt;
+<br />
+<br />&lt;CustomAction Id=&#8217;RollbackServiceSetProp&#8217; Property=&#8217;RollbackService&#8217; Value=&#8217;/installtype=notransaction /action=rollback /LogFile= &#8220;[#WindowsService]&#8221; &#8220;[DOTNETSERVICE]iuconfig.xml&#8221;&#8217;/&gt;
+<br />&lt;CustomAction Id=&#8217;RollbackService&#8217; BinaryKey=&#8217;InstallUtil&#8217; DllEntry=&#8217;ManagedInstall&#8217; Execute=&#8217;rollback&#8217; /&gt;
+<br />
+<br />&lt;!&#8211; Now to sequence these CAs in the execute sequence &#8211;&gt;
+<br />
+<br />&lt;InstallExecuteSequence&gt;
+<br />
+<br />&lt;Custom Action=&#8217;UnInstallServiceSetProp&#8217; After=&#8217;MsiUnpublishAssemblies&#8217;&gt;$TheService=2&lt;/Custom&gt;
+<br />&lt;Custom Action=&#8217;UnInstallService&#8217; After=&#8217;UnInstallServiceSetProp&#8217;&gt;$TheService=2&lt;/Custom&gt;
+<br />
+<br />&lt;Custom Action=&#8217;InstallServiceSetProp&#8217; After=&#8217;StartServices&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />&lt;Custom Action=&#8217;InstallService&#8217; After=&#8217;InstallServiceSetProp&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />
+<br />&lt;Custom Action=&#8217;RollbackServiceSetProp&#8217; After=&#8217;InstallService&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />&lt;Custom Action=&#8217;RollbackService&#8217; After=&#8217;RollbackServiceSetProp&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />
+<br />&lt;Custom Action=&#8217;CommitServiceSetProp&#8217; After=&#8217;RollbackService&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />&lt;Custom Action=&#8217;CommitService&#8217; After=&#8217;CommitServiceSetProp&#8217;&gt;$TheService&gt;2&lt;/Custom&gt;
+<br />
+<br />
+<br />&lt;/InstallExecuteSequence&gt;
+<br />
+<br />&lt;!&#8211;Now we&#8217;re done&#8211;&gt;
+<br />
+<br />&lt;/Product&gt;
+<br />&lt;/Wix&gt;</b>
+<br />
+<br />Despite all my skepticism, the above code ran perfectly fine. Now, I have to work on the real services. Hope you find this useful.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/09/25/to-nest-or-to-chain-or-to-merge/">To Nest or to Chain or to Merge</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-09-25T00:00:00+05:30" pubdate data-updated="true">Sep 25<span>th</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+This blog entry is for relatively novice setup developers and not for the die-hard Windows Installer gurus. Normally different groups in an organization develop components of software, which can be used standalone or as a part of a suite of products. This is a very normal practice. So they go ahead and create a software package with a complete setup.exe and a separate MSI for it. But when they plan to integrate it with the suite. That is when the setup developer&#8217;s headache starts. The setup developer might be hard pressed for time and would choose nested install of some sort to cut down time. This article discusses a few techniques to handle it in a better fashion.
+<br />
+<br />Firstly, <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/nested_installation_actions.asp">nested installs</a> are evil. Let me tell you why. They can never be patched and cannot be cleanly removed from the target system. That alone should drive you away from using nested installs. You perform a nested installation. And Boom! The next thing you know is that you have lost control over the life cycle of your application, your house has been burgled and your wife has run away with your neighbor. Well, it was a slight exaggeration but you get the picture. 
+<br />
+<br />A smarter way to handle this, as many argue would be to call the child install by launching the MSI package&#8217;s setup.exe or launch msiexec and pass appropriate command line parameters to install the package. This is equally bad. Such installations do not have their rollback logic integrated with the parent installer. Thus if the nested setup fails, you do not have any way to roll back the parent setup reliably or the vice-versa. Furthermore, Windows Installer&#8217;s architecture allows only one installation at a point to make changes to the system. Having two installations modify system resources might not be the smartest thing to do.
+<br />
+<br />The only way out of this mess is to use something called as the Merge Module. Merge Module is an atomic unit consisting of components, custom actions and various resources like files and registry entries. These merge modules can be integrated into the main installer at design time by the merge tool. You can either use tools like InstallShield to include merge modules in the application or use WIX&#8217;s <Merge> tag to include the merge module during build. The advantage of using the merge module is that the components in the merge module remain immutable. Thus it ensures that setup developers follow some of the many important component design rules. A resource going to a location will always have the same component GUID regardless of the product its being installed with. Windows Installer will then be able to do clean refcounting of the components and will give you a solid setup.
+<br />
+<br />Beyond all this, if the setup were a third party setup, you would have to use the MSI package unless the vendor agrees that you can repackage his setup. Buts lets just assume that he does not. Even in that case, it is recommended that you keep the logic of the third-party setup miles away from your application. You can handle the installation of the third party application from the bootstrapper. There are a couple of applications that do that. <a href="http://www.installshield.com/products/x">InstallShield X Premier and Professional editions</a> have a neat feature called as Setup Prerequisites, which let you call other MSI or non-MSI based installations from the bootstrapper. If you would like to stay open source, then you can use DevAge’s <a href="http://devage.com/dotNetInstaller/dotNetInstaller.html">DotNetInstaller</a> to achieve the same. Both of them are very easy to use. InstallShield’s solution comes with a price tag, sporting a snazzy killer interface and excellent documentation. While the DotNetInstaller is not a setup creation program but is just a bootstrapper and it is free.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/09/25/all-about-wix/">All About WIX</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-09-25T00:00:00+05:30" pubdate data-updated="true">Sep 25<span>th</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+Of late, I was very busy amidst many meetings. My friends would know the reasons for that<wink/>. As soon as I got away from my day job (actually afternoon, I work from 1PM to 10PM), I got really involved with <a href="http://sourceforge.net/projects/wix">WIX</a>. I have found this tool very versatile, stable and extremely lightweight. I believe that this is used internally at Microsoft by MS Office team. The MS Office team actually created Windows Installer (Codenamed Darwin) and hence it is only fair to assume that they use every feature of Windows Installer. This should give you some idea of the versatility of this tool. For folks who don’t know what WIX is, Rob has included a link to the <a href="http://blogs.msdn.com/robmen/archive/2004/09/23/233684.aspx">Introduction to Windows Installer XML video</a> in his <a href="http://blogs.msdn.com/robmen">blog</a>. He gives a broad overview of the tool and demonstrates the usability of this tool in real-time. Although this tool is versatile, learning it would be difficult if you do not know Windows Installer. Unfortunately, there are not enough good resources to learn Windows Installer. I did my learning with Bob Baker&#8217;s books published by <a href="http://www.installshield.com/ispress">InstallShield Press</a>. I supplemented my knowledge of Windows Installer with the Mike Gunderloy&#8217;s book <a href="http://www.amazon.com/exec/obidos/tg/detail/-/0782127452/103-8672555-0991068?v=glance">VB/VBA&#8217;s developers Guide for Windows Installer</a>. I have to yet read <a href="http://www.amazon.com/exec/obidos/tg/detail/-/1590592972/103-8672555-0991068?v=glance">Phil&#8217;s <i>The Definitive Guide to Windows Installer</i></a>. I am not sure if I could get hold of it in the near future, as it is not available in the local bookshops. But the bible or should I say the Gita of Windows Installer (MSI.chm) is my lifesaver any day.
+<br />
+<br />It was pretty fun working with WIX and I believe that all setup developers must seriously consider this tool as an alternative to other commercial tools. There are a number of high-level utilities which help you automate most of the rudimentary tasks with the XML file but are still a fertile field for more development. There is currently no CodeDOM available for WIX so generating the WIX source is not as easy. But I believe that there are a <a href="http://codeblooded.com/blog/archive/2004/04/24/145.aspx">couple of initiatives</a> for the same. So for people who have a phobia for editing text files, WIX is NOT for you, atleast until the higher-level apps come in. The documentation is still skimpy but I believe that we should be able to see that changing shortly. WIX, however has a very active users community to extend help when you get stuck.  As the tool is <b>open-source</b>, you can go ahead and fix a bug yourself depending on the criticality. There is a lot of scope for development for the tools like Tallow and sca.dll. Tallow.exe is a all purpose utility which does some rudimentary code gen, extracts self-reg entries, extracts registration information for assembles, process .rc files to create WIX UI fragments and the like. Sca.dll provides several custom actions like creating WebSites/Virtual directories, Users, run SQL Scripts, etc. Since the .wxs files are plain XML files, they are much easier to check in and check out than binary formats used by commercial tools like InstallShield. BTW, InstallShield does support XML format to store its project file but is nowhere close to the level of distributed application development functionality supported by WIX. Watch the video for more information about this. So if you are all set to download WIX and get running with it, jump <a href="http://sourceforge.net/projects/wix">here</a> and click on the download link. You might also want to read an <a href="http://www.ondotnet.com/pub/a/dotnet/2004/04/19/wix.html">article about WIX on O&#8217;Reilly</a>.
+<br />
+<br />I just finished stealing UI from one of my InstallShield Basic MSI projects by &#8220;dark&#8221;ing (decompiling) the built MSI and cleaning up the WXS file and editing it down to size. I had the custom actions and InstallShield specific properties cleaned out and removed the branding. Thanks to the folks at Wix-Users mailing list, I have successfully separated the UI from my main product&#8217;s installation and have documented the instructions to include the exact <InstallUISequence> and <AdminUISequence> to be used. I am still a developer so don’t expect me to write many lines of verbose comments. It is just a commented out block of code that you can cut and paste in the main WXS file. If you would like to have a copy of this .wxs file, please email me at <a href="mailto://vagmi.mudumbai@gmail.com">vagmi.mudumbai@gmail.com</a>.
+<br /></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/08/27/self-registration-vs-registry-tables/">Self-Registration vs. Registry Tables Group</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-08-27T00:00:00+05:30" pubdate data-updated="true">Aug 27<span>th</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+COM Servers are every Setup developer&#8217;s nightmare. One of my friends, a release engineer, expressed her extreme frustration over the technique that they had used to register COM Servers. The setup developer had written 100s of lines of code to launch RegSvr32 using the &#8216;/s&#8217; switch to register these COM Servers. In theory, the process of registration of a COM Server is perfectly fine when done via the regsvr32 utility. But there are certain disadvantages while doing that from the MSI Engineer&#8217;s perspective. Firstly, all the dependencies of the server need to be registered in a specific order. And secondly, the user performing the installation should have administrative rights. The latter aspect makes setup developers and administrators loathe the registration process. 
+<br />
+<br />Further, system administrators do not know the registry settings and COM interfaces that are exposed by the COM object. COM objects do not support reflection and hence are essentially black boxes. Windows Installer has a &#8217;<a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/selfreg_table.asp">SelfReg</a>&#8217; table which can be used to self-register COM servers. There are several disadvantages while using this table.
+<br />
+<br /><ul>
+<br /><li>Order of registration cannot be specified. Thus if the DLL has dependencies and the dependencies are not registered already, the self-registration would fail.</li>
+<br /><li>Rollback cannot be done reliably</li>
+<br /><li>Self-Registration requires administrative privileges</li>
+<br /><li>You cannot exploit the install-on-demand features of Windows Installer</li>
+<br /><li>You cannot register EXE (Out of process) servers.
+<br /></ul>
+<br />
+<br />Tools like <a href="http://www.installshield.com/products/x">InstallShield X</a> provide alternative methods to perform self-registration. This works around certain limitations like specifying the order of registration and registering EXE files. But largely there are limitations that are not in sync with Windows Installer&#8217;s philosophy of a setup. Speaking of Setup Philosophy, RobMen&#8217;s blog on his <a href="http://blogs.msdn.com/robmen/archive/2004/05/16/132928.aspx">philosophical musings</a> is really worth a read. I personally consider performing self-registration a fiendish act. Microsoft does not absolutely recommend it. Instead it recommends the use of <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/registry_tables_group.asp">Registry Table group</a>. These are a set of tables like Class, ProgId, Typelib, MIME, Extension and so forth that can be used to store COM information. Most of this information should be available in the generated IDL file for the COM component. If you have any trouble figuring it out, you can peep into the registry during the registration process using various registry-spying tools and extract the appropriate information. Thankfully, tools like <a href="http://www.installshield.com/products/x">InstallShield X</a> abstract this process. For example, using InstallShield X you can extract COM information from the key file of the component during the build time by setting the &#8220;COM Extract at Build&#8221; attribute of the component in the InstallShield X IDE. Although this makes life easy for a lot of setup developers, this technique has <a href="http://support.installshield.com/kb/view.asp?articleid=Q105681">its share of pains</a>. Although not perfect, this technique would solve most of the issues related with COM Registration.
+<br />
+<br />InstallShield also provides a simple utility call RegSpyUI.exe that helps users look at COM information for a specific DLL or exe. This tool is undocumented, unsupported and hence I do not know all the bad things that it might do. But it is a really cool utility, which helps us work around such nasty limitations. Search the InstallShield X or DevStudio installation directory for this tool. There are a few references to this tool in the <a href="http://community.installshield.com">InstallShield Communities</a>. So if something bad happens to your computer, don’t blame me. You have been warned. </wink>
+<br />
+<br />Some of the motivating factors for authoring these tables as opposed to self-registration are:
+<br />
+<br /><ol>
+<br /><li>You can forget about dependencies. Since all the information is already authored in the table, you do not need the COM servers registered in order.</li>
+<br /><li>You can register all kinds of COM Components (DLL, EXE, OCX and the like.)</li>
+<br /><li>You do not need administrative privileges. Since the registration is carried out by the standard actions, you can exploit MSI&#8217;s support for <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/how_do_i_install_a_package_with_elevated_privileges_as_a_non_admin.asp">elevated privileges</a>. This is a boon for people handling locked down environments.</li>
+<br /><li>You can now support Installation-on-Demand for these COM Components. I would cover this in detail some other day.</li>
+<br /></ol>
+<br />
+<br />With all these facts by your side, I am now sure that you can convince any setup developer to use the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/registry_tables_group.asp">Registry Table Group</a> instead of performing self-registration.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2004/08/21/reading-windows-installer-logs/">Reading Windows Installer Logs</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-08-21T00:00:00+05:30" pubdate data-updated="true">Aug 21<span>st</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+As we all know Windows Installer is a complicated and a elegant technology. Its beastly complexities are beautifully abstracted by the authoring packages like InstallShield X, DevStudio and Developer. But we live in a less than perfect world and Murphy’s Law still holds good for the Windows Installer world too. There might be several reasons why an Installation might fail. Some errors might be meaningful while others might just spit out a cryptic error message with an error number during installation. The only way to make sense of these would be to look at the log files generated during installation. You can generate a log file for the installation using the following command line.
+<br />
+<br />msiexec /i productname.msi /l*v package.log
+<br />
+<br />This command generates a verbose log file logging all errors, warnings and debug messages and produces a huge log file in the text format. The first look at the log file might be slightly intimidating. This article tries to break the ice with the basics of reading the log file to troubleshoot problems with installation. Discussing all the error messages and its aspects is out of scope of this article. If you have specific questions, feel free to drop me a word. (at installneo@yahoo.com)
+<br />
+<br /><strong>The Bottom Up Approach:</strong>
+<br />
+<br />Whenever I read a log file, I start reading it from the bottom of the file. You might dismiss this technique as one of my eccentricities but I believe that this is the quickest, if not the most efficient, way of reading a log file in case of errors like 1603 or 1721. As a convention, the letter &#8216;C&#8217; within brackets denotes the client context and the letter &#8216;S&#8217; denotes the server context. So all messages in the log, which start as below, are messages in the client&#8217;s context.
+<br />
+<br />MSI (c) (A0:4C): Doing action: INSTALL
+<br />Action start 0:12:20: INSTALL.
+<br />MSI (c) (A0:4C): UI Sequence table &#8216;InstallUISequence&#8217; is present and populated.
+<br />MSI (c) (A0:4C): Running UISequence
+<br />
+<br />All messages in the log which start as below are messages from the MSI running in the server&#8217;s context.
+<br />
+<br />MSI (s) (1C:7C): Doing action: INSTALL
+<br />Action start 0:12:54: INSTALL.
+<br />MSI (s) (1C:7C): Running ExecuteSequence
+<br />
+<br />Let us first analyze a successful log file and get ready to compare the anomalies with a not so perfect log file. I have used a simple Basic MSI project created with InstallShield X that just installs notepad.exe and I have disabled Update Ser. What we should be looking at is actions that do not have a return code of 1. You would find lines similar to the ones below just above the Server context property dump.
+<br />
+<br />MSI (c) (04:B0): Doing action: SetupCompleteSuccess
+<br />Action start 18:03:47: SetupCompleteSuccess.
+<br />Action 18:03:47: SetupCompleteSuccess. Dialog created
+<br /><em>Action ended 18:03:48: SetupCompleteSuccess. Return value 2.</em>
+<br />Action ended 18:03:48: INSTALL. Return value 1.
+<br />
+<br />
+<br />Hmm&#8230; What does this mean? The &#8221;<em>Action ended 18:03:48: SetupCompleteSuccess. Return value 2.</em>&#8221; message indicates that user cancelled the action or the operation was aborted due to a user instruction. But god knows that I did not instruct it stop. There must be something else that is wrong. The most obvious place to look for it would be the &#8220;Finish&#8221; button in the SetupCompleteSuccess dialog. You would find a line like the one below once you click on the Behavior tab of the dialog and select the OK control. If you insist on doing it via Orca, you can look at the ControlEvent table for the OK control in the SetupCompleteSuccess dialog.
+<br />
+<br />EndDialog - Exit - 1
+<br />
+<br />BINGO! We have found the culprit. The argument for the control event must be &#8216;Return&#8217; instead of &#8216;Exit&#8217;. Refer Windows Installer SDK help library article titled &#8220;EndDialog ControlEvent&#8221; for more information. Rebuild the project after changing it to &#8216;Return&#8217; and you would find that none of the actions have return values other than &#8216;1&#8217;.
+<br />
+<br />We have thus finally solved a trivial problem with the help of the log file, which would have gone unnoticed otherwise. Ah! Sweet Perfection.
+<br />
+<br />:-)
+<br />
+<br /><strong>Deferred Custom Actions:
+<br /></strong>
+<br />One of the common places where users get confused is with deferred custom actions. <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/deferred_execution_custom_actions.asp">Deferred Execution Custom Actions</a> are not executed the first time the installer processes the custom actions in the Execute Sequence table. They are instead written to the MSI script. All these actions are executed within the InstallFinalize action.  In these cases, you would have to look at the return value of the InstallFinalize action. A few lines above the line that indicates the return value of InstallFinalize would hint the action that failed. Let us verify this with a simple VBScript Custom Action that does nothing else but cause the install to fail &lt;/wink&gt;. This is the code for the VBScript.
+<br />
+<br />function MyFunction
+<br />MyFunction=1603
+<br />end function
+<br />
+<br />I then create a Type 1030 custom action (VBScript Stored in Binary Table + Deferred Execution). This custom action is scheduled after InstallFiles action in the Install Execute Sequence. Run and log the installation. The installation proceeds and comes up with a dialog, which states that the Installation operation has failed. Let us look into the log for more information.
+<br />
+<br />The final few lines in the log file complain that installation failed. But it still does  have not enough information to identify an error.
+<br />
+<br />MSI (c) (34:30): Product: SimpleInstaller &#8211; Installation operation failed.
+<br />
+<br />MSI (c) (34:30): Grabbed execution mutex.
+<br />MSI (c) (34:30): Cleaning up uninstalled install packages, if any exist
+<br />MSI (c) (34:30): MainEngineThread is returning 1603
+<br />
+<br />Above the client contexts&#8217; property dump, the following lines of code indicate that INSTALL (Top level action) returns a value of 3 and the main thread is returning 1603. The SetupCompleteError is the same as we discussed earlier. This does not give much information either.
+<br />
+<br />MSI (s) (DC:D8): MainEngineThread is returning 1603
+<br />MSI (c) (34:30): Back from server. Return value: 1603
+<br />MSI (c) (34:30): Decrementing counter to disable shutdown. If counter >= 0, shutdown will be denied.  Counter after decrement: -1
+<br />Action ended 19:24:28: ExecuteAction. Return value 3.
+<br />MSI (c) (34:30): Doing action: SetupCompleteError
+<br />Action start 19:24:28: SetupCompleteError.
+<br />Action 19:24:29: SetupCompleteError. Dialog created
+<br />Action ended 19:24:30: SetupCompleteError. Return value 2.
+<br />Action ended 19:24:30: INSTALL. Return value 3.
+<br />
+<br />Assuming that you have opened the log in notepad, search quickly for the word &#8216;InstallFinalize&#8217; and specify the direction of search as up. You will now be able to see the following lines. 
+<br />
+<br /><strong>&#8230;</strong>
+<br /><strong>Our custom action is being called</strong>
+<br />MSI (s) (DC:D8): Executing op: ActionStart(Name=NewCustomAction1,,)
+<br />Action 19:24:28: NewCustomAction1. 
+<br />MSI (s) (DC:D8): Executing op: CustomActionSchedule(Action=NewCustomAction1,ActionType=1030,Source=function MyFunction
+<br />MyFunction=1603
+<br />end function,Target=MyFunction,)
+<br />MSI (s) (DC:D8): Creating MSIHANDLE (3) of type 790536 for thread 2008
+<br />MSI (s) (DC:D8): Creating MSIHANDLE (4) of type 0 for thread 2008
+<br />MSI (s) (DC:D8): Closing MSIHANDLE (4) of type 0 for thread 2008
+<br />MSI (s) (DC:D8): Closing MSIHANDLE (3) of type 790536 for thread 2008
+<br /><strong>Our custom action fails causing the InstallFinalize action to fail</strong>
+<br /><em>Action ended 19:24:28: InstallFinalize. Return value 3.</em>
+<br /><strong>Initiate Rollback</strong>
+<br />MSI (s) (DC:D8): User policy value &#8216;DisableRollback&#8217; is 0
+<br />MSI (s) (DC:D8): Machine policy value &#8216;DisableRollback&#8217; is 0
+<br />MSI (s) (DC:D8): Executing op: Header
+<br /><strong>&#8230;</strong>
+<br /><strong>Rolls back changes</strong>
+<br />
+<br />As you would have aptly guessed, the lines in bold are my comments. So you can nail most of troublesome deferred custom action using this technique.
+<br />
+<br />I am really sleepy and have got some real work to do. I am sure I would touch on the log files again covering more aspects. Love it or Hate it, feel free to post your comments.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/9/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/7/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2010/08/31/first-track-call-taxi-epic-fail/">First Track Call Taxi - Epic Fail</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/07/27/yes-men-fix-world/">Yes Men Fix the World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/05/25/my-hacking-playlist/">My hacking playlist</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/02/19/magic-of-y/">The magic of Y</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/02/12/statistics-is-important/">Statistics is important</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/vagmi">@vagmi</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'vagmi',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("vagmi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/vagmi" class="twitter-follow-button" data-show-count="false">Follow @vagmi</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Vagmi Mudumbai -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: clojure java | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/clojure-java/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hello Clojure]]></title>
+    <link href="http://vagmim.in/blog/2008/10/09/hello-clojure/"/>
+    <updated>2008-10-09T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2008/10/09/hello-clojure</id>
+    <content type="html"><![CDATA[<div class='post'>
+<pre><code><br />; HelloClojure.clj<br />(import '(javax.swing JFrame JLabel)<br />  (doto (JFrame.)<br />    (add (JLabel. "Hello Clojure!"))<br />    (setTitle "Clojure!")<br />    (pack) (show))<br /></code></pre><br /><br />I have a strong feeling that the lisp is all set to make a comeback in the enterprise. Check out <a href="http://clojure.org">Clojure</a>. <br /><br />Dedicated to all the souls plagued with the horrors of sane concurrency.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

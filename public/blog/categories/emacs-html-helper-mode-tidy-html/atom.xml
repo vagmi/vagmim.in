@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: emacs html-helper-mode tidy-html | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/emacs-html-helper-mode-tidy-html/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[HTML Helper Mode and Indentation]]></title>
+    <link href="http://vagmim.in/blog/2008/11/18/html-helper-mode-and-indentation/"/>
+    <updated>2008-11-18T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2008/11/18/html-helper-mode-and-indentation</id>
+    <content type="html"><![CDATA[<div class='post'>
+This is my third post for the day. I blogged about <a href="http://blog.vagmim.com/2008/11/meetings-and-boredom.html">this</a> and <a href="http://blog.vagmim.com/2008/11/meetings-and-boredom-continues.html">this</a> earlier today. Writing smaller pieces regularly works much better than waiting for the big post. Commenters, do let me know if you like this style better.<br /><br />I am really irritated with the html-helper-mode's indentation. It flattens the code rather than indenting it. I missed my <a href="http://tidy.sourceforge.net/">tidy</a> command from yesteryears when I did not use emacs. But I am coding on emacs now. I do not have to miss anything from within emacs. So, I added a tidy-html function to format the html as properly indented XHTML. <br /><br /><script src="http://gist.github.com/26161.js"></script><br /><br />And I absolutely love <a href="http://gist.github.com">Gist</a>. It has solved all the quirks involved with posting code on a blog.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: personal | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/personal/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Single no more]]></title>
+    <link href="http://vagmim.in/blog/2007/01/28/single-no-more/"/>
+    <updated>2007-01-28T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2007/01/28/single-no-more</id>
+    <content type="html"><![CDATA[<div class='post'>
+There have been a lot of changes with my life lately. The most prominent one of all is that I am single no more. I am now happily wedded to my long time love Shanthi. I stole a few minutes off my busy schedule to post this <wink/>.<br /><br />I am going drop off the web for a couple of weeks now. Bye Bye web. Cya later.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

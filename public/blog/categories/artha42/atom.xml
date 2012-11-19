@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: artha42 | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/artha42/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The problem with certifications]]></title>
+    <link href="http://vagmim.in/blog/2009/12/08/problem-with-certifications/"/>
+    <updated>2009-12-08T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2009/12/08/problem-with-certifications</id>
+    <content type="html"><![CDATA[<div class='post'>
+There was a <a href="http://article.gmane.org/gmane.org.user-groups.linux.ilugc/57656">question</a> on ILUGC today to which I <a href="http://article.gmane.org/gmane.org.user-groups.linux.ilugc/57660">responded</a>. I am reposting it as a blog entry.<br /><br />You should first understand how certifications work from the perspective of a vendor who offers such certification say Microsoft, Redhat or SAP. The vendor has an economic interest in selling his product to a company. The company which buys a product (or a service in case the of Redhat) wants to know if the product/service they buy can be used by people they are going to employ. This is where the brilliance of marketing sets in. <br /><br />They con the students and the candidates in the job market that there are several jobs awaiting them if only they clear the certification in their technology. They then go and talk to all the colleges and institutes like NIIT and convince them to market the certification and give them the necessary materials to make it a course. They then contact book authors who fill in pages and pages with mind numbing facts about the technology. The institute in the meanwhile has started tailoring a course and claims that it can get you from a dud to a certified professional in 3 months. As with any statistical distribution in a country with a billion people, a sizable few take up the certifications. The first few batches are always tough. Only the good guys clear the first 3 or 4 batches. But good guys like to share knowledge. So they share the dumps with the world. <br /><br />The vendor does nothing to oppose this as they need that pool of skills in the market. After they have got enough number of people with the piece of paper with the name of the vendor and a printed signature of the CEO/founder of the company, the marketing department gets busy making powerpoint slides. The slides have graph of stating the number of people who have finished the certification and how easy it would be for their customers to find the right skills. And since the numbers (supply) are aplenty and the licensed customers are a few (demand), by the laws of economics, they should have no problem in finding people with the right skills (and a cheap pay). <br /><br />The mindless HR then goes and "recruits" people with certifications. So if you notice, if you are a good candidate, you can lower your value just by getting certified. There are alternative means to improve your employability. You can start contributing to open source for a start. Do not pick difficult projects. If you cannot find a project, try building something. Try creating a simple webapp or a game. I am seeing too many freshers with "Biometric AI-Driven Neural Network Enabled Grid Based Path Finding World Domination Engine" on their resumes. And they want me to believe that they did it in 3 months without being able to write fizz buzz in their favorite language. <br /><br />As an employer myself, I would recommend you to do the following. Take up a small project. A small pong game or a simple webapp that solves your problem and document all your learnings in a blog. This will make you a better writer and a better programmer. Use open source technologies. Apart from being the best choice in terms of freedoms that you get, you also get to interact directly with better programmers in mailing lists like these. <br /><br />To pioneer a change, I, on behalf of <a href="http://www.artha42.com">Artha42</a>, am ready mentor a select group of students every year. Your work will be entirely open sourced. I promise that you will not write a single line of proprietary code. That said, we are not Google. We are a small startup with limited resources. We cannot hold something as large as the Google Summer of Code. But we can do something smaller. If you are interested in such an internship opportunity, do drop in a line to careers <at> artha42 <dot> com with "internship" in the subject line or visit our <a href="http://www.artha42.com/career.html">careers</a> page.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[IE is being mean to me again]]></title>
+    <link href="http://vagmim.in/blog/2009/11/26/ie-is-being-mean-to-me-again/"/>
+    <updated>2009-11-26T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2009/11/26/ie-is-being-mean-to-me-again</id>
+    <content type="html"><![CDATA[<div class='post'>
+Exactly my sentiments.<br /><br /><object width="560" height="340"><param name="movie" value="http://www.youtube.com/v/vTTzwJsHpU8&hl=en_US&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/vTTzwJsHpU8&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="340"></embed></object><br /><br />BTW, <a href="http://www.artha42.com">Artha42</a> is also hiring talented and passionate developers. Drop in a like to careers <at> artha42 dot com, if you are interested.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Artha42 is hiring]]></title>
+    <link href="http://vagmim.in/blog/2009/11/11/artha42-is-hiring/"/>
+    <updated>2009-11-11T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2009/11/11/artha42-is-hiring</id>
+    <content type="html"><![CDATA[<div class='post'>
+<a href="http://www.artha42.com">Artha42</a> is hiring. I have been conducting a lot of interviews lately and am completely dissappointed at the state of freshers coming out of engineering colleges. They spend 4 years supposedly studying IT and Computer Science and cannot answer a simple question like <a href="http://www.codinghorror.com/blog/archives/000781.html">fizzbuzz</a>. Come on. I completely agree with <a href="http://krishashok.wordpress.com/">krishashok</a> on this one. Chennai does have concentration camps and they are the bane for a creative society.<br /><br /><object width="560" height="340"><param name="movie" value="http://www.youtube.com/v/jpDQ66r1f9M&hl=en&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/jpDQ66r1f9M&hl=en&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="340"></embed></object><br /><br />If there are guys wanting to work in a fun, passionate and challenging environment, please send your profile to careers <at> artha42.com.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

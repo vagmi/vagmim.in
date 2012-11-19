@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: video humor arbit | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/video-humor-arbit/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Code monkey]]></title>
+    <link href="http://vagmim.in/blog/2007/11/20/code-monkey/"/>
+    <updated>2007-11-20T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2007/11/20/code-monkey</id>
+    <content type="html"><![CDATA[<div class='post'>
+This is a really cool video.<br /><br /><br /><object width="425" height="355"><param name="movie" value="http://www.youtube.com/v/5W_wd9Qf0IE&rel=1"></param><param name="wmode" value="transparent"></param><embed src="http://www.youtube.com/v/5W_wd9Qf0IE&rel=1" type="application/x-shockwave-flash" wmode="transparent" width="425" height="355"></embed></object></div>
+
+]]></content>
+  </entry>
+  
+</feed>

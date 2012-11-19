@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: music spam | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/music-spam/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The Spam Song]]></title>
+    <link href="http://vagmim.in/blog/2008/03/12/spam-song/"/>
+    <updated>2008-03-12T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2008/03/12/spam-song</id>
+    <content type="html"><![CDATA[<div class='post'>
+A really funny song about spam.<br /><br />Eva Moon: Cash from Nigeria<br /><object><embed src="http://static.thesixtyone.com/site_media/swf/song_player_embed.swf?song_id=10050" type="application/x-shockwave-flash" wmode="transparent" width="310" height="120"></embed></object></div>
+
+]]></content>
+  </entry>
+  
+</feed>

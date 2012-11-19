@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: flex cross domain firefox linux | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/flex-cross-domain-firefox-linux/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Override cross domain policy for local files]]></title>
+    <link href="http://vagmim.in/blog/2008/03/10/override-cross-domain-policy-for-local/"/>
+    <updated>2008-03-10T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2008/03/10/override-cross-domain-policy-for-local</id>
+    <content type="html"><![CDATA[<div class='post'>
+I have been working with Flex for the past couple of weeks to build a quick UI Dashboard for our application. We were running this application from the local file system. For some reason it did not work on my machine alone due to the cross domain policy. I then later figured that it was because I was using Firefox and all the others were using IE. <br /><br />I fixed it then by adding my built file as a trusted swf. See <a href="http://livedocs.adobe.com/flex/3/html/help.html?content=05B_Security_03.html">here</a> for more information. The documentation does not say anything about Linux. But you can do the same for Linux as well. You would need to add a similar text file in the following directory.<br /><code><br />~/.macromedia/Flash_Player/#Security/FlashPlayerTrust<br /></code><br /><br />This is very useful for quick prototyping. You need to work with a proxy after that or better yet make some sense of the web services on your server side.<br /><br />Have fun. Keep coding.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

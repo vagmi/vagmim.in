@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: rubyclr | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/rubyclr/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Rolling with RubyCLR]]></title>
+    <link href="http://vagmim.in/blog/2006/11/23/rolling-with-rubyclr/"/>
+    <updated>2006-11-23T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2006/11/23/rolling-with-rubyclr</id>
+    <content type="html"><![CDATA[<div class='post'>
+I downloaded <a href="http://www.rubyclr.com/" title="RubyCLR">RubyCLR</a> today to play around with it and found that it was much more productive than <a href="http://www.codeplex.com/Wiki/View.aspx?ProjectName=IronPython" title="IronPython">IronPython</a>. The reason is quite the same as what I mentioned in my <a href="http://installneo.blogspot.com/2006/11/when-cross-platform-is-not-good-enough.html" title="previous blog entry">previous blog entry</a>. The Ruby-CLR bridge, which is essentially a library, is implemented as a native <a href="http://www.ruby-lang.org/" title="ruby">Ruby</a> extension. So, this gives the developers the choice of using both C based modules and .NET based assemblies from the same script. And thus, in my opinion, RubyCLR is better than <a href="http://jruby.codehaus.org/" title="JRuby">JRuby</a>. We do not have to rewrite most of the native wrappers that are already written. In fact, some of them can be brought to .NET. I am not sure on how to embed Ruby as a scripting language for .NET applications. The other way is pretty clear from the samples that are distributed with the download.<br /><br />Go ahead. Try it out. You will be surprised on how productive you become.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

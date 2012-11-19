@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: management | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/management/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Annual Performance Reviews and Mediocrity]]></title>
+    <link href="http://vagmim.in/blog/2008/12/15/annual-performance-reviews-and/"/>
+    <updated>2008-12-15T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2008/12/15/annual-performance-reviews-and</id>
+    <content type="html"><![CDATA[<div class='post'>
+Now that Performance Reviews are hanging around, all managers MUST read this.<br /><a href=" http://headrush.typepad.com/creating_passionate_users/2006/02/mediocrity_by_a.html"><br />http://headrush.typepad.com/creating_passionate_users/2006/02/mediocrity_by_a.html</a></div>
+
+]]></content>
+  </entry>
+  
+</feed>

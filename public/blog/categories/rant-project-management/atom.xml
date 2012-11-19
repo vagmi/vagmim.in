@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: rant project management | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/rant-project-management/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[PMP?.. me?... you must be kidding]]></title>
+    <link href="http://vagmim.in/blog/2008/09/28/pmp-me-you-must-be-kidding/"/>
+    <updated>2008-09-28T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2008/09/28/pmp-me-you-must-be-kidding</id>
+    <content type="html"><![CDATA[<div class='post'>
+I was reading my dilbert strips, when I noticed the ad below.<br /><p><br /><img src="http://lh5.ggpht.com/vagmi.mudumbai/SOB5Pl624jI/AAAAAAAACf4/RM6wzdukJ5M/dilbertwithad.GIF"/><br /></p><br /><br />Seriously! Do they really think that people who enjoy dilbert would like taking a PMP certification exam to become a (better) project manager? People, who know me, know that I have a low opinion of certifications. What they probably do not know is that I have a even lower opinion of these kits that provide improbable percentage of "Unconditional test pass guarantee". I followed the ad and was greeted with the following error.<br /><p><br /><img src="http://lh6.ggpht.com/vagmi.mudumbai/SOB5QIvFjEI/AAAAAAAACgA/YrzWLG2-iM0/google_adsense_error.GIF"/><br /></p><br />I did a little more digging to find out <a href="http://www.whizlabs.com/pmp-certification.html">about it</a>. They have dropped 50% chance of you passing and the guarantee is no more unconditional. The comments below have "brain dump" screaming all over it. <br /><br />There is really not much to project management. You have to manage priorities of the stake holders. You have scope, time and cost as your constraints. But what they dont tell you is that you cannot treat people like replacable cogs. The stuff that they teach you in PMP is a bunch of processes and the PMP certification exam is a test of memory. Having a PMP certification does not mean jack about your project management skills. In fact, I would be wary of a person who claims that PMP helped become a project manager. It is not that I have absolute distrust in certifications... oh wait .. I do. They can be cheated very easily. I know of a dozen MCSEs, MCPs (not male chauvinistic pigs), PMPs who do not have a clue of the stuff they have got certified in.<br /><br />I don't know why organizations pushing for PMP certifications for their employees. I am sure there is some sick demented reason why they are doing so. <br /><ul><br /><li> Hire people with common sense. (This would only work if you have common sense.)</li><br /><li>Promote your developers with a good aptitude towards management to management. </li><br /><li> Don't recruit B-School grads who haven't written a line of code straight off the school to do project management</li><br /><li> And for heaven's sake don't assume that people with PMP certifications are knowledgeable in project management. They have only made PMI wealthier. </li><br /></ul><br /><br />If you want your project managers to be better project managers, ask them to read <a href="http://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959">"The Mythical Man Month"</a>. That book is quite relevant even in today's context.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

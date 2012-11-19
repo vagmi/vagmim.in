@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>How I started off with Haskell and wound up with Lisp - Vagmi's Blog</title>
+  <meta name="author" content="Vagmi Mudumbai">
+
+  
+  <meta name="description" content="A while ago, I started dabbling in the functional programming space. As with many of my other experiments, I started learning Haskell. I mentioned &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://vagmim.in/blog/2007/10/14/how-i-started-off-with-haskell-and/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Vagmi's Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1364568-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Vagmi's Blog</a></h1>
+  
+    <h2>Rants and opinions about the world as I see it</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:vagmim.in" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">How I Started Off With Haskell and Wound Up With Lisp</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-10-14T00:00:00+05:30" pubdate data-updated="true">Oct 14<span>th</span>, 2007</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+A while ago, I started dabbling in the <a href="http://en.wikipedia.org/wiki/Functional_programming">functional programming</a> space. As with many of my other experiments, I started learning <a href="http://www.haskell.org/haskellwiki/Haskell">Haskell</a>. I mentioned this to a couple of friends and they asked me if it had to do anything with <a href="http://en.wikipedia.org/wiki/Pascal_%28programming_language%29">Pascal</a>. I assured them that they had no resemblance whatsoever. I got off with an excellent <a href="http://en.wikibooks.org/wiki/Haskell/YAHT">tutorial</a> on Haskell. But somehow the static typing part had a nagging feeling in the back of my head. I code with C# a lot in my day job. I do not have anything against statically typed languages, but I strongly believe that you can be far more productive with a <a href="http://en.wikipedia.org/wiki/Type_system#Dynamic_typing">dynamically typed</a> language.<br /><br />I then came across this <a href="http://en.wikibooks.org/wiki/Write_Yourself_a_Scheme_in_48_Hours">tutorial</a>, which teaches you to write a Scheme interpreter in Haskell in 48 hours. Really Cool. I fell in love with Lisp immediately. I googled for Lisp and I discovered that there are many <a href="http://en.wikipedia.org/wiki/Lisp_programming_language#Lisp_today">dialects</a> of Lisp. The most popular ones are <a href="http://www.lisp.org/HyperSpec/FrontMatter/index.html">Common Lisp</a> and <a href="http://www.schemers.org/">Scheme</a>. I decided to go with Common Lisp for some unknown reason. I guess because it had Lisp in its name :-). I then had to find the right implementation for my platform. Being a GNU fan, I picked the <a href="http://clisp.cons.org/">GNU CLISP</a>. As it turns out, it is a horrible implementation which does not support threading and is painfully slow. But it was fine for the small programs that I use for learning. I have <a href="https://wiki.ubuntu.com/FeistyFawn">Ubuntu Feisty</a> on my &#8220;home&#8221; laptop but I spend most of my time on the office laptop which as you all might have guessed, runs &#8220;Windows&#8221;. There are many good commercial implementations for Windows but I was looking only for open source software. GNU CLISP seems to be the only fully functional Common Lisp implementation. I&#8217;ve worked with <a href="http://sbcl.sourceforge.net/">SBCL</a> and found that okay too. I did not run into any major issues but their <a href="http://sbcl.sourceforge.net/platform-table.html">website</a> has an yellow status for SBCL on Windows and a big bold notice saying that it is an experimental implementation. But for learning purposes, I guess it is just fine.<br /><br />I followed a really cool <a href="http://gigamonkeys.com/book/">Lisp tutorial</a>, which is actually a book by a guy called <a href="http://gigamonkeys.com/blog/">Peter Seibel</a> named Practical Common Lisp. It is a free online resource.<br /><br />One of my biggest barriers to entry was my text editor. I was a &#8217;<a href="http://www.vim.org/">vi</a>&#8217; guy. As I browsed for help on Lisp, I kept finding these cool <a href="http://common-lisp.net/project/slime/">emacs extensions</a> for lisp programming. I then took the dive and started using <a href="http://www.gnu.org/software/emacs/">Emacs</a>. It was very painful in the beginning. My fingers automatically pressed the <esc> and the &#8216;:&#8217; keys whenever I wanted to do something. But it took about a week of exercise to train my mind to work with Emacs. Writing extensions for vim is a big deal and normal users would not do it. But extending emacs is a piece of cake. It can be done one step at a time and is very well documented. BTW, I am writing this blog on Emacs. One thing VI does not have is the &#8216;longlines-mode&#8217;. If there is one, please let me know. Emacs is just not a text editor but the text editor for me. One more cool thing about using Emacs to code common-lisp is that, you can turn it into a Lisp IDE. <a href="http://common-lisp.net/project/slime/">Slime</a>(a horrible name) is a mode in emacs that turns your modest text editor into a full blown IDE, including code assist and interactive debugging, even on remote machines.<br /><br />So this is your startup kit for learning Lisp.<br /></esc><ul><li>Common Lisp implementation - <a href="http://clisp.cons.org/">CLISP</a> or <a href="http://sbcl.sourceforge.net/">SBCL</a><br /></li><li><a href="http://gigamonkeys.com/book">Lisp Tutorial</a></li><li><a href="http://www.gnu.org/software/emacs/"><esc>Emacs</esc></a></li><li><esc><a href="http://common-lisp.net/project/slime/">Slime<br /></a></esc></li></ul>Happy coding!<br /><esc><br /></esc></div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Vagmi Mudumbai</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-10-14T00:00:00+05:30" pubdate data-updated="true">Oct 14<span>th</span>, 2007</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://vagmim.in/blog/2007/10/14/how-i-started-off-with-haskell-and/" data-via="vagmi" data-counturl="http://vagmim.in/blog/2007/10/14/how-i-started-off-with-haskell-and/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2007/10/05/really-achieving-your-childhood-dreams/" title="Previous Post: Really achieving your childhood dreams">&laquo; Really achieving your childhood dreams</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2007/11/20/code-monkey/" title="Next Post: Code monkey">Code monkey &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2010/08/31/first-track-call-taxi-epic-fail/">First Track Call Taxi - Epic Fail</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/07/27/yes-men-fix-world/">Yes Men Fix the World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/05/25/my-hacking-playlist/">My hacking playlist</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/02/19/magic-of-y/">The magic of Y</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/02/12/statistics-is-important/">Statistics is important</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/vagmi">@vagmi</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'vagmi',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("vagmi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/vagmi" class="twitter-follow-button" data-show-count="false">Follow @vagmi</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Vagmi Mudumbai -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

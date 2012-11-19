@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: inflation economy | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/inflation-economy/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Inflation]]></title>
+    <link href="http://vagmim.in/blog/2008/05/16/inflation/"/>
+    <updated>2008-05-16T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2008/05/16/inflation</id>
+    <content type="html"><![CDATA[<div class='post'>
+For people worrying about inflation in India, we can at least reconcile to the fact that things are not <a href="http://en.wikipedia.org/wiki/Hyperinflation#Zimbabwe.2C_2000s">this bad</a>.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: dilbert python beautiful soup | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/dilbert-python-beautiful-soup/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Meetings and Boredom]]></title>
+    <link href="http://vagmim.in/blog/2008/11/18/meetings-and-boredom/"/>
+    <updated>2008-11-18T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2008/11/18/meetings-and-boredom</id>
+    <content type="html"><![CDATA[<div class='post'>
+I am sitting in a really boring meeting. I was browsing reddit and found a very interesting dilbert script. I am a huge fan of Dilbert and wanted to download Dilbert strips for offline viewing. I know its not entirely ethical but what the hell. I wrote a small python screen scraper to do that. This requires you to download <a href="http://www.crummy.com/software/BeautifulSoup/">Beautiful Soup</a>. If I am too bored, I will write a script to compose it as a PDF.<br /><br /><script src="http://gist.github.com/26089.js"></script></div>
+
+]]></content>
+  </entry>
+  
+</feed>

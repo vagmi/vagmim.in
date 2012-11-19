@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: observer | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/observer/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The Observer Pattern using Ruby Meta- Voodoo]]></title>
+    <link href="http://vagmim.in/blog/2007/01/14/observer-pattern-using-ruby-meta-voodoo/"/>
+    <updated>2007-01-14T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2007/01/14/observer-pattern-using-ruby-meta-voodoo</id>
+    <content type="html"><![CDATA[<div class='post'>
+The <a href="http://www.ruby-doc.org/stdlib/">ruby standard library</a> already has an <a href="http://www.rubycentral.com/book/lib_patterns.html">implementation</a> for the <a href="http://en.wikipedia.org/wiki/Observer_pattern">observer pattern</a>. The implementation of the pattern was not very rubyish. It seemed a direct implementation of the Java equivalent of it. Ruby is far more powerful.  This is the more rubyish version of the of the code goes something like this.<br /><br /><blockquote><br />require 'observerext'<br /><br />class Person<br />include Observer #include the observer related methods<br />observable :name,:address # the metavoodoo to create the accessor methods and fire events<br />end<br /><br /><br />admin=Person.new<br />admin.name='vagmi'<br />admin.address='admin@somesite.com'<br /><br /># first observer<br />admin.observe :name do |old,newvalue|<br />puts %{The administrator changed from #{old} to #{newvalue}}<br />end<br /><br /># the second observer<br />admin.observe :name do |old,newvalue|<br />  puts 'there can be multiple observers'<br />end<br /><br />admin.name='root'<br />#this prints the following statements<br /># > The administrator has changed from vagmi to root<br /># > there can be multiple observers</blockquote><br /><br />You can find the code for observerext.rb <a href="http://vagmi.googlecode.com/svn/trunk/observer/observerext.rb">here</a>. What I have basically done is to extend the Module class, which defines the observable method. The observable method injects the attributes' getters and setters. The setter method notifies the observers if there are any. The Observer module does the leg work of registering and unregistering the blocks and the notifyobservers method.<br /><br /><span style="font-weight: bold;">Update:</span> Forgot to credit <a href="http://ghouston.blogspot.com/">Greg Houston</a> for <a href="http://ghouston.blogspot.com/2006/05/attraccessor-meta-programming.html">explaining</a> some of the ruby voodoo.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

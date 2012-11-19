@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: microisv | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/microisv/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[AppEngine and the MicroISV]]></title>
+    <link href="http://vagmim.in/blog/2008/04/11/appengine-and-microisv/"/>
+    <updated>2008-04-11T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2008/04/11/appengine-and-microisv</id>
+    <content type="html"><![CDATA[<div class='post'>
+Amazon pioneered the effort of providing computing and storage resources as a services like <a href="http://aws.amazon.com/s3">S3</a>, <a href="http://aws.amazon.com/ec2">EC2</a>, <a href="http://aws.amazon.com/simpledb">SimpleDB</a>, <a href="http://aws.amazon.com/sqs">SQS</a> and <a href="http://www.amazon.com/gp/browse.html?node=3435361">so on</a>. There were rumors that Google would come up with something like this but boy did they surprise everyone. Instead of exposing individual services they have now exposed a coherent framework to build applications on Google scale infrastructure.Google <a href="http://appengine.google.com">AppEngine</a> used in conjunction with <a href="http://www.google.com/a">Google Apps for your domain</a> is a brand new market for <a href="http://en.wikipedia.org/wiki/Micro_ISV">microISVs</a> to target. They could develop enterprise applications on Google scale hardware and have it integrate with the rest of Google's application suite. Google already had provided Sites and Page Creator. These were at best very weak for an organization's web presence. With Google's AppEngine small and medium scale organizations can look at Google AppEngine as a serious option for their enterprise IT system. <br /><br />Google Apps for your domain, for those who were living under a rock, provides GMail, GTalk and collaborative office suite for free or for a small fee. Imagine the tons of money that you save on licenses if you had to use Windows servers for your domain and email. Even if you had chosen Linux, the costs of administration and anti spam filtering and the hardware for the servers simply do not exist with Google Apps for your domain. It was almost good for enterprises but not good enough. They still had to worry about their ERP, CRM and other enterprise TLA systems. Salesforce was an option but something was still off with it. That's for a different post. <br /><br />Google, with its new AppEngine offering, has opened the floodgates of various applications that can be hosted on Google scale infrastructure with pay as you use model for application resources. This is just as <a href="http://www.roughtype.com/index.php">Nicholas Carr</a> from the <a href="http://www.nicholasgcarr.com/articles/matter.html">IT doesn't matter</a> fame  <a href="http://www.roughtype.com/archives/2008/02/alan_turing_clo.php">suggested</a>. Google is commoditizing the computing resources. This is a disruptive innovation which would change the dynamics of how applications are created. It wouldn’t be long for Google to provide a repository of applications that you could just deploy with a click on your domain. Currently Google AppEngine allows you to write applications in <a href="http://www.python.org">Python</a>. They have very clean APIs for integrated User authentication, mail integration, ability to build mashups using the URL Fetch API and store data on Google's BigTable. Google has said that it would add support for other languages. But who needs other languages when you have Python. :-)<br /><br />Google's offering levels the playing field for ISVs looking to build web-based enterprise products. So, stop reading and start coding. You know I am.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

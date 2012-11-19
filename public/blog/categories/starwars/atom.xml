@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: starwars | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/starwars/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Star wars a cappella video]]></title>
+    <link href="http://vagmim.in/blog/2009/04/15/star-wars-cappella-video/"/>
+    <updated>2009-04-15T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2009/04/15/star-wars-cappella-video</id>
+    <content type="html"><![CDATA[<div class='post'>
+I just have two words for this. Bloody Brilliant.<br /><br /><embed src="http://www.metacafe.com/fplayer/1969675/star_wars_an_a_capella_tribute_to_john_williams.swf" width="400" height="345" wmode="transparent" allowFullScreen="true" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"> </embed></div>
+
+]]></content>
+  </entry>
+  
+</feed>

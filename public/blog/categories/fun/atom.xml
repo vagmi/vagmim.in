@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: fun | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/fun/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Markov Chains]]></title>
+    <link href="http://vagmim.in/blog/2009/12/23/markov-chains/"/>
+    <updated>2009-12-23T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2009/12/23/markov-chains</id>
+    <content type="html"><![CDATA[<div class='post'>
+You know developers have an itch to implement something cool that they learned about. No can say it better than XKCD.<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://xkcd.com/208/"><img style="cursor:pointer; cursor:hand;width: 600px; height: 607px;" src="http://imgs.xkcd.com/comics/regular_expressions.png" border="0" alt="" /></a><br /><br />I learnt about <a href="http://en.wikipedia.org/wiki/Markov_chain">Markov Chains</a> today. <br /><br /><blockquote>In mathematics, a Markov chain, named after Andrey Markov, is a discrete random process with the Markov property. A discrete random process means a system which can be in various states, and which changes randomly in discrete steps. It can be helpful to think of the system as evolving once a minute, although strictly speaking the "step" may have nothing to do with time. The Markov property states that the probability distribution for the system at the next step (and in fact at all future steps) only depends on the current state of the system, and not additionally on the state of the system at previous steps. Since the system changes randomly, it is generally impossible to predict the exact state of the system in the future. However, the statistical properties of the system at a great many steps in the future can often be described. In many applications it is these statistical properties that are important. - From the wikipedia entry on <a href="http://en.wikipedia.org/wiki/Markov_chain">Markov Chains</a></blockquote><br /><br />It was so cool that I decided to do something with it. So I wrote a simple helper that generates articles for the app that I was testing. Here is the code in all its glory. It is not the fastest piece of code and is a memory hog, but who cares? <br /><br /><script src="http://gist.github.com/262529.js?file=markov.rb"></script><br /><br />This is how you use it.<br /><br /><script src="http://gist.github.com/262529.js?file=usage.rb"></script><br /><br />And this produced this <a href="http://gist.github.com/raw/262529/f53ad246a37eed108c98f05e6f3327355dff7df5/article.txt">fine article</a>. Isn't this cool?</div>
+
+]]></content>
+  </entry>
+  
+</feed>

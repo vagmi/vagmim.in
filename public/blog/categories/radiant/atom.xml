@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: radiant | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/radiant/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Modifying Radiant's Database Mailer]]></title>
+    <link href="http://vagmim.in/blog/2009/10/07/modifying-radiants-database-mailer/"/>
+    <updated>2009-10-07T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2009/10/07/modifying-radiants-database-mailer</id>
+    <content type="html"><![CDATA[<div class='post'>
+Radiant's <a href="http://github.com/Aissac/radiant-database-mailer-extension/">Database Mailer</a> is an wonderful extension that can quickly set up mailer forms and add stuff to the database too. But they have tried to do some serious magic to ensure that arbitrary structures can be imported by defining them in the config/environment.rb. That is a bit too hacky for Rails to handle. <br /><br />If you decide to change the structure any time later, you cannot migrate those changes. That is quite a bummer. The crazy part is you cannot uninstall Database Mailer after that either. It keeps reporting an "undefined method set_schema_version" error. To uninstall it you have to manually nuke the form_datas (isn't data already plural?) table and related attachment tables. You also have to remove the migrations in the schema_migrations table manually. Can someone suggest a better alternative?</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Getting to tolerate Radiant]]></title>
+    <link href="http://vagmim.in/blog/2009/09/26/getting-to-tolerate-radiant/"/>
+    <updated>2009-09-26T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2009/09/26/getting-to-tolerate-radiant</id>
+    <content type="html"><![CDATA[<div class='post'>
+I have been working with <a href="http://radiantcms.org">Radiant</a> for the past couple of days. It is definitely impressive. But I simply hated the fact that you need to work within the confines of the browser's textarea to fill in content. This is just plain lame. I am so used to <a href="http://www.vim.org/">Vim</a> that typing within that small window is just plain irritating. You can of course copy paste stuff from and to vim but that is equally lame. Luckily there are a couple of ways you can work around this. <br /><br />The first being the "<a href="https://addons.mozilla.org/en-US/firefox/addon/4125">Its all Text</a>" extension. Its all text enables me to type anything that I type in a text area in vim. It is actually pretty cool.<br /><br />The second being <a href="http://github.com/nelstrom/radiant-file-system-extension">radiant-file-system-extension</a>. It allows me to use the file system and version content with git. Happy hacking with radiant.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: clojure | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/clojure/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The magic of Y]]></title>
+    <link href="http://vagmim.in/blog/2010/02/19/magic-of-y/"/>
+    <updated>2010-02-19T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2010/02/19/magic-of-y</id>
+    <content type="html"><![CDATA[<div class='post'>
+I have always been a fan of lisp. I spent my fair deal of time with emacs and emacs lisp. Scheme and Dr.Scheme have always fascinated me. I am searching for a good excuse to put Clojure into action. However, I am sometimes blinded by the awesomeness of Ruby which I do a lot as a part of my day job. But Lisp is too beautiful for my mind to ignore. One of those things that interest a lisp hacker is this concept of fixed point combinator.<br /><br /><blockquote><br />A <b>fixed point combinator</b> (or <b>fixed-point operator</b>) is a <a href="http://vagmim.in/wiki/Higher-order_function" title="Higher-order function">higher-order function</a> that computes a <a href="http://vagmim.in/wiki/Fixed_point_(mathematics)" title="Fixed point (mathematics)">fixed point</a> of other functions. A <i>fixed point</i> of a function <b>f</b> is a value <i>x</i> such that <b>f</b>(<i>x</i>) = <i>x</i>. For example, 0 and 1 are fixed points of the function <b>f</b>(<i>x</i>) = x<sup>2</sup>, because 0<sup>2</sup> = 0 and 1<sup>2</sup> = 1. Whereas a fixed-point of a first-order function (a function on "simple" values such as integers) is a first-order value, a fixed point of a higher-order function <b>f</b> is <i>another function</i> <b>p</b> such that <b>f</b>(<b>p</b>) = <b>p</b>. A fixed point combinator, then, is a function <b>g</b> which produces such a fixed point <b>p</b> for any function <b>f</b>:<br /><dl><br /><dd><b>p</b> = <b>g</b>(<b>f</b>), <b>f</b>(<b>p</b>) = <b>p</b></dd><br /></dl><br />or, alternately:<br /><dl><br /><dd><b>f</b>(<b>g</b>(<b>f</b>)) = <b>g</b>(<b>f</b>).</dd><br /></dl><br />Shamelessly ripped from <a href="http://en.wikipedia.org/wiki/Fixed_point_combinator">Wikipedia</a><br /></blockquote><br /><br />One of the best papers I had read so far is the <a href="http://www.dreamsongs.com/NewFiles/WhyOfY.pdf">Why of Y(pdf)</a>. This derives the <a href="http://en.wikipedia.org/wiki/Fixed_point_combinator">Y combinator</a> and I thought it was beautiful derivation. However, the author uses terms like currying which is interpreted by my indian mind as a tasty gravy rather than a technique to break down a series of arguments to multiple function calls. But then I read Peter Krumin's <a href="http://www.catonmat.net/blog/derivation-of-ycombinator/">derivation of Y combinator</a>. This is just magical. He takes small baby steps with working scheme code and does not mix up terms used in indian recipes. This is by far the best derivation of Y-combinator I read in years.<br /><br /><a href="http://blogs.discovermagazine.com/loom/2008/02/17/y-combinator/" target="_blank"><br /><img src="http://blogs.discovermagazine.com/loom/files/2008/07/y-combinator.jpg" alt="Y combinator" title="Y combinator"/><br /></a><br /><br /><b>Disclaimer:</b> I haven't read <a href="http://mitpress.mit.edu/catalog/item/default.asp?ttype=2&tid=4825">The Little Schemer</a> yet. I am now looking for a good excuse to use scheme/clojure for my next project.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

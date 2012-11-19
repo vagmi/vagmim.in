@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: log | Vagmi's Blog]]></title>
+  <link href="http://vagmim.in/blog/categories/log/atom.xml" rel="self"/>
+  <link href="http://vagmim.in/"/>
+  <updated>2012-11-20T00:27:22+05:30</updated>
+  <id>http://vagmim.in/</id>
+  <author>
+    <name><![CDATA[Vagmi Mudumbai]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Logarithm to any base in ruby]]></title>
+    <link href="http://vagmim.in/blog/2010/01/25/logarithm-to-any-base-in-ruby/"/>
+    <updated>2010-01-25T00:00:00+05:30</updated>
+    <id>http://vagmim.in/blog/2010/01/25/logarithm-to-any-base-in-ruby</id>
+    <content type="html"><![CDATA[<div class='post'>
+Ruby's Math module includes functions for a natural log (log to the base e) and the common log (log to the base 10). If you have to have a log to an arbitrary base, you have to write your own. Doing so is trivial.<br /><br /><script src="http://gist.github.com/285744.js?file=log_base.rb"></script><br /><br />I will probably explain the theory behind this another day.</div>
+
+]]></content>
+  </entry>
+  
+</feed>
