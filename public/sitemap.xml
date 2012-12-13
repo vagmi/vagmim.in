@@ -10,7 +10,7 @@
     </url>
     <url>
         <loc>http://vagmim.in/blog/2004/08/27/self-registration-vs-registry-tables/</loc>
-        <lastmod>2012-11-19T17:00:30+05:30</lastmod>
+        <lastmod>2012-12-13T09:55:04+05:30</lastmod>
     </url>
     <url>
         <loc>http://vagmim.in/blog/2004/09/25/all-about-wix/</loc>
@@ -325,11 +325,15 @@
         <lastmod>2012-11-19T17:00:30+05:30</lastmod>
     </url>
     <url>
+        <loc>http://vagmim.in/blog/2012/12/10/getting-started-with-clojure/</loc>
+        <lastmod>2012-12-13T09:53:54+05:30</lastmod>
+    </url>
+    <url>
         <loc>http://vagmim.in/blog/archives/</loc>
-        <lastmod>2012-11-19T17:02:19+05:30</lastmod>
+        <lastmod>2012-12-13T09:55:04+05:30</lastmod>
     </url>
     <url>
         <loc>http://vagmim.in/</loc>
-        <lastmod>2012-11-19T17:02:19+05:30</lastmod>
+        <lastmod>2012-12-13T09:55:04+05:30</lastmod>
     </url>
 </urlset>

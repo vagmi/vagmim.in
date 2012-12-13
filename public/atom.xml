@@ -4,7 +4,7 @@
   <title><![CDATA[Vagmi's Blog]]></title>
   <link href="http://vagmim.in/atom.xml" rel="self"/>
   <link href="http://vagmim.in/"/>
-  <updated>2012-11-20T00:25:55+05:30</updated>
+  <updated>2012-12-13T09:55:47+05:30</updated>
   <id>http://vagmim.in/</id>
   <author>
     <name><![CDATA[Vagmi Mudumbai]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Getting started with clojure]]></title>
+    <link href="http://vagmim.in/blog/2012/12/10/getting-started-with-clojure/"/>
+    <updated>2012-12-10T17:18:00+05:30</updated>
+    <id>http://vagmim.in/blog/2012/12/10/getting-started-with-clojure</id>
+    <content type="html"><![CDATA[<p>I have been playing around with <a href="http://clojure.org/">clojure</a> for a bit now and I can postively say that I am absolutely floored. I have always favored dynamic and more expressive languages. I have a rather unfortunate situation of working with a Java codebase. I like the JVM and the <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/share/jvisualvm.html">tools</a> around it but not the language itself. I have always been fond of lisp. Ever since I read <a href="http://www.catb.org/esr/faqs/hacker-howto.html">&#8220;How to be a hacker&#8221;</a> by Eric Raymond, I wanted to learn both lisp and python. Picking up python was easy. It took my barely a week until I could write a web app in python. With Ruby and Rails the transition was even smoother. My forays into the Lisp world were not that fruitful. I learned both Common Lisp and PLT Scheme. I found that I liked Scheme better than CL. In fact the only lisp I found myself using regularly was elisp. For anything useful in the sense of hacking, I found I was using python a lot. Was lisp then merely an academic language? I had read John McCarthy&#8217;s <a href="http://www-formal.stanford.edu/jmc/recursive.pdf">initial paper</a> and was awed by its simplicity. In the meanwhile I had devoured books and articles on lisp its macros and was even able to appreciate the flamewars about <a href="http://www.cs.indiana.edu/~dyb/pubs/tr356.pdf">hygenic macros</a> and <a href="http://www.cs.oswego.edu/~blue/xex/black/courses/f06/ai1/ECOOP.pdf">CLOS</a>. However, I could not do serious stuff with lisp. I found lisp very had to smuggle in to enterprises. Python and Ruby were far easier to be sold.</p>
+
+<p>Then I met clojure. From its first sight, I knew it was beautiful. It implemented both the CLOS parts with defmulti and hygenic macros from the scheme land. It had nice set of special forms to provide just enough syntactic sugar to be expressive without breaking the language too much. But what is more fascinating about Clojure is that it gets concurrency right. It uses persistent and <a href="http://clojure.org/state">immutable data structures</a> that can be shared across callers. It provides a sane implementation of <a href="http://clojure.org/refs">STM</a> and ties it in beautifully concepts like futures and promises. Its Java interop makes interacting with Java libraries amazingly laconic with macros like the expression threading macro and the dot macros. Bottlenecks that you may have in your code due to the dynamic nature can be easily optimized away using type hinting. And in the Java land there is a library for literally everything. It may not have a nice DSL but thats where clojure comes in.</p>
+
+<p>Ousterhout had formulated a dichotomy between powerful statically typed languages or system programming languages and the expressive dynamically typed languages. With clojure that distinction does not exist or is very nearly invisible. Clojure almost always errs on the side of better performance. At this point, I happen to be working with quite a large dataset that needs to be kept in memory and uses complicated graph traversals using Neo4j. Clojure handles this without breaking a sweat. Similar code written in plain Java would be quite complicated and I was not able to get nearly enough performance with JRuby despite several tricks.</p>
+
+<p>In short, what is your excuse for not using clojure?</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[First Track Call Taxi - Epic Fail]]></title>
@@ -200,16 +215,6 @@ Apart from the conspiracy theory part in the end, this is by far the best explan
     <id>http://vagmim.in/blog/2009/01/07/india-say-hello-to-corporate-greed</id>
     <content type="html"><![CDATA[<div class='post'>
 I was browsing the net about the Satyam fiasco when I saw <a href="http://deadpresident.blogspot.com/2009/01/satyam-mail-to-employees.html">this</a>. What infuriated me were the comments on the blog. They are asking people to stick to the company. This is the time the talented people should extend their middle finger and say <span style="font-weight:bold;">FUCK YOU</span>  to the management. Make sure you enunciate that properly. It works best if told in groups. Tell it with enough intensity to make them die in shame.<br /><br />Stay with Satyam&#8230; Are you crazy?? Jump the ship now. Don&#8217;t commit a career suicide. If the <a href="http://en.wikipedia.org/wiki/Ramalinga_Raju">man</a> had an ounce of dignity he would not have jeopardized the life of so many people. Indians do not have social security. If a guy in India does not have a job, he is literally on the streets. <br /><br />Ramalinga Raju was sure as hell not maintaining family accounts. The CFO, other senior managment and the financial/controlling staff would have known this. I am sure <a href="http://www.pwc.com/">PWC</a> would have spotted this and would have been duly silenced. Corporate Greed has entered India. <br /><br />If you are a good programmer, you would not have joined Satyam in the first place. But if you are there, jump now. You may not get a raise, but what the hell. You can get out of the depressing situation and have a chance a save your soul.<br /><br />The following days to come in an organization like Satyam would be extremely depressing and would be enough to demotivate a motivated soul. It would be full of bureaucracy where mediocrity will reign supreme. Sounds like a fun place to work?? Hell no. If you you are a rockstar coder, this is your chance. <br /><br />Get out of the hell hole now.</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[An accidental trip to erode]]></title>
-    <link href="http://vagmim.in/blog/2008/12/24/accidental-trip-to-erode/"/>
-    <updated>2008-12-24T00:00:00+05:30</updated>
-    <id>http://vagmim.in/blog/2008/12/24/accidental-trip-to-erode</id>
-    <content type="html"><![CDATA[<div class='post'>
-I am blogging from <a href="http://www.hotellejardinindia.com/">Hotel Le Jardin</a>. This hotel is amazing and has free Wi-Fi. The breakfast was one of the best I had. How I got here is a topic of another blog post. It was a completely unplanned travel. More on this later. If you are anywhere around this area, Hotel Le Jardin is definitely the place to stay. <br /><br /><iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=erode,+india&amp;sll=37.0625,-95.677068&amp;sspn=33.572881,79.101563&amp;ie=UTF8&amp;ll=11.185222,77.657804&amp;spn=0.020281,0.038624&amp;z=14&amp;output=embed&amp;s=AARTsJoBWzSyCgVN_Ss2Qly0-GyJT6a3qw"></iframe><br /><small><a href="http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=erode,+india&amp;sll=37.0625,-95.677068&amp;sspn=33.572881,79.101563&amp;ie=UTF8&amp;ll=11.185222,77.657804&amp;spn=0.020281,0.038624&amp;z=14&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small><br /><br />Free WiFi Rocks. :-)</div>
 ]]></content>
   </entry>
   
