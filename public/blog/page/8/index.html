@@ -9,7 +9,7 @@
   <meta name="author" content="Vagmi Mudumbai">
 
   
-  <meta name="description" content="After my recent cribbing about my wish-list for WIX, it is only fair that I talk about the advantages of WIX over other tools like InstallShield. I &hellip;">
+  <meta name="description" content="">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,17 +18,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://vagmim.in/blog/page/8/">
+  <link rel="canonical" href="http://vagmim.in/blog/page/8">
   <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    body {
+      padding-bottom: 40px;
+    }
+    h1 {
+      margin-bottom: 15px;
+    }
+    img {
+      max-width: 100%;
+    }
+    .sharing, .meta, .pager {
+      margin: 20px 0px 20px 0px;
+    }
+    .page-footer p {
+      text-align: center;
+    }
+  </style>
+  <script src="/javascripts/libs/jquery.js"></script>
+  <script src="/javascripts/libs/modernizr-2.0.js"></script>
+  <script src="/javascripts/libs/bootstrap.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="Vagmi's Blog" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
+  
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -46,86 +63,51 @@
 </head>
 
 <body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Vagmi's Blog</a></h1>
-  
-    <h2>Rants and opinions about the world as I see it</h2>
-  
-</hgroup>
+  <nav role="navigation"><div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
 
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:vagmim.in" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
+      <a class="brand" href="/">Vagmi's Blog</a>
+
+      <div class="nav-collapse">
+        <ul class="nav">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2004/10/29/wix-features/">WIX Features</a></h1>
-    
-    
-      <p class="meta">
+
+        <ul class="nav pull-right" data-subscription="rss">
+          <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+          
+        </ul>
+
         
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2004-10-29T00:00:00+05:30" pubdate data-updated="true">Oct 29<span>th</span>, 2004</time>
+          <form class="pull-right navbar-search" action="http://google.com/search" method="get">
+            <fieldset role="search">
+              <input type="hidden" name="q" value="site:vagmim.in" />
+              <input class="search-query" type="text" name="q" results="0" placeholder="Search"/>
+            </fieldset>
+          </form>
         
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-After my recent cribbing about my wish-list for WIX, it is only fair that I talk about the advantages of <a href="http:\\wix.sourceforge.net">WIX</a> over other tools like InstallShield. I am primarily comparing it with InstallShield, as it is the only tool that I am aware of to an extent and is also the current market leader (in my opinion) in the installation tools market place.
-<br />
-<br /><b>1) XML Format:</b> <a href="http:\\wix.sourceforge.net">WIX</a> source files are in a programmer friendly format. You are allowed to comment the code at any place, that makes the installation project source files as readable as the application&#8217;s source files. Tools like <a href="http://www.installshield.com/products/x">InstallShield X</a> allow you to save your file in the XML format but editing the XML and adding comments to it is not really easy. Furthermore, the changes in the source code across versions can be easily tracked by diffing from the source control, which would be very inconvenient with binary files.
-<br />
-<br /><b>2) Distributed Development: </b>Each setup developer or even the application developer can edit a small fragment of the project to produce multiple WXS files which can be compiled independently and linked in the final process to produce MSI/MSM files. To my knowledge, this feature is currently available only with WIX. Of course, you could use other tools to create Merge Modules, but they would only add to the confusion with the modularization of the columns than to aid the process of distributed development. You can use <a href="http:\\wix.sourceforge.net">WIX</a> to maintain the readability of code. You could include comments within the code to actually point to the WXS file from which the element is referenced.
-<br />
-<br /><b>3) Clean Installation:</b> You do not have to go through a whole big deal of the installation process just to get the package authoring system available on the build and the design environments. The <a href="http:\\wix.sourceforge.net">WIX</a> package decompressed is only 3.56 MB including the documentation and comes completely with custom actions to work with IIS, SQL Server, hypercharged LockPermissions functionality and much more. There are no DLLs to be registered, no registry entries to be created. Just unzip it into a machine with .NET Framework 1.1 installed and <a href="http:\\wix.sourceforge.net">WIX</a> would run without any problems. You would need Platform SDK on the machine to work with merge modules. Or at least the mergemod.dll registered on the build machine.
-<br />
-<br /><b>4) Custom Action Library:</b> <a href="http:\\wix.sourceforge.net">WIX</a> comes with a custom action library to install/configure IIS websites and virtual directories. It is also present in InstallShield. <a href="http:\\wix.sourceforge.net">WIX</a> has support for SQL Server 2000 which is also present in <a href="http://www.installshield.com">InstallShield</a> X. So I guess that levels the playing field. What <a href="http:\\wix.sourceforge.net">WIX</a> currently does not have is the support for installing COM+ Applications. But people following the Wix-Users list would know that these are already been worked upon and there have been a couple of users who have implemented the code and are currently contributing it back to the community.</div>
+      </div>
+    </div>
+  </div>
 </div>
+</nav>
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span9">
   
-  
-
-
-    </article>
   
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2004/10/28/what-does-wix-need/">What Does WIX Need?</a></h1>
     
@@ -174,7 +156,7 @@ After a long time, I have got some time to get to my blog. After a long day of p
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2004/10/15/good-bye/">Good Bye!</a></h1>
     
@@ -211,7 +193,7 @@ Imagine a blog entry where I talk about my last day in my organization. Incident
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2004/10/08/rikos-blog-entry-on-resources-and-data/">Riko&#8217;s Blog Entry on Resources and Data</a></h1>
     
@@ -248,7 +230,7 @@ Imagine a blog entry where Riko speaks on the Resources, User Data and Applicati
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2004/10/07/handling-application-data/">Handling Application Data</a></h1>
     
@@ -300,7 +282,7 @@ Recently, I had initiated a thread in the WIX users list regarding the inclusion
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2004/10/04/designing-upgrades-part-i/">Designing Upgrades - Part I</a></h1>
     
@@ -365,7 +347,7 @@ The previous week had been really busy. With five new recruits on board, I was a
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2004/09/26/installing-windows-services-created/">Installing Windows Services (Created With .NET) With WIX</a></h1>
     
@@ -535,7 +517,7 @@ This is a pretty obscure topic and there is not enough literature on this. Insta
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2004/09/25/to-nest-or-to-chain-or-to-merge/">To Nest or to Chain or to Merge</a></h1>
     
@@ -580,7 +562,7 @@ This blog entry is for relatively novice setup developers and not for the die-ha
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2004/09/25/all-about-wix/">All About WIX</a></h1>
     
@@ -622,7 +604,7 @@ Of late, I was very busy amidst many meetings. My friends would know the reasons
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2004/08/27/self-registration-vs-registry-tables/">Self-Registration vs. Registry Tables Group</a></h1>
     
@@ -681,21 +663,152 @@ COM Servers are every Setup developer&#8217;s nightmare. One of my friends, a re
 
     </article>
   
-  <div class="pagination">
-    
-      <a class="prev" href="/blog/page/9/">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-    <a class="next" href="/blog/page/7/">Newer &rarr;</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
   
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2004/08/21/reading-windows-installer-logs/">Reading Windows Installer Logs</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2004-08-21T00:00:00+05:30" pubdate data-updated="true">Aug 21<span>st</span>, 2004</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+As we all know Windows Installer is a complicated and a elegant technology. Its beastly complexities are beautifully abstracted by the authoring packages like InstallShield X, DevStudio and Developer. But we live in a less than perfect world and Murphy’s Law still holds good for the Windows Installer world too. There might be several reasons why an Installation might fail. Some errors might be meaningful while others might just spit out a cryptic error message with an error number during installation. The only way to make sense of these would be to look at the log files generated during installation. You can generate a log file for the installation using the following command line.
+<br />
+<br />msiexec /i productname.msi /l*v package.log
+<br />
+<br />This command generates a verbose log file logging all errors, warnings and debug messages and produces a huge log file in the text format. The first look at the log file might be slightly intimidating. This article tries to break the ice with the basics of reading the log file to troubleshoot problems with installation. Discussing all the error messages and its aspects is out of scope of this article. If you have specific questions, feel free to drop me a word. (at installneo@yahoo.com)
+<br />
+<br /><strong>The Bottom Up Approach:</strong>
+<br />
+<br />Whenever I read a log file, I start reading it from the bottom of the file. You might dismiss this technique as one of my eccentricities but I believe that this is the quickest, if not the most efficient, way of reading a log file in case of errors like 1603 or 1721. As a convention, the letter &#8216;C&#8217; within brackets denotes the client context and the letter &#8216;S&#8217; denotes the server context. So all messages in the log, which start as below, are messages in the client&#8217;s context.
+<br />
+<br />MSI (c) (A0:4C): Doing action: INSTALL
+<br />Action start 0:12:20: INSTALL.
+<br />MSI (c) (A0:4C): UI Sequence table &#8216;InstallUISequence&#8217; is present and populated.
+<br />MSI (c) (A0:4C): Running UISequence
+<br />
+<br />All messages in the log which start as below are messages from the MSI running in the server&#8217;s context.
+<br />
+<br />MSI (s) (1C:7C): Doing action: INSTALL
+<br />Action start 0:12:54: INSTALL.
+<br />MSI (s) (1C:7C): Running ExecuteSequence
+<br />
+<br />Let us first analyze a successful log file and get ready to compare the anomalies with a not so perfect log file. I have used a simple Basic MSI project created with InstallShield X that just installs notepad.exe and I have disabled Update Ser. What we should be looking at is actions that do not have a return code of 1. You would find lines similar to the ones below just above the Server context property dump.
+<br />
+<br />MSI (c) (04:B0): Doing action: SetupCompleteSuccess
+<br />Action start 18:03:47: SetupCompleteSuccess.
+<br />Action 18:03:47: SetupCompleteSuccess. Dialog created
+<br /><em>Action ended 18:03:48: SetupCompleteSuccess. Return value 2.</em>
+<br />Action ended 18:03:48: INSTALL. Return value 1.
+<br />
+<br />
+<br />Hmm&#8230; What does this mean? The &#8221;<em>Action ended 18:03:48: SetupCompleteSuccess. Return value 2.</em>&#8221; message indicates that user cancelled the action or the operation was aborted due to a user instruction. But god knows that I did not instruct it stop. There must be something else that is wrong. The most obvious place to look for it would be the &#8220;Finish&#8221; button in the SetupCompleteSuccess dialog. You would find a line like the one below once you click on the Behavior tab of the dialog and select the OK control. If you insist on doing it via Orca, you can look at the ControlEvent table for the OK control in the SetupCompleteSuccess dialog.
+<br />
+<br />EndDialog - Exit - 1
+<br />
+<br />BINGO! We have found the culprit. The argument for the control event must be &#8216;Return&#8217; instead of &#8216;Exit&#8217;. Refer Windows Installer SDK help library article titled &#8220;EndDialog ControlEvent&#8221; for more information. Rebuild the project after changing it to &#8216;Return&#8217; and you would find that none of the actions have return values other than &#8216;1&#8217;.
+<br />
+<br />We have thus finally solved a trivial problem with the help of the log file, which would have gone unnoticed otherwise. Ah! Sweet Perfection.
+<br />
+<br />:-)
+<br />
+<br /><strong>Deferred Custom Actions:
+<br /></strong>
+<br />One of the common places where users get confused is with deferred custom actions. <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/deferred_execution_custom_actions.asp">Deferred Execution Custom Actions</a> are not executed the first time the installer processes the custom actions in the Execute Sequence table. They are instead written to the MSI script. All these actions are executed within the InstallFinalize action.  In these cases, you would have to look at the return value of the InstallFinalize action. A few lines above the line that indicates the return value of InstallFinalize would hint the action that failed. Let us verify this with a simple VBScript Custom Action that does nothing else but cause the install to fail &lt;/wink&gt;. This is the code for the VBScript.
+<br />
+<br />function MyFunction
+<br />MyFunction=1603
+<br />end function
+<br />
+<br />I then create a Type 1030 custom action (VBScript Stored in Binary Table + Deferred Execution). This custom action is scheduled after InstallFiles action in the Install Execute Sequence. Run and log the installation. The installation proceeds and comes up with a dialog, which states that the Installation operation has failed. Let us look into the log for more information.
+<br />
+<br />The final few lines in the log file complain that installation failed. But it still does  have not enough information to identify an error.
+<br />
+<br />MSI (c) (34:30): Product: SimpleInstaller &#8211; Installation operation failed.
+<br />
+<br />MSI (c) (34:30): Grabbed execution mutex.
+<br />MSI (c) (34:30): Cleaning up uninstalled install packages, if any exist
+<br />MSI (c) (34:30): MainEngineThread is returning 1603
+<br />
+<br />Above the client contexts&#8217; property dump, the following lines of code indicate that INSTALL (Top level action) returns a value of 3 and the main thread is returning 1603. The SetupCompleteError is the same as we discussed earlier. This does not give much information either.
+<br />
+<br />MSI (s) (DC:D8): MainEngineThread is returning 1603
+<br />MSI (c) (34:30): Back from server. Return value: 1603
+<br />MSI (c) (34:30): Decrementing counter to disable shutdown. If counter >= 0, shutdown will be denied.  Counter after decrement: -1
+<br />Action ended 19:24:28: ExecuteAction. Return value 3.
+<br />MSI (c) (34:30): Doing action: SetupCompleteError
+<br />Action start 19:24:28: SetupCompleteError.
+<br />Action 19:24:29: SetupCompleteError. Dialog created
+<br />Action ended 19:24:30: SetupCompleteError. Return value 2.
+<br />Action ended 19:24:30: INSTALL. Return value 3.
+<br />
+<br />Assuming that you have opened the log in notepad, search quickly for the word &#8216;InstallFinalize&#8217; and specify the direction of search as up. You will now be able to see the following lines. 
+<br />
+<br /><strong>&#8230;</strong>
+<br /><strong>Our custom action is being called</strong>
+<br />MSI (s) (DC:D8): Executing op: ActionStart(Name=NewCustomAction1,,)
+<br />Action 19:24:28: NewCustomAction1. 
+<br />MSI (s) (DC:D8): Executing op: CustomActionSchedule(Action=NewCustomAction1,ActionType=1030,Source=function MyFunction
+<br />MyFunction=1603
+<br />end function,Target=MyFunction,)
+<br />MSI (s) (DC:D8): Creating MSIHANDLE (3) of type 790536 for thread 2008
+<br />MSI (s) (DC:D8): Creating MSIHANDLE (4) of type 0 for thread 2008
+<br />MSI (s) (DC:D8): Closing MSIHANDLE (4) of type 0 for thread 2008
+<br />MSI (s) (DC:D8): Closing MSIHANDLE (3) of type 790536 for thread 2008
+<br /><strong>Our custom action fails causing the InstallFinalize action to fail</strong>
+<br /><em>Action ended 19:24:28: InstallFinalize. Return value 3.</em>
+<br /><strong>Initiate Rollback</strong>
+<br />MSI (s) (DC:D8): User policy value &#8216;DisableRollback&#8217; is 0
+<br />MSI (s) (DC:D8): Machine policy value &#8216;DisableRollback&#8217; is 0
+<br />MSI (s) (DC:D8): Executing op: Header
+<br /><strong>&#8230;</strong>
+<br /><strong>Rolls back changes</strong>
+<br />
+<br />As you would have aptly guessed, the lines in bold are my comments. So you can nail most of troublesome deferred custom action using this technique.
+<br />
+<br />I am really sleepy and have got some real work to do. I am sure I would touch on the log files again covering more aspects. Love it or Hate it, feel free to post your comments.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  <ul class="pager">
+    
+    <li class="previous"><a href="/blog/page/9/">&larr; Older</a></li>
+    
+    <li><a href="/blog/archives">Blog Archives</a></li>
+    
+    <li class="next"><a href="/blog/page/7/">Newer &rarr;</a></li>
+    
+  </ul>
+</div>
+<aside class="sidebar-nav span3">
+  
+    <section class="well">
+  <ul id="recent_posts" class="nav nav-list">
+    <li class="nav-header">Recent Posts</li>
     
       <li class="post">
         <a href="/blog/2012/12/10/getting-started-with-clojure/">Getting started with clojure</a>
@@ -710,34 +823,26 @@ COM Servers are every Setup developer&#8217;s nightmare. One of my friends, a re
       </li>
     
       <li class="post">
-        <a href="/blog/2010/05/25/my-hacking-playlist/">My hacking playlist</a>
+        <a href="/blog/2010/02/19/magic-of-y/">The magic of Y</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2010/02/19/magic-of-y/">The magic of Y</a>
+        <a href="/blog/2010/02/12/statistics-is-important/">Statistics is important</a>
       </li>
     
   </ul>
 </section>
 
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
+<section class="well">
+  <ul id="gh_repos" class="nav">
+    <li class="nav-header">GitHub Repos</li>
     <li class="loading">Status updating&#8230;</li>
   </ul>
   
   <a href="https://github.com/vagmi">@vagmi</a> on GitHub
   
   <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
+    $(document).ready(function(){
         github.showRepos({
             user: 'vagmi',
             count: 5,
@@ -746,21 +851,21 @@ COM Servers are every Setup developer&#8217;s nightmare. One of my friends, a re
         });
     });
   </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
+  <script src="/javascripts/asides/github.js" type="text/javascript"> </script>
 </section>
 
 
-<section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
+<section class="well">
+  <ul id="tweets" class="nav">
+    <li class="nav-header">Latest Tweets</li>
     <li class="loading">Status updating&#8230;</li>
   </ul>
   <script type="text/javascript">
-    $.domReady(function(){
+    $(document).ready(function(){
       getTwitterFeed("vagmi", 4, false);
     });
   </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  <script src="/javascripts/asides/twitter.js" type="text/javascript"> </script>
   
     <a href="http://twitter.com/vagmi" class="twitter-follow-button" data-show-count="false">Follow @vagmi</a>
   
@@ -775,7 +880,8 @@ COM Servers are every Setup developer&#8217;s nightmare. One of my friends, a re
 
     </div>
   </div>
-  <footer role="contentinfo"><p>
+  <footer role="contentinfo" class="page-footer"><hr>
+<p>
   Copyright &copy; 2012 - Vagmi Mudumbai -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>

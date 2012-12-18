@@ -9,7 +9,7 @@
   <meta name="author" content="Vagmi Mudumbai">
 
   
-  <meta name="description" content="One of my co-workers asked me today that he would like to build a website. A freewheeling discussion started from Google Calendar, software as a &hellip;">
+  <meta name="description" content="">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,17 +18,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://vagmim.in/blog/page/6/">
+  <link rel="canonical" href="http://vagmim.in/blog/page/6">
   <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    body {
+      padding-bottom: 40px;
+    }
+    h1 {
+      margin-bottom: 15px;
+    }
+    img {
+      max-width: 100%;
+    }
+    .sharing, .meta, .pager {
+      margin: 20px 0px 20px 0px;
+    }
+    .page-footer p {
+      text-align: center;
+    }
+  </style>
+  <script src="/javascripts/libs/jquery.js"></script>
+  <script src="/javascripts/libs/modernizr-2.0.js"></script>
+  <script src="/javascripts/libs/bootstrap.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="Vagmi's Blog" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
+  
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -46,78 +63,51 @@
 </head>
 
 <body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Vagmi's Blog</a></h1>
-  
-    <h2>Rants and opinions about the world as I see it</h2>
-  
-</hgroup>
+  <nav role="navigation"><div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
 
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:vagmim.in" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
+      <a class="brand" href="/">Vagmi's Blog</a>
+
+      <div class="nav-collapse">
+        <ul class="nav">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/08/29/building-websites/">Building Websites</a></h1>
-    
-    
-      <p class="meta">
+
+        <ul class="nav pull-right" data-subscription="rss">
+          <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+          
+        </ul>
+
         
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-08-29T00:00:00+05:30" pubdate data-updated="true">Aug 29<span>th</span>, 2007</time>
+          <form class="pull-right navbar-search" action="http://google.com/search" method="get">
+            <fieldset role="search">
+              <input type="hidden" name="q" value="site:vagmim.in" />
+              <input class="search-query" type="text" name="q" results="0" placeholder="Search"/>
+            </fieldset>
+          </form>
         
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<div class="document"><br /><p>One of my co-workers asked me today that he would like to build a website. A freewheeling discussion started from <a class="reference" href="http://calendar.google.com">Google Calendar</a>, software as a service, dynamic languages, web frameworks, open source and so on. But finally he asked me to send some material on building a dynamic website which is also cost effective. I hunted on Google and could not find a single resource that kind of captured the essence of our discussion and that results in this blog entry.</p><br /><p>His idea was that he had a dance studio that wanted to get on the web. Basic stuff like events management, feedback, news and so on. A bit of e-commerce involving selling some salsa dance related goodies like dancing shoes and so on. So there it goes.</p><br /><div><br /><h2><a id="domain-registration-and-basic-hosting" name="domain-registration-and-basic-hosting">Domain Registration and Basic Hosting</a></h2><br /><p>If your site is a bunch of blog posts and set of static content, then you can get away with paying only for the domain. It would cost you about $10/year. Choose your domain registrar carefully and make sure that the registrar supports a good control panel to change your DNS entries as you wish. Some domain registrars require you to send a mail to them to change your CNAME records. And frankly, that sucks. <a class="reference" href="http://www.nearlyfreespeech.net">NearlyFreeSpeech.Net</a> supports a nice and elegant control panel to manage your domain entries.</p><br /><p>Most blogging sites like <a class="reference" href="http://www.blogger.com">Blogger</a> allow you to host a blog on your own domain. One other thing that you have to do is to get <a class="reference" href="http://www.google.com/a">Google Apps for your domain</a>. That makes setting up email and calendar on custom domains really easy. Google Apps for your domain comes with Google Pages which are static HTML pages. Their page construction tools are not very helpful but some space is better than no space at all.</p><br /></div><br /><div class="section"><br /><h2><a id="cranking-out-your-web-app" name="cranking-out-your-web-app">Cranking out your Web App</a></h2><br /><p>The next thing to do would be to crank out your web application. There are several choices you have. In fact, down right daunting. Since my good friend is a enterprisey kind of guy, let me place this advice right at the beginning.</p><br /><p>Don&#8217;t even try building a serious website with ASP.NET or J2EE. It would take forever and you are tying yourself down to a track facing an oncoming train. Chances of your survival are nearly zero. One of the hassle free solutions which would quickly get messy is to use some Content Management System like PHP Nuke or Post Nuke. This would help you get started very quickly but you cannot do much one you get started.</p><br /><p>Alternatively you can crank your own PHP app with the <a class="reference" href="http://www.railsenvy.com/2007/8/24/rails-vs-php">Ruby on Rails wanna be</a> frameworks like <a class="reference" href="http://www.cakephp.org">Cake</a> or <a class="reference" href="http://www.symfony-project.com">Symfony</a>. I only suggest this because PHP hosting is well supported and easy to setup with a shared hosting partner. <a class="reference" href="http://www.nearlyfreespeech.net">NSFN</a> has some pretty cool plans. Check them out.</p><br /><p>Alternatively, if you are ready to do some hard work, you can create a <a class="reference" href="http://www.rubyonrails.com">Ruby on Rails</a> or a <a class="reference" href="http://www.djangoproject.com">Django</a> based web application. Both these frameworks are pretty good. I am not attempting to start a Ruby or Python war here. I have not hosted Ruby on Rails applications. But the word on the street is that Ruby on Rails deployment is a little more difficult than Python with mod_python. There are camps on either side throwing spit balls at each other. But I would like to refrain from commenting either ways. Look at it this way. Frameworks like RoR, Django, TurboGears (or is it Pylons??) help you achieve tremendous productivity. You will just have to swallow the pill and deal with deployment. Even though I love python and Django, I would have to commend the Ruby on Rails community for keeping change management in mind while designing the framework. You have stuff like Migrations and Capastrino to save several hours of upgrade headaches. I give two thumbs up for Ruby on Rails. :-)</p><br /><p>If you are impressed by Django&#8217;s admin interface capabilities. I would strongly suggest you to look at <a class="reference" href="http://www.streamlinedframework.org/">Streamlined</a>. The amount of code you write to create a fully functional application would be considerably reduced by using these tools with prudence.</p><br /><p>For static content, you must seriously consider <a class="reference" href="http://aws.amazon.com/s3">Amazon&#8217;s Simple Storage Service</a>. It lets you park your static content for a very low fee. You would save tonnes of hassles if your hosting provider pulls you down for exceeding your bandwidth capacity.</p><br /><p>If your target audience is small, I reckon that you might get away with paying about $10-$15 monthly and about $7-$10 yearly for the domain registration.</p><br /><div class="section"><br /><h2><a id="suggestions-for-the-dance-school" name="suggestions-for-the-dance-school">Suggestions for the Dance School</a></h2><br /><p>Now that I have scared you with the options and have left you dazed and confused, let me tell you how I would go about getting the dance studio on the web.</p><br /><ul class="simple"><br /><li>Calendar - Google Calendar (no doubts about it). It has simple and clear <a class="reference" href="http://code.google.com/apis/">API</a> to integrate it with your application.</li><br /><li>Feedback - If the feedback is on particular articles, then you can simply use feedback articles on your blog. Google Calendar also supports comments.</li><br /><li>Static Content - Use google pages or Nearly FreeSpeech.NET&#8217;s hosting. Its pretty cheap and is pay as you use.</li><br /><li>ECommerce - Now you are talking web-apps. I would strongly recommend Ruby on Rails. Throw the hosting question to the community. You will get tonnes of replies. Evaluate them and choose the best. Make sure that you ask the hosting provider about a reference customer so that you could validate your evaluations.</li><br /></ul><br /><p>All the best to you all.</p><br /></div><br /></div><br /></div></div>
+      </div>
+    </div>
+  </div>
 </div>
+</nav>
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span9">
   
-  
-
-
-    </article>
   
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2007/06/22/getting-f-by-oo-write/">Getting F&#ked by OO Write</a></h1>
     
@@ -154,7 +144,7 @@ Excuse my french. I am really irritated with Open Office and at the point of bas
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2007/06/06/google-gears-woohoo/">Google Gears - Woohoo!</a></h1>
     
@@ -191,7 +181,7 @@ If you have not heard about <a href="http://gears.google.com/">Google Gears</a> 
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2007/02/27/not-so-angry-response-to-eight-years_27/">Not So Angry Response to Eight Years Later&#8230; And Linux Still Sucks</a></h1>
     
@@ -228,7 +218,7 @@ I read <a href="http://www.tipsoftheweekonline.com/linuxsucks.html">this</a> (ht
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2007/02/27/is-piracy-good-for-microsoft/">Is Piracy Good for Microsoft?</a></h1>
     
@@ -265,7 +255,7 @@ I read <a href="http://www.tipsoftheweekonline.com/linuxsucks.html">this</a> (ht
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2007/01/28/single-no-more/">Single No More</a></h1>
     
@@ -302,7 +292,7 @@ There have been a lot of changes with my life lately. The most prominent one of 
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2007/01/18/6006l3-4-h4x0r/">6006l3 4 H4x0r</a></h1>
     
@@ -339,7 +329,7 @@ I just came across <a href="http://www.google.com/intl/xx-hacker/">this</a>.  <a
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2007/01/14/observer-pattern-using-ruby-meta-voodoo/">The Observer Pattern Using Ruby Meta- Voodoo</a></h1>
     
@@ -376,7 +366,7 @@ The <a href="http://www.ruby-doc.org/stdlib/">ruby standard library</a> already 
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2007/01/08/moving-back-to-blogger/">Moving Back to Blogger</a></h1>
     
@@ -413,7 +403,7 @@ I have moved back to blogger from my <a href="http://www.geekswithblogs.net/vagm
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2006/11/23/rolling-with-rubyclr/">Rolling With RubyCLR</a></h1>
     
@@ -447,21 +437,58 @@ I downloaded <a href="http://www.rubyclr.com/" title="RubyCLR">RubyCLR</a> today
 
     </article>
   
-  <div class="pagination">
-    
-      <a class="prev" href="/blog/page/7/">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-    <a class="next" href="/blog/page/5/">Newer &rarr;</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
   
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2006/11/21/madai-thiranthu-really-cool-tamil-hip/">Madai Thiranthu - a Really Cool Tamil Hip Hop Remix</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-21T00:00:00+05:30" pubdate data-updated="true">Nov 21<span>st</span>, 2006</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<p>While I was browsing the net, I came across this amazing remix. As Yuvan is  busy butchering his father&#8217;s masterpieces in the name of remixes, this group of  Malaysian hip hop artists have produced another masterpiece remixing the older  master piece by Ilayaraja.  </p><p> </p> <p><a href="http://www.youtube.com/watch?v=uQSDr4609BU">http://www.youtube.com/watch?v=uQSDr4609BU</a></p><p><br /></p><br /><br /><object height="350" width="425"><param name="movie" value="http://www.youtube.com/v/uQSDr4609BU"><param name="wmode" value="transparent"><embed src="http://www.youtube.com/v/uQSDr4609BU" type="application/x-shockwave-flash" wmode="transparent" height="350" width="425"></object></div>
+</div>
+  
+  
+
+
+    </article>
+  
+  <ul class="pager">
+    
+    <li class="previous"><a href="/blog/page/7/">&larr; Older</a></li>
+    
+    <li><a href="/blog/archives">Blog Archives</a></li>
+    
+    <li class="next"><a href="/blog/page/5/">Newer &rarr;</a></li>
+    
+  </ul>
+</div>
+<aside class="sidebar-nav span3">
+  
+    <section class="well">
+  <ul id="recent_posts" class="nav nav-list">
+    <li class="nav-header">Recent Posts</li>
     
       <li class="post">
         <a href="/blog/2012/12/10/getting-started-with-clojure/">Getting started with clojure</a>
@@ -476,34 +503,26 @@ I downloaded <a href="http://www.rubyclr.com/" title="RubyCLR">RubyCLR</a> today
       </li>
     
       <li class="post">
-        <a href="/blog/2010/05/25/my-hacking-playlist/">My hacking playlist</a>
+        <a href="/blog/2010/02/19/magic-of-y/">The magic of Y</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2010/02/19/magic-of-y/">The magic of Y</a>
+        <a href="/blog/2010/02/12/statistics-is-important/">Statistics is important</a>
       </li>
     
   </ul>
 </section>
 
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
+<section class="well">
+  <ul id="gh_repos" class="nav">
+    <li class="nav-header">GitHub Repos</li>
     <li class="loading">Status updating&#8230;</li>
   </ul>
   
   <a href="https://github.com/vagmi">@vagmi</a> on GitHub
   
   <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
+    $(document).ready(function(){
         github.showRepos({
             user: 'vagmi',
             count: 5,
@@ -512,21 +531,21 @@ I downloaded <a href="http://www.rubyclr.com/" title="RubyCLR">RubyCLR</a> today
         });
     });
   </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
+  <script src="/javascripts/asides/github.js" type="text/javascript"> </script>
 </section>
 
 
-<section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
+<section class="well">
+  <ul id="tweets" class="nav">
+    <li class="nav-header">Latest Tweets</li>
     <li class="loading">Status updating&#8230;</li>
   </ul>
   <script type="text/javascript">
-    $.domReady(function(){
+    $(document).ready(function(){
       getTwitterFeed("vagmi", 4, false);
     });
   </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  <script src="/javascripts/asides/twitter.js" type="text/javascript"> </script>
   
     <a href="http://twitter.com/vagmi" class="twitter-follow-button" data-show-count="false">Follow @vagmi</a>
   
@@ -541,7 +560,8 @@ I downloaded <a href="http://www.rubyclr.com/" title="RubyCLR">RubyCLR</a> today
 
     </div>
   </div>
-  <footer role="contentinfo"><p>
+  <footer role="contentinfo" class="page-footer"><hr>
+<p>
   Copyright &copy; 2012 - Vagmi Mudumbai -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>

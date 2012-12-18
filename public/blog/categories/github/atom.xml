@@ -4,7 +4,7 @@
   <title><![CDATA[Category: github | Vagmi's Blog]]></title>
   <link href="http://vagmim.in/blog/categories/github/atom.xml" rel="self"/>
   <link href="http://vagmim.in/"/>
-  <updated>2012-12-13T09:56:31+05:30</updated>
+  <updated>2012-12-18T23:35:33+05:30</updated>
   <id>http://vagmim.in/</id>
   <author>
     <name><![CDATA[Vagmi Mudumbai]]></name>
@@ -19,7 +19,7 @@
     <updated>2009-04-22T00:00:00+05:30</updated>
     <id>http://vagmim.in/blog/2009/04/22/liquid-and-sinatra</id>
     <content type="html"><![CDATA[<div class='post'>
-<a href="http://www.liquidmarkup.org/">Liquid</a> is a templating language used when you need safety for your templates. I was planning to build a CMS and Liquid fit the needs of a templating library really well. I also like <a href="http://www.sinatrarb.com">Sinatra</a> for its simplicity. Unfortunately, Sinatra did not have support for liquid yet so I went ahead and built one. You can get that from my <a href="http://github.com/vagmi/sinatra/tree/liquid">liquid topic branch</a> on github.<br /><br />There are few significant changes that you need to care about when using liquid instead of ERB or HAML. <br /><br /><ul><br /><li>None of the local members or class members declared will be available in your template</li><br /><li>The locals hash is respected even for the layout.</li><br /><li>You have to use {{ content }} in your layouts, instead of yielding.</li><br /></ul><br /><br />And finally a "hello world" sinatra app with liquid.<br /><br /><script src="http://gist.github.com/99714.js"></script><br /><br />Do let me know if you like it.</div>
+<a href="http://www.liquidmarkup.org/">Liquid</a> is a templating language used when you need safety for your templates. I was planning to build a CMS and Liquid fit the needs of a templating library really well. I also like <a href="http://www.sinatrarb.com">Sinatra</a> for its simplicity. Unfortunately, Sinatra did not have support for liquid yet so I went ahead and built one. You can get that from my <a href="http://github.com/vagmi/sinatra/tree/liquid">liquid topic branch</a> on github.<br /><br />There are few significant changes that you need to care about when using liquid instead of ERB or HAML. <br /><br /><ul><br /><li>None of the local members or class members declared will be available in your template</li><br /><li>The locals hash is respected even for the layout.</li><br /><li>You have to use  in your layouts, instead of yielding.</li><br /></ul><br /><br />And finally a "hello world" sinatra app with liquid.<br /><br /><script src="http://gist.github.com/99714.js"></script><br /><br />Do let me know if you like it.</div>
 
 ]]></content>
   </entry>

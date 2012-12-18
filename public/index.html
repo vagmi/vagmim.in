@@ -9,7 +9,7 @@
   <meta name="author" content="Vagmi Mudumbai">
 
   
-  <meta name="description" content="I have been playing around with clojure for a bit now and I can postively say that I am absolutely floored. I have always favored dynamic and more &hellip;">
+  <meta name="description" content="">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,17 +18,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://vagmim.in/">
+  <link rel="canonical" href="http://vagmim.in">
   <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    body {
+      padding-bottom: 40px;
+    }
+    h1 {
+      margin-bottom: 15px;
+    }
+    img {
+      max-width: 100%;
+    }
+    .sharing, .meta, .pager {
+      margin: 20px 0px 20px 0px;
+    }
+    .page-footer p {
+      text-align: center;
+    }
+  </style>
+  <script src="/javascripts/libs/jquery.js"></script>
+  <script src="/javascripts/libs/modernizr-2.0.js"></script>
+  <script src="/javascripts/libs/bootstrap.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="Vagmi's Blog" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
+  
   
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -46,41 +63,51 @@
 </head>
 
 <body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Vagmi's Blog</a></h1>
-  
-    <h2>Rants and opinions about the world as I see it</h2>
-  
-</hgroup>
+  <nav role="navigation"><div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
 
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:vagmim.in" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
+      <a class="brand" href="/">Vagmi's Blog</a>
+
+      <div class="nav-collapse">
+        <ul class="nav">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
+
+        <ul class="nav pull-right" data-subscription="rss">
+          <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+          
+        </ul>
+
+        
+          <form class="pull-right navbar-search" action="http://google.com/search" method="get">
+            <fieldset role="search">
+              <input type="hidden" name="q" value="site:vagmim.in" />
+              <input class="search-query" type="text" name="q" results="0" placeholder="Search"/>
+            </fieldset>
+          </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
 </nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span9">
   
   
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2012/12/10/getting-started-with-clojure/">Getting Started With Clojure</a></h1>
     
@@ -122,7 +149,7 @@
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2010/08/31/first-track-call-taxi-epic-fail/">First Track Call Taxi - Epic Fail</a></h1>
     
@@ -159,7 +186,7 @@ I have got royally screwed by the First Track Call Taxi company. I cannot imagin
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2010/07/27/yes-men-fix-world/">Yes Men Fix the World</a></h1>
     
@@ -196,44 +223,7 @@ This is by far the best movie/documentary I&#8217;ve ever seen. Yes Men deserves
   
     <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/05/25/my-hacking-playlist/">My Hacking Playlist</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-05-25T00:00:00+05:30" pubdate data-updated="true">May 25<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-This is my hacking playlist. My brain has registered these songs really well. For some reason, these help me get in the zone.<br /><br /><object width="250" height="400"> <param name="movie" value="http://listen.grooveshark.com/widget.swf" /> <param name="wmode" value="window" /> <param name="allowScriptAccess" value="always" /> <param name="flashvars" value="hostname=cowbell.grooveshark.com&widgetID=21295120&style=metal&bbg=FFFFFF&bfg=D6D6D6&bt=7A7A7A&bth=FFFFFF&pbg=7A7A7A&pbgh=D6D6D6&pfg=FFFFFF&pfgh=7A7A7A&si=7A7A7A&lbg=7A7A7A&lbgh=D6D6D6&lfg=FFFFFF&lfgh=7A7A7A&sb=7A7A7A&sbh=D6D6D6&p=0" /> <embed src="http://listen.grooveshark.com/widget.swf" type="application/x-shockwave-flash" width="250" height="400" flashvars="hostname=cowbell.grooveshark.com&widgetID=21295120&style=metal&bbg=FFFFFF&bfg=D6D6D6&bt=7A7A7A&bth=FFFFFF&pbg=7A7A7A&pbgh=D6D6D6&pfg=FFFFFF&pfgh=7A7A7A&si=7A7A7A&lbg=7A7A7A&lbgh=D6D6D6&lfg=FFFFFF&lfgh=7A7A7A&sb=7A7A7A&sbh=D6D6D6&p=0" allowScriptAccess="always" wmode="window" ></embed></object><br /><br />Happy hacking.</div>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2010/02/19/magic-of-y/">The Magic of Y</a></h1>
     
@@ -270,7 +260,7 @@ I have always been a fan of lisp. I spent my fair deal of time with emacs and em
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2010/02/12/statistics-is-important/">Statistics Is Important</a></h1>
     
@@ -307,7 +297,7 @@ This is important.<br /><br /><a href="http://www.google.co.in/search?q=populati
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2010/01/25/logarithm-to-any-base-in-ruby/">Logarithm to Any Base in Ruby</a></h1>
     
@@ -344,7 +334,7 @@ Ruby&#8217;s Math module includes functions for a natural log (log to the base e
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2009/12/23/markov-chains/">Markov Chains</a></h1>
     
@@ -381,7 +371,7 @@ You know developers have an itch to implement something cool that they learned a
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2009/12/08/problem-with-certifications/">The Problem With Certifications</a></h1>
     
@@ -418,7 +408,7 @@ There was a <a href="http://article.gmane.org/gmane.org.user-groups.linux.ilugc/
   
     <article>
       
-  <header>
+  <header class="page-header">
     
       <h1 class="entry-title"><a href="/blog/2009/11/26/ie-is-being-mean-to-me-again/">IE Is Being Mean to Me Again</a></h1>
     
@@ -452,19 +442,56 @@ Exactly my sentiments.<br /><br /><object width="560" height="340"><param name="
 
     </article>
   
-  <div class="pagination">
-    
-      <a class="prev" href="/blog/page/2/">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
   
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2009/11/11/artha42-is-hiring/">Artha42 Is Hiring</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-11T00:00:00+05:30" pubdate data-updated="true">Nov 11<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<a href="http://www.artha42.com">Artha42</a> is hiring. I have been conducting a lot of interviews lately and am completely dissappointed at the state of freshers coming out of engineering colleges. They spend 4 years supposedly studying IT and Computer Science and cannot answer a simple question like <a href="http://www.codinghorror.com/blog/archives/000781.html">fizzbuzz</a>. Come on. I completely agree with <a href="http://krishashok.wordpress.com/">krishashok</a> on this one. Chennai does have concentration camps and they are the bane for a creative society.<br /><br /><object width="560" height="340"><param name="movie" value="http://www.youtube.com/v/jpDQ66r1f9M&hl=en&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/jpDQ66r1f9M&hl=en&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="340"></embed></object><br /><br />If there are guys wanting to work in a fun, passionate and challenging environment, please send your profile to careers <at> artha42.com.</div>
+</div>
+  
+  
+
+
+    </article>
+  
+  <ul class="pager">
+    
+    <li class="previous"><a href="/blog/page/2/">&larr; Older</a></li>
+    
+    <li><a href="/blog/archives">Blog Archives</a></li>
+    
+  </ul>
+</div>
+<aside class="sidebar-nav span3">
+  
+    <section class="well">
+  <ul id="recent_posts" class="nav nav-list">
+    <li class="nav-header">Recent Posts</li>
     
       <li class="post">
         <a href="/blog/2012/12/10/getting-started-with-clojure/">Getting started with clojure</a>
@@ -479,34 +506,26 @@ Exactly my sentiments.<br /><br /><object width="560" height="340"><param name="
       </li>
     
       <li class="post">
-        <a href="/blog/2010/05/25/my-hacking-playlist/">My hacking playlist</a>
+        <a href="/blog/2010/02/19/magic-of-y/">The magic of Y</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2010/02/19/magic-of-y/">The magic of Y</a>
+        <a href="/blog/2010/02/12/statistics-is-important/">Statistics is important</a>
       </li>
     
   </ul>
 </section>
 
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
+<section class="well">
+  <ul id="gh_repos" class="nav">
+    <li class="nav-header">GitHub Repos</li>
     <li class="loading">Status updating&#8230;</li>
   </ul>
   
   <a href="https://github.com/vagmi">@vagmi</a> on GitHub
   
   <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
+    $(document).ready(function(){
         github.showRepos({
             user: 'vagmi',
             count: 5,
@@ -515,21 +534,21 @@ Exactly my sentiments.<br /><br /><object width="560" height="340"><param name="
         });
     });
   </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
+  <script src="/javascripts/asides/github.js" type="text/javascript"> </script>
 </section>
 
 
-<section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
+<section class="well">
+  <ul id="tweets" class="nav">
+    <li class="nav-header">Latest Tweets</li>
     <li class="loading">Status updating&#8230;</li>
   </ul>
   <script type="text/javascript">
-    $.domReady(function(){
+    $(document).ready(function(){
       getTwitterFeed("vagmi", 4, false);
     });
   </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  <script src="/javascripts/asides/twitter.js" type="text/javascript"> </script>
   
     <a href="http://twitter.com/vagmi" class="twitter-follow-button" data-show-count="false">Follow @vagmi</a>
   
@@ -544,7 +563,8 @@ Exactly my sentiments.<br /><br /><object width="560" height="340"><param name="
 
     </div>
   </div>
-  <footer role="contentinfo"><p>
+  <footer role="contentinfo" class="page-footer"><hr>
+<p>
   Copyright &copy; 2012 - Vagmi Mudumbai -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
