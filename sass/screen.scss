@@ -1,10 +1,12 @@
-@import "compass";
-@include global-reset;
-@include reset-html5;
-
-@import "custom/colors";
-@import "custom/fonts";
-@import "custom/layout";
-@import "base";
-@import "partials";
-@import "custom/styles";
+article {
+  .entry-content {
+    p, blockquote, .post {
+      font-size: 1.2em;
+      line-height: 2em;
+      margin: 2em 0;
+    }
+    .gist {
+      line-height: 20px;
+    }
+  }
+}
