@@ -41,6 +41,9 @@ single: true
 </article>
 {% unless page.sidebar == false %}
 <aside class="sidebar-nav span3">
+  <div class="profile-image">
+    <img src="http://www.gravatar.com/avatar/76c5ea6a17750fdf3f65da5832a1f37c.png?s=250" title="Me with Oorjasvita"/>
+  </div>
   {% if site.post_asides.size %}
     {% include_array post_asides %}
   {% else %}

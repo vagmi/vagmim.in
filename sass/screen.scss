@@ -10,3 +10,20 @@ article {
     }
   }
 }
+.profile-image {
+  margin: 10px;
+  img {
+    padding: 5px;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: 2px 2px 2px 0px #777;
+    box-shadow: 2px 2px 2px 0px #777;
+
+    -webkit-transform: rotate(1deg); 
+       -moz-transform: rotate(1deg); 
+        -ms-transform: rotate(1deg); 
+         -o-transform: rotate(1deg); 
+            transform: rotate(1deg); 
+    
+    
+  }
+}
