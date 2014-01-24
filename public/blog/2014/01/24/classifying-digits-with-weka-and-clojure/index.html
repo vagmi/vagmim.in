@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Classifying Digits with Weka and Clojure - Vagmi's Blog</title>
+  <meta name="author" content="Vagmi Mudumbai">
+
+  
+  <meta name="description" content="">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://vagmim.in/blog/2014/01/24/classifying-digits-with-weka-and-clojure">
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    body {
+      padding-bottom: 40px;
+    }
+    h1 {
+      margin-bottom: 15px;
+    }
+    img {
+      max-width: 100%;
+    }
+    .sharing, .meta, .pager {
+      margin: 20px 0px 20px 0px;
+    }
+    .page-footer p {
+      text-align: center;
+    }
+  </style>
+  <script src="/javascripts/libs/jquery.js"></script>
+  <script src="/javascripts/libs/modernizr-2.0.js"></script>
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Vagmi's Blog" type="application/atom+xml">
+  
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1364568-6']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <nav role="navigation"><div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <a class="brand" href="/">Vagmi's Blog</a>
+
+      <div class="nav-collapse">
+        <ul class="nav">
+  <li><a href="/">Blog</a></li>
+  <li><a href="http://github.com/vagmi">Github</a></li>
+  <li><a href="http://twitter.com/vagmi">Twitter</a></li>
+</ul>
+
+
+        <ul class="nav pull-right" data-subscription="rss">
+          <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+          
+        </ul>
+
+        
+          <form class="pull-right navbar-search" action="http://google.com/search" method="get">
+            <fieldset role="search">
+              <input type="hidden" name="q" value="site:vagmim.in" />
+              <input class="search-query" type="text" name="q" results="0" placeholder="Search"/>
+            </fieldset>
+          </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</nav>
+  <div class="container">
+    <div class="row-fluid">
+      
+<article class="hentry span9" role="article">
+
+  
+  <header class="page-header">
+    
+      <h1 class="entry-title">Classifying Digits With Weka and Clojure</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-24T12:15:00+05:30" pubdate data-updated="true">Jan 24<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I was looking to get my feet wet with Machine Learning and I decided to try out the Kaggle&#8217;s <a href="http://www.kaggle.com/c/digit-recognizer">Digit Recognizer problem</a>.
+The goal is to recognize hand written digits. You are provided with a training set that contains the label (0-9) and the pixel values of a 28x28 image. So, every row
+in the training set is contains a label and 784 numbers each of which contains a value from (0-255) in grayscale.</p>
+
+<p>I used the <a href="http://www.cs.waikato.ac.nz/ml/weka/">Weka 3</a> <a href="http://weka.sourceforge.net/doc.dev/weka/classifiers/trees/RandomForest.html">RandomForest</a> classifier.
+It implements the Breiman, et al&#8217;s <a href="http://www.stat.berkeley.edu/~breiman/RandomForests/cc_home.htm">RandomForest</a> method for classification.
+I downloaded the training and test data set from Kaggle. I had to change the <code>train.csv</code> to change the labels to strings. So the file looks a bit
+like below. It was a simple enough change so I did that in vim. I used the test csv unchaged.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"Zero" 0 0 0 ....
+</span><span class='line'>"One" 0 0 0 ...</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can find the code on the <a href="https://github.com/vagmi/random-forest">random-forest</a> github repo. With 10 trees and 28 random features, I got a 94%
+accuracy while with 100 trees, the accuracy improved marginally by 96%.</p>
+
+<p>What is powerful about this technique is that it does not know anything about the domain that we are dealing with. As I followed the discussions on
+the Kaggle forums, people have got better predictions by processing the original <a href="http://yann.lecun.com/exdb/mnist/">MNIST</a> training set which contains
+more samples. So better data beats clever algorithms. Off to solve more Kaggle problems now.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Vagmi Mudumbai</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-24T12:15:00+05:30" pubdate data-updated="true">Jan 24<span>th</span>, 2014</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://vagmim.in/blog/2014/01/24/classifying-digits-with-weka-and-clojure/" data-via="vagmi" data-counturl="http://vagmim.in/blog/2014/01/24/classifying-digits-with-weka-and-clojure/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    
+    <ul class="pager">
+      
+      <li class="previous"><a class="basic-alignment left"
+        href="/blog/2012/12/10/getting-started-with-clojure/" title="Previous Post:
+        Getting started with clojure">&laquo; Getting started with clojure</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+<aside class="sidebar-nav span3">
+  <div class="profile-image">
+    <img src="http://www.gravatar.com/avatar/76c5ea6a17750fdf3f65da5832a1f37c.png?s=250" title="Me with Oorjasvita"/>
+  </div>
+  
+    <section class="well">
+  <ul id="recent_posts" class="nav nav-list">
+    <li class="nav-header">Recent Posts</li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/24/classifying-digits-with-weka-and-clojure/">Classifying Digits with Weka and Clojure</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/10/getting-started-with-clojure/">Getting started with clojure</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/08/31/first-track-call-taxi-epic-fail/">First Track Call Taxi - Epic Fail</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/07/27/yes-men-fix-world/">Yes Men Fix the World</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/02/19/magic-of-y/">The magic of Y</a>
+      </li>
+    
+  </ul>
+</section>
+<section class="well">
+  <ul id="gh_repos" class="nav">
+    <li class="nav-header">Open Source</li>
+    <li>
+      <a href="http://www.github.com/vagmi/graphtastic">Graphtastic</a>
+      <p>An opinionated graph library built on top of Neo4j</p>
+    </li>
+    <li>
+    <a href="http://www.github.com/thoughtworks/irumugam">Irumugam</a>
+    <p>The two faced framework helps you setup a DSL for describing services. The one face helps you test the services using RSpec while the other runs it as a mock for consuming them.</p>
+    </li>
+  </ul>
+  More from <a href="https://github.com/vagmi">@vagmi</a> on GitHub
+</section>
+
+<section class="well">
+  <ul id="tweets" class="nav">
+    <li class="nav-header">Latest Tweets</li>
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      getTwitterFeed("vagmi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/asides/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/vagmi" class="twitter-follow-button" data-show-count="false">Follow @vagmi</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo" class="page-footer"><hr>
+<p>
+  Copyright &copy; 2014 - Vagmi Mudumbai -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -108,6 +108,62 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2014/01/24/classifying-digits-with-weka-and-clojure/">Classifying Digits With Weka and Clojure</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-24T12:15:00+05:30" pubdate data-updated="true">Jan 24<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I was looking to get my feet wet with Machine Learning and I decided to try out the Kaggle&#8217;s <a href="http://www.kaggle.com/c/digit-recognizer">Digit Recognizer problem</a>.
+The goal is to recognize hand written digits. You are provided with a training set that contains the label (0-9) and the pixel values of a 28x28 image. So, every row
+in the training set is contains a label and 784 numbers each of which contains a value from (0-255) in grayscale.</p>
+
+<p>I used the <a href="http://www.cs.waikato.ac.nz/ml/weka/">Weka 3</a> <a href="http://weka.sourceforge.net/doc.dev/weka/classifiers/trees/RandomForest.html">RandomForest</a> classifier.
+It implements the Breiman, et al&#8217;s <a href="http://www.stat.berkeley.edu/~breiman/RandomForests/cc_home.htm">RandomForest</a> method for classification.
+I downloaded the training and test data set from Kaggle. I had to change the <code>train.csv</code> to change the labels to strings. So the file looks a bit
+like below. It was a simple enough change so I did that in vim. I used the test csv unchaged.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"Zero" 0 0 0 ....
+</span><span class='line'>"One" 0 0 0 ...</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can find the code on the <a href="https://github.com/vagmi/random-forest">random-forest</a> github repo. With 10 trees and 28 random features, I got a 94%
+accuracy while with 100 trees, the accuracy improved marginally by 96%.</p>
+
+<p>What is powerful about this technique is that it does not know anything about the domain that we are dealing with. As I followed the discussions on
+the Kaggle forums, people have got better predictions by processing the original <a href="http://yann.lecun.com/exdb/mnist/">MNIST</a> training set which contains
+more samples. So better data beats clever algorithms. Off to solve more Kaggle problems now.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2012/12/10/getting-started-with-clojure/">Getting Started With Clojure</a></h1>
     
     
@@ -441,43 +497,6 @@ Exactly my sentiments.<br /><br /><object width="560" height="340"><param name="
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2009/11/11/artha42-is-hiring/">Artha42 Is Hiring</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-11-11T00:00:00+05:30" pubdate data-updated="true">Nov 11<span>th</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<a href="http://www.artha42.com">Artha42</a> is hiring. I have been conducting a lot of interviews lately and am completely dissappointed at the state of freshers coming out of engineering colleges. They spend 4 years supposedly studying IT and Computer Science and cannot answer a simple question like <a href="http://www.codinghorror.com/blog/archives/000781.html">fizzbuzz</a>. Come on. I completely agree with <a href="http://krishashok.wordpress.com/">krishashok</a> on this one. Chennai does have concentration camps and they are the bane for a creative society.<br /><br /><object width="560" height="340"><param name="movie" value="http://www.youtube.com/v/jpDQ66r1f9M&hl=en&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/jpDQ66r1f9M&hl=en&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="340"></embed></object><br /><br />If there are guys wanting to work in a fun, passionate and challenging environment, please send your profile to careers <at> artha42.com.</div>
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="/blog/page/2/">&larr; Older</a></li>
@@ -496,6 +515,10 @@ Exactly my sentiments.<br /><br /><object width="560" height="340"><param name="
     <li class="nav-header">Recent Posts</li>
     
       <li class="post">
+        <a href="/blog/2014/01/24/classifying-digits-with-weka-and-clojure/">Classifying Digits with Weka and Clojure</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/12/10/getting-started-with-clojure/">Getting started with clojure</a>
       </li>
     
@@ -509,10 +532,6 @@ Exactly my sentiments.<br /><br /><object width="560" height="340"><param name="
     
       <li class="post">
         <a href="/blog/2010/02/19/magic-of-y/">The magic of Y</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2010/02/12/statistics-is-important/">Statistics is important</a>
       </li>
     
   </ul>
@@ -559,7 +578,7 @@ Exactly my sentiments.<br /><br /><object width="560" height="340"><param name="
   </div>
   <footer role="contentinfo" class="page-footer"><hr>
 <p>
-  Copyright &copy; 2013 - Vagmi Mudumbai -
+  Copyright &copy; 2014 - Vagmi Mudumbai -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
