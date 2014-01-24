@@ -16,12 +16,13 @@ I downloaded the training and test data set from Kaggle. I had to change the `tr
 like below. It was a simple enough change so I did that in vim. I used the test csv unchaged.
 
 ```
-"Zero" 0 0 0 ....
-"One" 0 0 0 ...
+label, pixel1, pixel2, pixel3, ...
+"Zero", 0, 0, 0, ....
+"One", 0, 0, 0 ...
 ```
 
 You can find the code on the [random-forest](https://github.com/vagmi/random-forest) github repo. With 10 trees and 28 random features, I got a 94%
-accuracy while with 100 trees, the accuracy improved marginally by 96%.
+accuracy while with 100 trees, the accuracy improved marginally to 96%.
 
 What is powerful about this technique is that it does not know anything about the domain that we are dealing with. As I followed the discussions on
 the Kaggle forums, people have got better predictions by processing the original [MNIST](http://yann.lecun.com/exdb/mnist/) training set which contains 
